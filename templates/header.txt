@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+   schematypens="http://purl.oclc.org/dsdl/schematron"?>
+   <TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="a">{item_name}</title>
+            <author>{autorzy[item_auth]}</author>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Instytut Historii im. T. Manteuffla Polskiej Akademiii Nauk</publisher>
+            <publisher>Towarzystwo Naukowe Societas Vistulana</publisher>
+            <idno type="ISBN">978-83-65548-09-2</idno>
+            <date>2016</date>
+         </publicationStmt>
+         <seriesStmt>
+            <title level="m">Słownik historyczno-geograficzny województwa krakowskiego w średniowieczu część V zeszyt 1: Mstów-Nagłowice [edycja elektroniczna]</title>
+            <respStmt>
+               <resp>red.</resp>
+               <name>Waldemar Bukowski</name>
+            </respStmt>
+            <respStmt>
+               <resp>oprac.</resp>
+               <name>Waldemar Bukowski</name>
+            </respStmt>
+            <respStmt>
+               <resp>oprac.</resp>
+               <name>Jacek Laberschek</name>
+            </respStmt>
+            <respStmt>
+               <resp>oprac.</resp>
+               <name>Karol Nabiałek</name>
+            </respStmt>
+            <respStmt>
+               <resp>oprac.</resp>
+               <name>Michał Schmidt</name>
+            </respStmt>
+            <respStmt>
+               <resp>oprac.</resp>
+               <name>Franciszek Sikora</name>
+            </respStmt>
+            <respStmt>
+               <resp>oprac.</resp>
+               <name>Janusz Szyszka</name>
+            </respStmt>
+            <respStmt>
+               <resp>współpraca</resp>
+               <name>Zuzanna Kulpa</name>
+            </respStmt>
+            <respStmt>
+               <resp>współpraca archeologiczna</resp>
+               <name>Michał Wojenka</name>
+            </respStmt>
+            <biblScope unit="part">V</biblScope>
+            <biblScope unit="volume">1</biblScope>
+         </seriesStmt>
+         <sourceDesc>
+            <bibl>Słownik historyczno-geograficzny województwa krakowskiego w średniowieczu część V zeszyt 1: Mstów-Nagłowice</bibl>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
