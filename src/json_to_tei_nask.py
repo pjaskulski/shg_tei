@@ -18,6 +18,7 @@ from wojtowie import rule_patterns_wojtowie
 from landwojtowie import rule_patterns_landwojtowie
 from przysiezni import rule_patterns_przysiezni
 from wicesoltysi import rule_patterns_wicesoltysi
+from monety import rule_patterns_coin
 
 
 warnings.filterwarnings("ignore")
@@ -62,7 +63,8 @@ label2tag = {
             "OCCUPATION_CHURCH_LOW": "roleName",
             "OCCUPATION_CHURCH_HIGH": "roleName",
             "OCCUPATION_MUNICIPAL": "roleName",
-            "OCCUPATION_LAND": "roleName"
+            "OCCUPATION_LAND": "roleName",
+            "COIN": "unit"
         }
 
 # reguły ogólne i kościelne
@@ -153,6 +155,12 @@ for item in patterns_wicesoltysi:
                     "pattern": item,
                     "id": "wicesołtysi"})
 
+# reguły dla monet
+patterns_coin = rule_patterns_coin()
+for item in patterns_coin:
+    pattern.append(item)
+
+print(len(pattern))
 # wzorce encji
 wzorce_encji.add_patterns(pattern)
 
@@ -190,10 +198,10 @@ def ner_to_xml(value:str) -> str:
         if (ent.label_ in label2tag) and (ent.label_ != "ORGNAME" or len(ent.text) > 3) :
             if ent.label_ == "OBJECT":
                 tagged_text += (value[last_index:ent.start_char] +
-                                f'<{label2tag[ent.label_]} type="obj[{ent.lemma_}]">{ent.text}</{label2tag[ent.label_]}>')
+                                f'<{label2tag[ent.label_]} type="obj" subtype="{ent.lemma_}">{ent.text}</{label2tag[ent.label_]}>')
             elif ent.label_ == "FIZJOGRAFIA":
                 tagged_text += (value[last_index:ent.start_char] +
-                                f'<{label2tag[ent.label_]} type="fiz[{ent.lemma_}]">{ent.text}</{label2tag[ent.label_]}>')
+                                f'<{label2tag[ent.label_]} type="fiz" subtype="{ent.lemma_}">{ent.text}</{label2tag[ent.label_]}>')
             elif ent.label_ == "OCCUPATION_CHURCH_LOW":
                 tagged_text += (value[last_index:ent.start_char] +
                                 f'<{label2tag[ent.label_]} type="kościelny_niższy" subtype="{ent.ent_id_}">{ent.text}</{label2tag[ent.label_]}>')
@@ -206,6 +214,9 @@ def ner_to_xml(value:str) -> str:
             elif ent.label_ == "OCCUPATION_LAND":
                 tagged_text += (value[last_index:ent.start_char] +
                                 f'<{label2tag[ent.label_]} type="ziemski" subtype="{ent.ent_id_}">{ent.text}</{label2tag[ent.label_]}>')
+            elif ent.label_ == "COIN":
+                tagged_text += (value[last_index:ent.start_char] +
+                                f'<{label2tag[ent.label_]} type="currency" subtype="{ent.ent_id_}">{ent.text}</{label2tag[ent.label_]}>')
             else:
                 tagged_text += (value[last_index:ent.start_char] +
                                 f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
@@ -254,8 +265,9 @@ if __name__ == '__main__':
         header = f_h.read()
 
     # poprawione wyniki dla functions
+    data_folder = Path("..") / "json_krak_cz_V_z_1"
     filename = '30659.json'
-    path = Path("..") / "json" / filename
+    path = Path("..") / "json_krak_cz_V_z_1" / filename
 
     type_count = {}
     with open(path, "r", encoding='utf-8') as f:

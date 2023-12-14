@@ -18,7 +18,7 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
             "id": "obj"
            },
            {"label":"FIZJOGRAFIA",
-            "pattern": [{"LEMMA": {"IN": fizjografia}}],
+            "pattern": [{"LEMMA": {"IN": fizjografia}, "IS_TITLE": False}],
             "id": "fiz"
            },
            {"label":"COATOFARMS",
@@ -124,6 +124,203 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
            {"label": "OCCUPATION_CHURCH_HIGH",
             "pattern": [{"LEMMA": "sufragan"}, {"POS":"ADJ", "OP": "*"}],
             "id": "sufragan"
+           },
+           # urzędy ziemskie
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "burgrabia"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "burgrabia"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "celnik"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "celnik"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "chorąży"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "chorąży"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "ciwun"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "ciwun"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "cześnik"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "cześnik"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "generał"}, {"POS": "NOUN", "OP":"*"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "generał"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "hetman"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "hetman"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "horodniczy"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "horodniczy"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "instygator"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "instygator"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "kanclerz"}, {"LEMMA": "koronny"}],
+            "id": "kanclerz"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "klucznik"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "klucznik"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "konarski"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "konarski"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "koniuszy"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "koniuszy"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "korzenny"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "korzenny"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "krajczy"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "krajczy"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "kuchmistrz"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "kuchmistrz"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "ławnik"}, {"LEMMA": "ziemski"}],
+            "id": "ławnik"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "łożniczy"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "łożniczy"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "łowczy"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "łowczy"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "łowczy"}, {"TEXT": {"IN": ["lub", "krak", "sand", "lel"]}}, {"IS_PUNCT": True}],
+            "id": "łowczy"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "marszałek"}, {"LEMMA": {"IN": ["dworski", "koronny", "nadworny", "wielki", "królestwo"] }}],
+            "id": "marszałek"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "miecznik"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "miecznik"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "mierniczy"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "mierniczy"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "mostowniczy"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "mostowniczy"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "pisarz"}, {"LEMMA":{"IN": ["skarbowy", "ziemski", "polny"]}}],
+            "id": "pisarz"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "pocztmagister"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "pocztmagister"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "podczaszy"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "podczaszy"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "podkanclerzy"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "podkanclerzy"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "podkoni"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "podkoni"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "podłowczy"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "podsędek"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "podskarbi"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "podskarbi"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "podstoli"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "postoli"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "prefekt"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "prefekt"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "referendarz"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "referendarz"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "regent"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "regent"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "sekretarz"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "sekretarz"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "skarbnik"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "skarbnik"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "skarbny"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "skarbny"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "starosta"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "starosta"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"TEXT": "star"},{"IS_PUNCT": True}, {"POS":"ADJ", "OP": "*"}],
+            "id": "starosta"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"TEXT": "star"},{"IS_PUNCT": True}, {"TEXT": {"IN": ["lub", "krak", "sand", "lel"]}}, {"IS_PUNCT": True}],
+            "id": "starosta"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "stolnik"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "stolnik"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "strażnik"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "strażnik"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "wiceinstygator"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "wiceinstygator"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "wiceregent"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "wiceregent"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "wicewojewoda"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "wicewojewoda"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "wielkorządca"}, {"TEXT": {"IN": ["krak", "sand"]}}, {"IS_PUNCT": True}],
+            "id": "wielkorządca"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "włodarz"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "włodarz"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "wojski"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "wojski"
            },
            # skróty urzędów bez kropek
            {"label": "OCCUPATION_LAND",
