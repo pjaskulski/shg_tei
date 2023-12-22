@@ -13,14 +13,27 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
                     "zawich", "zwierzyn", "żarn", "żyd"]
 
     patterns = [
+           # obiekty gospodarcze, budowle itp.
            {"label":"OBJECT",
             "pattern": [{"LEMMA": {"IN": obiekty}}],
             "id": "obj"
            },
+           # obiekty fizjograficzne
            {"label":"FIZJOGRAFIA",
             "pattern": [{"LEMMA": {"IN": fizjografia}, "IS_TITLE": False}],
             "id": "fiz"
            },
+           # obiekty gosp. i budowle jako skróty
+           {"label":"OBJECT",
+            "pattern": [{"TEXT": {"IN": ["folw", "kat", "kl", "kol"]}}, {"IS_PUNCT": True}],
+            "id": "obj"
+           },
+           # obiekty fizjograficzne jako skróty
+           {"label":"FIZJOGRAFIA",
+            "pattern": [{"TEXT": {"IN": ["jez", "rz"]}}, {"IS_PUNCT": True}],
+            "id": "fiz"
+           },
+           # herby
            {"label":"COATOFARMS",
             "pattern": [{"TEXT": "h"}, {"IS_PUNCT": True}, {"POS": "PROPN"}]
            },
@@ -363,6 +376,18 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
            },
            {"label": "OCCUPATION_CHURCH_HIGH",
             "pattern": [{"TEXT": "prep"}, {"IS_PUNCT": True}, {"POS":"ADJ", "OP": "*"}],
+            "id": "prepozyt"
+           },
+           # prep. kl. z M.
+           {"label": "OCCUPATION_CHURCH_HIGH",
+            "pattern": [{"TEXT": "prep"}, {"IS_PUNCT": True},{"TEXT":"kl"},
+                       {"IS_PUNCT": True}, {"TEXT":"z"}, {"TEXT":f"{skrot}"}, {"IS_PUNCT": True}],
+            "id": "prepozyt"
+           },
+           # prep. w M.
+           {"label": "OCCUPATION_CHURCH_HIGH",
+            "pattern": [{"TEXT": "prep"}, {"IS_PUNCT": True},{"TEXT":{"IN":["w","z"]}}, {"TEXT":f"{skrot}"},
+                       {"IS_PUNCT": True}],
             "id": "prepozyt"
            },
            # skróty urzędów z kropkami + skróty geograficzne

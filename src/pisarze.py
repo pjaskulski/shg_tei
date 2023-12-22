@@ -30,6 +30,8 @@ def rule_patterns_pisarze() -> list:
         [{"LEMMA":"pisarz"}, {"POS":"NOUN"}, {"LOWER":"król"}, {"IS_PUNCT":True}],
         # pisarz star. + przymiotnik
         [{"LEMMA":"pisarz"}, {"LOWER":"star"}, {"IS_PUNCT":True}, {"POS":"ADJ"}],
+        # pisarz sądu + przymiotnik
+        [{"LEMMA":"pisarz"}, {"LEMMA":"sąd"}, {"POS":"ADJ"}],
         [{"LEMMA":"pisarz"}]
     ]
 

@@ -1,4 +1,5 @@
 """ results """
+import os
 import json
 import time
 import re
@@ -8,7 +9,15 @@ from pathlib import Path
 def get_text_with_year(text: str) -> str:
     """ zwraca początek tekstu z rokiem, latami"""
     result = ''
-    znaki = '0123456789-— ,aAn.[]'
+    # jeżeli nie ma daty na początku tekstu, ale są litery typu n a A
+    # sprawdzana jest obecność cyfr na początku i w przypadku braku funkcja
+    # uznaje że nie ma daty w przekazanym tekście
+    if (len(text.strip()) > 2 and not text.strip()[0].isnumeric()
+        and not text.strip()[1].isnumeric()
+        and not text.strip()[2].isnumeric()):
+        return result
+
+    znaki = '0123456789-— ,.[]' # aAn
     for i in text:
         if i in znaki:
             result += i
@@ -143,16 +152,20 @@ def prepare_regest(value: str) -> tuple():
         value_source = value_source[:pos_en]
         value_source_list.append({"source_bg": value_source_bg})
 
-    if ';' in value_source:
-        tmp = value_source.split(';')
-    else:
-        tmp = [value_source]
+    if value_source:
+        if ';' in value_source:
+            tmp = value_source.split(';')
+        else:
+            tmp = [value_source]
 
-    for element_tmp in tmp:
-        value_source_list.append({"source_el": element_tmp.strip()})
+        for element_tmp in tmp:
+            value_source_list.append({"source_el": element_tmp.strip()})
 
     if value_source_en:
         value_source_list.append({"source_en":value_source_en.strip()})
+
+    if len(value_source_list) == 0:
+        value_source_list = None
 
     return value_date, value_content, value_source_list
 
@@ -162,50 +175,54 @@ if __name__ == '__main__':
     # pomiar czasu wykonania
     start_time = time.time()
 
-    # poprawione wyniki dla functions
-    data_folder = Path("..") / "json_krak_cz_V_z_1"
-    filename = '30659_old.json'
-    path = Path("..") / "json_krak_cz_V_z_1" / filename
-    output_path = Path("..") / "json_krak_cz_V_z_1" / filename.replace("_old.json","_new.json")
+    # folder z plikami json do poprawienia skryptem
+    data_folder = Path("..") / "json_pre"
+    data_folder_list = data_folder.glob('*.json')
+    for data_file in data_folder_list:
+        filename = os.path.basename(data_file)
+        if filename != '30790.json':
+            continue
+        path = Path("..") / "json_pre" / filename
+        output_path = Path("..") / "json" / filename
 
-    type_count = {}
-    with open(path, "r", encoding='utf-8') as f:
-        json_data = json.load(f)
-        item_text = json_data["text"]
+        type_count = {}
+        with open(path, "r", encoding='utf-8') as f:
+            json_data = json.load(f)
+            item_text = json_data["text"]
 
-        # regesty
-        for point in item_text:
-            point_num = point["point_num"]
-            point_content = point["point_content"]
-            lista_content = []
-            for point_item in point_content:
-                if "regesty" in point_item:
-                    regesty = point_item["regesty"]
-                    del point_item['regesty']
-                    lista = xsplit(regesty)
-                    for item in lista:
-                        # jeżeli zastosowano nietypowy podział regestów np. zwykłą
-                        # kropką i znakiem \n zamiast ;
-                        if '\n' in item:
-                            tmp_list = item.split('\n')
-                            for tmp_list_item in tmp_list:
-                                item_date, item_content, source_list = prepare_regest(tmp_list_item)
+            # regesty
+            for point in item_text:
+                point_num = point["point_num"]
+                point_content = point["point_content"]
+                lista_content = []
+                for point_item in point_content:
+                    if "regesty" in point_item:
+                        regesty = point_item["regesty"]
+                        del point_item['regesty']
+                        lista = xsplit(regesty)
+                        for item in lista:
+                            # jeżeli zastosowano nietypowy podział regestów np. zwykłą
+                            # kropką i znakiem \n zamiast ;
+                            if '\n' in item:
+                                tmp_list = item.split('\n')
+                                for tmp_list_item in tmp_list:
+                                    item_date, item_content, source_list = prepare_regest(tmp_list_item)
+                                    lista_content.append({"regest":{"date":item_date,
+                                                                    "content":item_content,
+                                                                    "source": source_list}})
+                            else:
+                                item_date, item_content, source_list = prepare_regest(item)
                                 lista_content.append({"regest":{"date":item_date,
                                                                 "content":item_content,
                                                                 "source": source_list}})
-                        else:
-                            item_date, item_content, source_list = prepare_regest(item)
-                            lista_content.append({"regest":{"date":item_date,
-                                                            "content":item_content,
-                                                            "source": source_list}})
-                else:
-                    lista_content.append(point_item)
+                    else:
+                        lista_content.append(point_item)
 
-            del point["point_content"]
-            point["point_content"] = lista_content
+                del point["point_content"]
+                point["point_content"] = lista_content
 
-        with open(output_path, 'w', encoding='utf-8') as f_out:
-            json.dump(json_data, f_out, indent=4, ensure_ascii=False)
+            with open(output_path, 'w', encoding='utf-8') as f_out:
+                json.dump(json_data, f_out, indent=4, ensure_ascii=False)
 
     # czas wykonania programu
     end_time = time.time()
