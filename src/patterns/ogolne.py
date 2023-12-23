@@ -37,9 +37,11 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
            {"label":"COATOFARMS",
             "pattern": [{"TEXT": "h"}, {"IS_PUNCT": True}, {"POS": "PROPN"}]
            },
+           # skrót bieżącej miejscowości
            {"label":"PLACENAME",
             "pattern": [{"TEXT":f"{skrot}"}, {"IS_PUNCT":True}]
            },
+           # osoba z miejscowości
            {"label": "PERSON",
             "pattern": [{"ENT_TYPE": "PERSNAME", "OP":"+"}, {"TEXT": "z"}, {"ENT_TYPE":"PLACENAME"}],
             "id": "person_1"
