@@ -4,6 +4,8 @@
 def rule_patterns_lawnicy() -> list:
     """ definicje reguł """
     patterns = [
+        # ławnik
+        [{"LEMMA":"ławnik"}],
         # ławnik + przymiotnik (lub parę przymiotników)
         # opcjonalnie 'sądu leńskiego'
         [{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"}, {"POS":"ADJ", "OP": "+"}],

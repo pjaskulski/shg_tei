@@ -4,6 +4,8 @@
 def rule_patterns_wojtowie() -> list:
     """ definicje reguł """
     patterns = [
+        # wójt
+         [{"LEMMA":"wójt"}],
         # wójt + przymiotnik (lub parę przymiotników)
         [{"LEMMA":"wójt"}, {"POS":"ADJ", "OP": "*"}],
         [{"LEMMA":"wójtowy"}, {"POS":"ADJ", "OP": "*"}],

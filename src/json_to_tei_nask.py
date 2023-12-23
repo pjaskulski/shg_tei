@@ -6,20 +6,20 @@ import time
 from pathlib import Path
 import warnings
 import spacy
-from burmistrzowie import rule_patterns_burmistrzowie
-from podwojtowie import rule_patterns_podwojtowie
-from sedziowie import rule_patterns_sedziowie
-from pisarze import rule_patterns_pisarze
-from notariusze import rule_patterns_notariusze
-from ogolne import patterns_ogolne
-from lawnicy import rule_patterns_lawnicy
-from rajcowie import rule_patterns_rajcowie
-from soltysi import rule_patterns_soltysi
-from wojtowie import rule_patterns_wojtowie
-from landwojtowie import rule_patterns_landwojtowie
-from przysiezni import rule_patterns_przysiezni
-from wicesoltysi import rule_patterns_wicesoltysi
-from monety import rule_patterns_coin
+from patterns.burmistrzowie import rule_patterns_burmistrzowie
+from patterns.podwojtowie import rule_patterns_podwojtowie
+from patterns.sedziowie import rule_patterns_sedziowie
+from patterns.pisarze import rule_patterns_pisarze
+from patterns.notariusze import rule_patterns_notariusze
+from patterns.ogolne import patterns_ogolne
+from patterns.lawnicy import rule_patterns_lawnicy
+from patterns.rajcowie import rule_patterns_rajcowie
+from patterns.soltysi import rule_patterns_soltysi
+from patterns.wojtowie import rule_patterns_wojtowie
+from patterns.landwojtowie import rule_patterns_landwojtowie
+from patterns.przysiezni import rule_patterns_przysiezni
+from patterns.wicesoltysi import rule_patterns_wicesoltysi
+from patterns.monety import rule_patterns_coin
 
 
 warnings.filterwarnings("ignore")
@@ -202,10 +202,7 @@ def ner_to_xml(value:str) -> str:
     if not MAKE_NER:
         return value
 
-    # print(value)
-
-    #if value.strip() == "":
-    #    return value
+    #print(value)
 
     # Process the text
     doc = nlp(value)
@@ -306,10 +303,12 @@ if __name__ == '__main__':
 
     for data_file in data_folder_list:
         filename = os.path.basename(data_file)
-        if filename != "30795.json":
+
+        # jeżeli tylko wybrany plik
+        if filename != "30659.json":
             continue
 
-        if filename == "30659.json":
+        if filename == "xxxxx.json":
             print("Plik wzorcowy: 30659.json pominięty")
             continue
         else:
@@ -468,14 +467,10 @@ if __name__ == '__main__':
                             tei_text += ';</seg>'
 
                         previous_item = 'regest'
-                    # lista elementów
+                    # lista elementów (w formie tekstu ze znakami końca wiersza)
+                    # przetwarzana na sekcje <seg>
                     elif "elements" in item:
-                        tei_text += '<p>\n'
-
-                        if '\n' in item["elements"]:
-                            tmp_list = item["elements"].split('\n')
-                        else:
-                            tmp_list = [item["elements"]]
+                        tmp_list = item["elements"]
 
                         for el in tmp_list:
                             el = ner_to_xml(el)

@@ -4,6 +4,8 @@
 def rule_patterns_sedziowie() -> list:
     """ definicje reguł """
     patterns = [
+        # sędzia
+        [{"LEMMA":"sędzia"}],
         # sędzia + przymiotnik (lub parę przymiotników)
         [{"LEMMA":"sędzia"}, {"POS":"ADJ", "OP":"+"}],
         # sędzia + przymiotnik (lub parę przymiotników) + kropka
@@ -65,7 +67,7 @@ def rule_patterns_sedziowie() -> list:
         [{"LEMMA":"sędzia"}, {"POS":"ADJ"}, {"LEMMA":"sąd"}],
 
     ]
-    
+
     shortcuts = ["krak", "lel", "biec", "chęc", "czchow", "czech", "czes", "frank", "gnieźn",
                     "imbr", "jędrz", "kal", "Klar", "koprz", "ksiąs", "lub", "łęcz", "magd", "maz",
                     "miech", "miej", "mog", "mstow", "niem", "opocz", "ośw", "pilzn", "pol", "poł",
@@ -73,7 +75,7 @@ def rule_patterns_sedziowie() -> list:
                     "sieciech", "sier", "siew", "staniąt", "starosądec", "szczyrz", "śl", "średz",
                     "świętokrz", "świętop", "tyn", "wąch", "węg", "wiel", "wiśl", "wojn", "zator",
                     "zawich", "zwierzyn", "żarn", "żyd"]
-    
+
     litery = 'ABCDEFGHIJKLMNOPRSTUWZŚŻŹĆŁ'
     for shortcut in shortcuts:
         # sędzia + skrót (geograficzny) np krak. biec. lel.
@@ -88,7 +90,7 @@ def rule_patterns_sedziowie() -> list:
         patterns.append([{"LEMMA":"sędzia"}, {"LEMMA":"sąd"}, {"POS":"ADJ"}, {"LOWER":"na"}, {"POS":"NOUN"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
         # sędzia sądu + przymiotnik + skrót geogr.
         patterns.append([{"LEMMA":"sędzia"}, {"LEMMA":"sąd"}, {"POS":"ADJ"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        
+
         # sędzia z + skrót miejscowości np.: A.
         for litera in litery:
             patterns.append([{"LEMMA":"sędzia"}, {"LOWER":"z"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])

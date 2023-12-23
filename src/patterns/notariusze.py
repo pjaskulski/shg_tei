@@ -4,6 +4,8 @@
 def rule_patterns_notariusze() -> list:
     """ definicje reguł """
     patterns = [
+        # notariusz
+        [{"LEMMA":"notariusz"}],
         # notariusz z + nazwa
         [{"LEMMA":"notariusz"}, {"LOWER":"z"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # notariusz miejski w + nazwa, przymiotnik + nazwa, w rzeczownik

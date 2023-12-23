@@ -4,6 +4,8 @@
 def rule_patterns_pisarze() -> list:
     """ definicje reguł """
     patterns = [
+        # pisarz
+        [{"LEMMA":"pisarz"}],
         # pisarz m. + nazwa
         [{"LEMMA":"pisarz"}, {"LOWER":"m"}, {"IS_PUNCT":True}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # pisarz z + nazwa

@@ -4,6 +4,8 @@
 def rule_patterns_wicesoltysi() -> list:
     """ definicje reguł """
     patterns = [
+        # wicesołtys
+        [{"LEMMA":"wicesołtys"}],
         # wicesołtys + przymiotnik (lub parę przymiotników)
         [{"LEMMA":"wicesołtys"}, {"POS":"ADJ", "OP": "+"}],
         # wicesołtys + przymiotnik i przymiotnik

@@ -4,6 +4,8 @@
 def rule_patterns_soltysi() -> list:
     """ definicje reguł """
     patterns = [
+        # sołtys
+        [{"LEMMA":"sołtys"}],
         # sołtys + przymiotnik (lub parę przymiotników)
         [{"LEMMA":"sołtys"}, {"POS":"ADJ", "OP": "+"}],
         [{"LEMMA":"sołtyska"}, {"POS":"ADJ", "OP": "+"}],

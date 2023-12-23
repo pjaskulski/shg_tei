@@ -11,6 +11,8 @@
 def rule_patterns_rajcowie() -> list:
     """ definicje reguł """
     patterns = [
+        # rajca
+        [{"LEMMA":"rajca"}],
         # rajca + przymiotnik (lub parę przymiotników)
         [{"LEMMA":"rajca"}, {"POS":"ADJ", "OP": "+"}],
          # rajca + przymiotnik i przymiotnik

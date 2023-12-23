@@ -4,6 +4,8 @@
 def rule_patterns_burmistrzowie() -> list:
     """ definicje reguł """
     patterns = [
+        # burmistrz
+        [{"LEMMA":"burmistrz"}],
         # burmistrz + nazwa
         [{"LEMMA":"burmistrz"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         [{"LOWER":"burm"}, {"IS_PUNCT":True}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
