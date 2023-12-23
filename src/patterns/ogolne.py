@@ -125,6 +125,10 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
             "id": "kustosz"
            },
            {"label": "OCCUPATION_CHURCH_HIGH",
+            "pattern": [{"LEMMA": "oficjał"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "oficjał"
+           },
+           {"label": "OCCUPATION_CHURCH_HIGH",
             "pattern": [{"LEMMA": "prałat"}, {"POS":"ADJ", "OP": "*"}],
             "id": "prałat"
            },
@@ -257,9 +261,13 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
             "pattern":  [{"LEMMA": "podkoni"}, {"POS":"ADJ", "OP": "*"}],
             "id": "podkoni"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "podrzędczy"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "podrzędczy"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "podłowczy"}, {"POS":"ADJ", "OP": "*"}],
-            "id": "podsędek"
+            "id": "podłowczy"
            },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "podskarbi"}, {"POS":"ADJ", "OP": "*"}],
@@ -268,6 +276,10 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "podstoli"}, {"POS":"ADJ", "OP": "*"}],
             "id": "postoli"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "podstarości"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "podstarości"
            },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "prefekt"}, {"POS":"ADJ", "OP": "*"}],
@@ -337,6 +349,10 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
             "pattern":  [{"LEMMA": "wojski"}, {"POS":"ADJ", "OP": "*"}],
             "id": "wojski"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "woźny"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "woźny"
+           },
            # skróty urzędów bez kropek
            {"label": "OCCUPATION_LAND",
             "pattern": [{"TEXT": "wwda"}, {"POS":"ADJ", "OP": "*"}],
@@ -355,7 +371,7 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
             "pattern": [{"TEXT": "klan"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
             "id": "kasztelan"
            },
-           # skróty urzędów z kropkami: burgr., kaszt., komor., pkancl., pkom., prep.
+           # skróty urzędów z kropkami: burgr., kaszt., komor., pkancl., pkom., prep. pstar.
            {"label": "OCCUPATION_LAND",
             "pattern": [{"TEXT": "kaszt"}, {"IS_PUNCT": True}, {"POS":"ADJ", "OP": "*"}],
             "id": "kasztelan"
@@ -371,6 +387,10 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
            {"label": "OCCUPATION_LAND",
             "pattern": [{"TEXT": "pkom"}, {"IS_PUNCT": True}, {"POS":"ADJ", "OP": "*"}],
             "id": "podkomorzy"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "pstar"}, {"IS_PUNCT": True}, {"POS":"ADJ", "OP": "*"}],
+            "id": "podstarości"
            },
            {"label": "OCCUPATION_LAND",
             "pattern": [{"TEXT": "burgr"}, {"IS_PUNCT": True}, {"POS":"ADJ", "OP": "*"}],
