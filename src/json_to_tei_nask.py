@@ -305,11 +305,11 @@ if __name__ == '__main__':
         filename = os.path.basename(data_file)
 
         # jeżeli tylko wybrany plik
-        if filename != "30659.json":
-            continue
+        # if filename != "30659.json":
+        #    continue
 
         if filename == "xxxxx.json":
-            print("Plik wzorcowy: 30659.json pominięty")
+            print("Plik wzorcowy: xxxxx.json pominięty")
             continue
         else:
             output_path = Path("..") / "tei" / filename.replace('.json', '.xml')
