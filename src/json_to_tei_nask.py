@@ -25,7 +25,6 @@ from patterns.monety import rule_patterns_coin
 warnings.filterwarnings("ignore")
 
 MAKE_NER = True
-NER_TYPE = 'pl-nask'
 
 nlp = spacy.load('pl_nask')
 spacy.require_cpu()
@@ -45,6 +44,17 @@ path_fizjografia = Path("..") / "slowniki" / "fizjografia.csv"
 with open(path_fizjografia, 'r', encoding='utf-8') as f:
     lines = f.readlines()
     fizjografia = [x.strip() for x in lines]
+
+# wczytanie słowników staropolskich imion i miejscowości
+path_imiona = Path("..") / "slowniki" / "imiona.csv"
+with open(path_imiona, 'r', encoding='utf-8') as f:
+    lines = f.readlines()
+    imiona = [x.strip() for x in lines]
+
+path_miejscowosci = Path("..") / "slowniki" / "miejscowosci.csv"
+with open(path_miejscowosci, 'r', encoding='utf-8') as f:
+    lines = f.readlines()
+    miejscowosci = [x.strip() for x in lines]
 
 # Skrót bieżącej miejscowości
 skrot = 'M'
@@ -69,7 +79,8 @@ label2tag = {
         }
 
 # reguły ogólne i kościelne
-pattern = patterns_ogolne(skrot=skrot, obiekty=obiekty, fizjografia=fizjografia)
+pattern = patterns_ogolne(skrot=skrot, obiekty=obiekty, fizjografia=fizjografia,
+                          imiona=imiona, miejscowosci=miejscowosci)
 
 # uzupełnienia reguł dla urzędów
 # reguły dla burmistrzów
@@ -186,26 +197,26 @@ def fstr(template):
     return eval(f'f"""{template}"""')
 
 
-def add_footnotes(value:str, max:int) -> str:
+def add_footnotes(text_to_complete:str, max_footnotes:int) -> str:
     """ funkcja zmienia tagi przypisów na docelowe """
     # jeżeli są jakieś przypisy
-    if max:
-        for i in range(1, max + 1):
-            value = value.replace(f'[[{i}]]', f'<note n="{i}" type="footnote">{item_foot[str(i)]}</note>')
+    if max_footnotes:
+        for i in range(1, max_footnotes + 1):
+            text_to_complete = text_to_complete.replace(f'[[{i}]]', f'<note n="{i}" type="footnote">{item_foot[str(i)]}</note>')
 
-    return value
+    return text_to_complete
 
 
-def ner_to_xml(value:str) -> str:
+def ner_to_xml(text_to_process:str) -> str:
     """ wyszukiwanie encji - nazw własnych """
     # w trybie bez NER zwraca po prostu wartość wejściową
     if not MAKE_NER:
-        return value
+        return text_to_process
 
     #print(value)
 
     # Process the text
-    doc = nlp(value)
+    doc = nlp(text_to_process)
 
     # Iterate over the entities and tag person entities
     tagged_text = ""
@@ -223,7 +234,7 @@ def ner_to_xml(value:str) -> str:
                     ent_lemma_value = 'folwark'
                 else:
                     ent_lemma_value = ent.lemma_
-                tagged_text += (value[last_index:ent.start_char] +
+                tagged_text += (text_to_process[last_index:ent.start_char] +
                                 f'<{label2tag[ent.label_]} type="obj" subtype="{ent_lemma_value}">{ent.text}</{label2tag[ent.label_]}>')
             elif ent.label_ == "FIZJOGRAFIA":
                 if ent.lemma_ == 'jez.':
@@ -232,28 +243,28 @@ def ner_to_xml(value:str) -> str:
                     ent_lemma_value = 'rzeka'
                 else:
                     ent_lemma_value = ent.lemma_
-                tagged_text += (value[last_index:ent.start_char] +
+                tagged_text += (text_to_process[last_index:ent.start_char] +
                                 f'<{label2tag[ent.label_]} type="fiz" subtype="{ent_lemma_value}">{ent.text}</{label2tag[ent.label_]}>')
             elif ent.label_ == "OCCUPATION_CHURCH_LOW":
-                tagged_text += (value[last_index:ent.start_char] +
+                tagged_text += (text_to_process[last_index:ent.start_char] +
                                 f'<{label2tag[ent.label_]} type="kościelny_niższy" subtype="{ent.ent_id_}">{ent.text}</{label2tag[ent.label_]}>')
             elif ent.label_ == "OCCUPATION_CHURCH_HIGH":
-                tagged_text += (value[last_index:ent.start_char] +
+                tagged_text += (text_to_process[last_index:ent.start_char] +
                                 f'<{label2tag[ent.label_]} type="kościelny_wyższy" subtype="{ent.ent_id_}">{ent.text}</{label2tag[ent.label_]}>')
             elif ent.label_ == "OCCUPATION_MUNICIPAL":
-                tagged_text += (value[last_index:ent.start_char] +
+                tagged_text += (text_to_process[last_index:ent.start_char] +
                                 f'<{label2tag[ent.label_]} type="miejski" subtype="{ent.ent_id_}">{ent.text}</{label2tag[ent.label_]}>')
             elif ent.label_ == "OCCUPATION_LAND":
-                tagged_text += (value[last_index:ent.start_char] +
+                tagged_text += (text_to_process[last_index:ent.start_char] +
                                 f'<{label2tag[ent.label_]} type="ziemski" subtype="{ent.ent_id_}">{ent.text}</{label2tag[ent.label_]}>')
             elif ent.label_ == "COIN":
-                tagged_text += (value[last_index:ent.start_char] +
+                tagged_text += (text_to_process[last_index:ent.start_char] +
                                 f'<{label2tag[ent.label_]} type="currency" subtype="{ent.ent_id_}">{ent.text}</{label2tag[ent.label_]}>')
             else:
-                tagged_text += (value[last_index:ent.start_char] +
+                tagged_text += (text_to_process[last_index:ent.start_char] +
                                 f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
             last_index = ent.end_char
-    tagged_text += value[last_index:]
+    tagged_text += text_to_process[last_index:]
 
     return tagged_text
 
@@ -513,12 +524,7 @@ if __name__ == '__main__':
 
             tei_text = tei_header + tei_text + '</body></text></TEI>'
 
-            # name_ner = ''
-            # if MAKE_NER:
-            #     name_ner = '_' + NER_TYPE
-
             output_path2 = Path("..") / "tei" / filename.replace('.json','.xml')
-
             with open(output_path2, "w", encoding='utf-8') as f_out_1:
                 f_out_1.write(tei_text)
 

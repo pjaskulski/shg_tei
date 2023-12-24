@@ -1,7 +1,7 @@
 """ definicja reguł ogólnych w SHG """
 
 
-def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
+def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list, imiona:list, miejscowosci:list) -> list:
     """ definicje reguł """
 
     shortcuts = ["krak", "lel", "biec", "chęc", "czchow", "czech", "czes", "frank", "gnieźn",
@@ -22,6 +22,16 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
            {"label":"FIZJOGRAFIA",
             "pattern": [{"LEMMA": {"IN": fizjografia}, "IS_TITLE": False}],
             "id": "fiz"
+           },
+           # staropolskie imiona
+           {"label":"PERSON",
+            "pattern": [{"LEMMA": {"IN": imiona}}],
+            "id": "person"
+           },
+           # staropolskie miejscowosci
+           {"label":"PLACENAME",
+            "pattern": [{"LEMMA": {"IN": miejscowosci}}],
+            "id": "placename"
            },
            # obiekty gosp. i budowle jako skróty
            {"label":"OBJECT",
@@ -149,20 +159,40 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
             "pattern":  [{"LEMMA": "burgrabia"}, {"POS":"ADJ", "OP": "*"}],
             "id": "burgrabia"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "burgrabia"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "burgrabia"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "celnik"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "celnik"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "celnik"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
             "id": "celnik"
            },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "chorąży"}, {"POS":"ADJ", "OP": "*"}],
             "id": "chorąży"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "chorąży"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "chorąży"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "ciwun"}, {"POS":"ADJ", "OP": "*"}],
             "id": "ciwun"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "ciwun"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "ciwun"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "cześnik"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "cześnik"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "cześnik"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
             "id": "cześnik"
            },
            {"label":"OCCUPATION_LAND",
@@ -177,36 +207,72 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
             "pattern":  [{"LEMMA": "horodniczy"}, {"POS":"ADJ", "OP": "*"}],
             "id": "horodniczy"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "horodniczy"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "horodniczy"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "instygator"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "instygator"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "instygator"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
             "id": "instygator"
            },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "kanclerz"}, {"LEMMA": "koronny"}],
             "id": "kanclerz"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "kanclerz"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "kanclerz"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "klucznik"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "klucznik"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "klucznik"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
             "id": "klucznik"
            },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "konarski"}, {"POS":"ADJ", "OP": "*"}],
             "id": "konarski"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "konarski"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "konarski"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "koniuszy"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "koniuszy"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "koniuszy"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
             "id": "koniuszy"
            },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "korzenny"}, {"POS":"ADJ", "OP": "*"}],
             "id": "korzenny"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "korzenny"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "korzenny"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "krajczy"}, {"POS":"ADJ", "OP": "*"}],
             "id": "krajczy"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "krajczy"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "krajczy"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "kuchmistrz"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "kuchmistrz"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "kuchmistrz"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
             "id": "kuchmistrz"
            },
            {"label":"OCCUPATION_LAND",
@@ -217,8 +283,16 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
             "pattern":  [{"LEMMA": "łożniczy"}, {"POS":"ADJ", "OP": "*"}],
             "id": "łożniczy"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "łożniczy"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "łożniczy"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "łowczy"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "łowczy"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "łowczy"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
             "id": "łowczy"
            },
            {"label":"OCCUPATION_LAND",
@@ -233,12 +307,24 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
             "pattern":  [{"LEMMA": "miecznik"}, {"POS":"ADJ", "OP": "*"}],
             "id": "miecznik"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "miecznik"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "miecznik"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "mierniczy"}, {"POS":"ADJ", "OP": "*"}],
             "id": "mierniczy"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "mierniczy"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "mierniczy"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "mostowniczy"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "mostowniczy"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"TEXT": "mostowniczy"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
             "id": "mostowniczy"
            },
            {"label":"OCCUPATION_LAND",
@@ -253,40 +339,88 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
             "pattern":  [{"LEMMA": "podczaszy"}, {"POS":"ADJ", "OP": "*"}],
             "id": "podczaszy"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "podczaszy"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "podczaszy"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "podkanclerzy"}, {"POS":"ADJ", "OP": "*"}],
             "id": "podkanclerzy"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "podkanclerzy"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "podczaszy"
            },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "podkoni"}, {"POS":"ADJ", "OP": "*"}],
             "id": "podkoni"
            },
            {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "podkoni"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "podkoni"
+           },
+           {"label": "OCCUPATION_LAND",
             "pattern": [{"LEMMA": "podrzędczy"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "podrzędczy"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "podrzędczy"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
             "id": "podrzędczy"
            },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "podłowczy"}, {"POS":"ADJ", "OP": "*"}],
             "id": "podłowczy"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "podłowczy"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "podłowczy"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "podsędek"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "podsędek"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "podsędek"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "podsędek"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "podskarbi"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "podskarbi"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "podskarbi"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
             "id": "podskarbi"
            },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "podstoli"}, {"POS":"ADJ", "OP": "*"}],
             "id": "postoli"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "podstoli"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "podstoli"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "podstarości"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "podstarości"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "podstarości"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
             "id": "podstarości"
            },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "prefekt"}, {"POS":"ADJ", "OP": "*"}],
             "id": "prefekt"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "prefekt"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "prefekt"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "referendarz"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "referendarz"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "referendarz"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
             "id": "referendarz"
            },
            {"label":"OCCUPATION_LAND",
@@ -301,6 +435,10 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
             "pattern":  [{"LEMMA": "skarbnik"}, {"POS":"ADJ", "OP": "*"}],
             "id": "skarbnik"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "skarbnik"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "skarbnik"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "skarbny"}, {"POS":"ADJ", "OP": "*"}],
             "id": "skarbny"
@@ -309,16 +447,26 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
             "pattern":  [{"LEMMA": "starosta"}, {"POS":"ADJ", "OP": "*"}],
             "id": "starosta"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "starosta"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "starosta"
+           },
+           # star. + przymiotnik
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"TEXT": "star"},{"IS_PUNCT": True}, {"POS":"ADJ", "OP": "*"}],
             "id": "starosta"
            },
+           # star. + skrót
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"TEXT": "star"},{"IS_PUNCT": True}, {"TEXT": {"IN": ["lub", "krak", "sand", "lel"]}}, {"IS_PUNCT": True}],
             "id": "starosta"
            },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "stolnik"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "stolnik"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "stolnik"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
             "id": "stolnik"
            },
            {"label":"OCCUPATION_LAND",
@@ -337,8 +485,16 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
             "pattern":  [{"LEMMA": "wicewojewoda"}, {"POS":"ADJ", "OP": "*"}],
             "id": "wicewojewoda"
            },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "wicewojewoda"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "wicewojewoda"
+           },
            {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "wielkorządca"}, {"TEXT": {"IN": ["krak", "sand"]}}, {"IS_PUNCT": True}],
+            "id": "wielkorządca"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "wielkorządca"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
             "id": "wielkorządca"
            },
            {"label":"OCCUPATION_LAND",
@@ -350,7 +506,15 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list) -> list:
             "id": "wojski"
            },
            {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "wojski"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "id": "wojski"
+           },
+           {"label": "OCCUPATION_LAND",
             "pattern": [{"LEMMA": "woźny"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "woźny"
+           },
+           {"label": "OCCUPATION_LAND",
+            "pattern": [{"LEMMA": "woźny"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
             "id": "woźny"
            },
            # skróty urzędów bez kropek
