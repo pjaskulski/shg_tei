@@ -1,4 +1,5 @@
-""" definicja reguł dla wyszukiwania urzedów w SHG """
+""" definicja reguł dla wyszukiwania urzędów w SHG """
+# cspell: disable
 
 
 def rule_patterns_wicesoltysi() -> list:
@@ -21,15 +22,18 @@ def rule_patterns_wicesoltysi() -> list:
         # wicesołtys ze + nazwa
         [{"LEMMA":"wicesołtys"}, {"LOWER":"ze"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # wicesołtys m. nazwa
-        [{"LEMMA":"wicesołtys"}, {"LOWER":"m"}, {"IS_PUNCT":True}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        [{"LEMMA":"wicesołtys"}, {"LOWER":"m"}, {"IS_PUNCT":True},
+         {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # wicesołtys miasta nazwa
         [{"LEMMA":"wicesołtys"}, {"LEMMA":"miasto"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # wicesołtys wsi nazwa
         [{"LEMMA":"wicesołtys"}, {"LEMMA":"wieś"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # wicesołtys z wsi nazwa
-        [{"LEMMA":"wicesołtys"}, {"LOWER":"z"}, {"LEMMA":"wieś"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        [{"LEMMA":"wicesołtys"}, {"LOWER":"z"}, {"LEMMA":"wieś"},
+         {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # wicesołtys ze wsi nazwa
-        [{"LEMMA":"wicesołtys"}, {"LOWER":"ze"}, {"LEMMA":"wieś"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}]
+        [{"LEMMA":"wicesołtys"}, {"LOWER":"ze"}, {"LEMMA":"wieś"},
+         {"ENT_TYPE":"PLACENAME", "OP": "+"}]
     ]
 
     shortcuts = ["krak", "lel", "biec", "chęc", "czchow", "czech", "czes", "frank", "gnieźn",
@@ -40,21 +44,28 @@ def rule_patterns_wicesoltysi() -> list:
                     "świętokrz", "świętop", "tyn", "wąch", "węg", "wiel", "wiśl", "wojn", "zator",
                     "zawich", "zwierzyn", "żarn", "żyd"]
 
-    litery = 'ABCDEFGHIJKLMNOPRSTUWZŚŻŹĆŁ'
+    # w zeszycie 1 z części V SHG występują tylko miejscowości na M i N
+    # litery = 'ABCDEFGHIJKLMNOPRSTUWZŚŻŹĆŁ'
+    litery = 'MN'
 
     for shortcut in shortcuts:
         # wicesołtys + skrót (geograficzny) np krak. biec. lel.
         patterns.append([{"LEMMA":"wicesołtys"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
         # wicesołtys + 'z' + skrót (geograficzny) np krak. biec. lel.
-        patterns.append([{"LEMMA":"wicesołtys"}, {"LOWER":"z"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"wicesołtys"}, {"LOWER":"z"}, {"LOWER":f"{shortcut}"},
+                         {"IS_PUNCT":True}])
         # wicesołtys + 'w' + skrót (geograficzny) np krak. biec. lel.
-        patterns.append([{"LEMMA":"wicesołtys"}, {"LOWER":"w"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"wicesołtys"}, {"LOWER":"w"}, {"LOWER":f"{shortcut}"},
+                         {"IS_PUNCT":True}])
         # wicesołtys + 'm' + skrót (geograficzny) np krak. biec. lel.
-        patterns.append([{"LEMMA":"wicesołtys"}, {"LOWER":"m"}, {"IS_PUNCT":True}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"wicesołtys"}, {"LOWER":"m"}, {"IS_PUNCT":True},
+                         {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
 
     # wicesołtys z + skrót miejscowości np.: A.
     for litera in litery:
-        patterns.append([{"LEMMA":"wicesołtys"}, {"LOWER":"z"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"wicesołtys"}, {"LEMMA":"wieś"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"wicesołtys"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
+                         {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"wicesołtys"}, {"LEMMA":"wieś"}, {"TEXT":f"{litera}"},
+                         {"IS_PUNCT":True}])
 
     return patterns

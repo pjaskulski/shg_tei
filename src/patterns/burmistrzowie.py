@@ -1,4 +1,5 @@
-""" definicje reguł dla wyszukiwania urzedów w SHG """
+""" definicje reguł dla wyszukiwania urzędów w SHG """
+# cspell: disable
 
 
 def rule_patterns_burmistrzowie() -> list:
@@ -16,11 +17,13 @@ def rule_patterns_burmistrzowie() -> list:
         [{"LEMMA":"burmistrzowie"}, {"POS":"ADJ", "OP": "+"}],
         # burmistrz miasteczka + nazwa
         [{"LEMMA":"burmistrz"}, {"LEMMA":"miasteczko"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        [{"LOWER":"burm"}, {"IS_PUNCT":True}, {"LEMMA":"miasteczko"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        [{"LOWER":"burm"}, {"IS_PUNCT":True}, {"LEMMA":"miasteczko"},
+         {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         [{"LEMMA":"burmistrzowie"}, {"LEMMA":"miasteczko"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # burmistrz miasta + nazwa
         [{"LEMMA":"burmistrz"}, {"LEMMA":"miasto"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        [{"LOWER":"burm"}, {"IS_PUNCT":True}, {"LEMMA":"miasto"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        [{"LOWER":"burm"}, {"IS_PUNCT":True}, {"LEMMA":"miasto"},
+         {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         [{"LEMMA":"burmistrzowie"}, {"LEMMA":"miasto"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # burmistrz z +nazwa
         [{"LEMMA":"burmistrz"}, {"LOWER":"z"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
@@ -31,14 +34,18 @@ def rule_patterns_burmistrzowie() -> list:
         [{"LOWER":"burm"}, {"IS_PUNCT":True}, {"LOWER":"w"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         [{"LEMMA":"burmistrzowie"}, {"LOWER":"w"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # burmistrz m. +nazwa
-        [{"LEMMA":"burmistrz"}, {"LOWER":"m"}, {"IS_PUNCT":True}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        [{"LOWER":"burm"}, {"IS_PUNCT":True}, {"LOWER":"m"}, {"IS_PUNCT":True}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        [{"LEMMA":"burmistrzowie"}, {"LOWER":"m"}, {"IS_PUNCT":True}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        [{"LEMMA":"burmistrz"}, {"LOWER":"m"}, {"IS_PUNCT":True},
+         {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        [{"LOWER":"burm"}, {"IS_PUNCT":True}, {"LOWER":"m"}, {"IS_PUNCT":True},
+         {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        [{"LEMMA":"burmistrzowie"}, {"LOWER":"m"}, {"IS_PUNCT":True},
+         {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # burm. + nazwa
         [{"LEMMA":"burm"}, {"IS_PUNCT":True}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # burmistrz miasta + nazwa
         [{"LEMMA":"burmistrz"}, {"LEMMA":"miasto"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        [{"LOWER":"burm"}, {"IS_PUNCT":True}, {"LEMMA":"miasto"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        [{"LOWER":"burm"}, {"IS_PUNCT":True}, {"LEMMA":"miasto"},
+         {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         [{"LEMMA":"burmistrzowie"}, {"LEMMA":"miasto"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # burmistrz
         [{"LEMMA":"burmistrz"}]
@@ -52,23 +59,34 @@ def rule_patterns_burmistrzowie() -> list:
                     "świętokrz", "świętop", "tyn", "wąch", "węg", "wiel", "wiśl", "wojn", "zator",
                     "zawich", "zwierzyn", "żarn", "żyd"]
 
-    litery = 'ABCDEFGHIJKLMNOPRSTUWZŚŻŹĆŁ'
+    # w zeszycie 1 z części V SHG występują tylko miejscowości na M i N
+    # litery = 'ABCDEFGHIJKLMNOPRSTUWZŚŻŹĆŁ'
+    litery = 'MN'
+
     for shortcut in shortcuts:
         # burmistrz + skrót geogr.
         patterns.append([{"LEMMA":"burmistrz"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
         # burm. + skrót geogr.
-        patterns.append([{"LOWER":"burm"}, {"IS_PUNCT":True},  {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LOWER":"burm"}, {"IS_PUNCT":True},  {"LOWER":f"{shortcut}"},
+                         {"IS_PUNCT":True}])
 
         # burmistrz z + skrót miejscowości np.: burmistrz z A., burmistrz A.
         for litera in litery:
-            patterns.append([{"LEMMA":"burmistrz"}, {"LOWER":"z"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-            patterns.append([{"LEMMA":"burmistrz"}, {"LOWER":"w"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+            patterns.append([{"LEMMA":"burmistrz"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
+                             {"IS_PUNCT":True}])
+            patterns.append([{"LEMMA":"burmistrz"}, {"LOWER":"w"}, {"TEXT":f"{litera}"},
+                             {"IS_PUNCT":True}])
             patterns.append([{"LEMMA":"burmistrz"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-            patterns.append([{"LOWER":"burm"}, {"IS_PUNCT":True}, {"LOWER":"z"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-            patterns.append([{"LOWER":"burm"}, {"IS_PUNCT":True}, {"LOWER":"w"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-            patterns.append([{"LOWER":"burm"}, {"IS_PUNCT":True}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-            patterns.append([{"LEMMA":"burmistrzowie"}, {"LOWER":"z"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-            patterns.append([{"LEMMA":"burmistrzowie"}, {"LOWER":"w"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+            patterns.append([{"LOWER":"burm"}, {"IS_PUNCT":True}, {"LOWER":"z"},
+                             {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+            patterns.append([{"LOWER":"burm"}, {"IS_PUNCT":True}, {"LOWER":"w"},
+                             {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+            patterns.append([{"LOWER":"burm"}, {"IS_PUNCT":True}, {"TEXT":f"{litera}"},
+                             {"IS_PUNCT":True}])
+            patterns.append([{"LEMMA":"burmistrzowie"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
+                             {"IS_PUNCT":True}])
+            patterns.append([{"LEMMA":"burmistrzowie"}, {"LOWER":"w"}, {"TEXT":f"{litera}"},
+                             {"IS_PUNCT":True}])
             patterns.append([{"LEMMA":"burmistrzowie"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
 
     return patterns

@@ -1,4 +1,5 @@
-""" definicja reguł dla wyszukiwania urzedów w SHG """
+""" definicja reguł dla wyszukiwania urzędów w SHG """
+# cspell: disable
 
 
 def rule_patterns_notariusze() -> list:
@@ -9,7 +10,8 @@ def rule_patterns_notariusze() -> list:
         # notariusz z + nazwa
         [{"LEMMA":"notariusz"}, {"LOWER":"z"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # notariusz miejski w + nazwa, przymiotnik + nazwa, w rzeczownik
-        [{"LEMMA":"notariusz"}, {"LEMMA":"miejski"}, {"LOWER":"w"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        [{"LEMMA":"notariusz"}, {"LEMMA":"miejski"}, {"LOWER":"w"},
+         {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         [{"LEMMA":"notariusz"}, {"POS":"ADJ"}, {"LOWER":"w"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         [{"LEMMA":"notariusz"}, {"LOWER":"w"}, {"POS":"NOUN", "OP": "+"}],
         # notariusz z. sandomierskiej (przymiotnik)
@@ -31,7 +33,8 @@ def rule_patterns_notariusze() -> list:
         # notariusz + kogo (np. Jana Długosza)
         [{"LEMMA":"notariusz"}, {"ENT_TYPE":"PROPN", "OP":"+"}],
         # notariusz + kogo (np. ks. Henryka)
-        [{"LEMMA":"notariusz"}, {"LOWER":"ks"}, {"IS_PUNCT":True}, {"ENT_TYPE":"PLACENAME", "OP":"+"}],
+        [{"LEMMA":"notariusz"}, {"LOWER":"ks"}, {"IS_PUNCT":True},
+         {"ENT_TYPE":"PLACENAME", "OP":"+"}],
         # notariusz w rzeczownik
         [{"LEMMA":"notariusz"}, {"LOWER":"w"}, {"POS":"NOUN", "OP":"+"}],
         # protonotariusz
@@ -49,23 +52,36 @@ def rule_patterns_notariusze() -> list:
                     "świętokrz", "świętop", "tyn", "wąch", "węg", "wiel", "wiśl", "wojn", "zator",
                     "zawich", "zwierzyn", "żarn", "żyd"]
 
-    litery = 'ABCDEFGHIJKLMNOPRSTUWZŚŻŹĆŁ'
+    # w zeszycie 1 z części V SHG występują tylko miejscowości na M i N
+    # litery = 'ABCDEFGHIJKLMNOPRSTUWZŚŻŹĆŁ'
+    litery = 'MN'
 
     for shortcut in shortcuts:
         # notariusz + skrót geogr.
-        patterns.append([{"LEMMA":"notariusz"}, {"LOWER":"z"}, {"IS_PUNCT":True}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"notariusz"}, {"LOWER":"bpa"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"notariusz"}, {"LOWER":"publ"}, {"IS_PUNCT":True}, {"POS":"NOUN"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"notariusz"}, {"POS":"NOUN"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"notariusz"}, {"LEMMA":"sąd"}, {"POS":"ADJ"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"notariusz"}, {"LOWER":"kap"}, {"IS_PUNCT":True}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"notariusz"}, {"LOWER":"woj"}, {"IS_PUNCT":True}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"notariusz"}, {"POS":"ADJ"}, {"LOWER":"w"}, {"LOWER":"diec"}, {"IS_PUNCT":True}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"notariusz"}, {"LOWER":"z"}, {"IS_PUNCT":True},
+                         {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"notariusz"}, {"LOWER":"bpa"}, {"LOWER":f"{shortcut}"},
+                         {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"notariusz"}, {"LOWER":"publ"}, {"IS_PUNCT":True},
+                         {"POS":"NOUN"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"notariusz"}, {"POS":"NOUN"}, {"LOWER":f"{shortcut}"},
+                         {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"notariusz"}, {"LEMMA":"sąd"}, {"POS":"ADJ"},
+                         {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"notariusz"}, {"LOWER":"kap"}, {"IS_PUNCT":True},
+                         {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"notariusz"}, {"LOWER":"woj"}, {"IS_PUNCT":True},
+                         {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"notariusz"}, {"POS":"ADJ"}, {"LOWER":"w"}, {"LOWER":"diec"},
+                         {"IS_PUNCT":True}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
 
     # notariusz z + skrót miejscowości np.: notariusz z A., notariusz A.
     for litera in litery:
-        patterns.append([{"LEMMA":"notariusz"}, {"LOWER":"z"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"notariusz"}, {"LOWER":"ze"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"notariusz"}, {"POS":"ADJ"}, {"LOWER":"w"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"notariusz"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
+                         {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"notariusz"}, {"LOWER":"ze"}, {"TEXT":f"{litera}"},
+                         {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"notariusz"}, {"POS":"ADJ"}, {"LOWER":"w"},
+                         {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
 
     return patterns

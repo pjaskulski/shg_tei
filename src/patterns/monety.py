@@ -1,4 +1,6 @@
 """ definicja reguł dla wyszukiwania monet w SHG """
+# cspell: disable
+
 
 def rule_patterns_coin() -> list:
     """ definicje reguł """
@@ -97,7 +99,8 @@ def rule_patterns_coin() -> list:
          "id": "floren_monety_polskiej"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT":"fl"}, {"IS_PUNCT": True}, {"LEMMA":"obiegowy"}, {"LEMMA": "moneta"}, {"LEMMA":"polska"}],
+         "pattern": [{"TEXT":"fl"}, {"IS_PUNCT": True}, {"LEMMA":"obiegowy"}, {"LEMMA": "moneta"},
+                     {"LEMMA":"polska"}],
          "id": "floren_monety_polskiej"
         },
         {"label": "COIN",
@@ -122,7 +125,8 @@ def rule_patterns_coin() -> list:
         },
         # floren_monety_slaskiej
         {"label": "COIN",
-         "pattern": [{"TEXT":"fl"}, {"IS_PUNCT": True}, {"LEMMA":"moneta"}, {"TEXT": "śl"}, {"IS_PUNCT": True}],
+         "pattern": [{"TEXT":"fl"}, {"IS_PUNCT": True}, {"LEMMA":"moneta"}, {"TEXT": "śl"},
+                     {"IS_PUNCT": True}],
          "id": "floren_monety_slaskiej"
         },
         # floren półgroszy
@@ -131,7 +135,8 @@ def rule_patterns_coin() -> list:
          "id": "floren_polgroszy"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT":"fl"}, {"IS_PUNCT": True}, {"TEXT":"w"}, {"TEXT":"półgr"}, {"IS_PUNCT": True}],
+         "pattern": [{"TEXT":"fl"}, {"IS_PUNCT": True}, {"TEXT":"w"}, {"TEXT":"półgr"},
+                     {"IS_PUNCT": True}],
          "id": "floren_polgroszy"
         },
         {"label": "COIN",
@@ -154,7 +159,8 @@ def rule_patterns_coin() -> list:
         },
         # floren_wegierski
         {"label": "COIN",
-         "pattern": [{"LEMMA": "czerwony"}, {"TEXT":"fl"}, {"IS_PUNCT": True}, {"TEXT":"węg", "OP": "?"}, {"IS_PUNCT": True, "OP": "?"}],
+         "pattern": [{"LEMMA": "czerwony"}, {"TEXT":"fl"}, {"IS_PUNCT": True},
+                     {"TEXT":"węg", "OP": "?"}, {"IS_PUNCT": True, "OP": "?"}],
          "id": "floren_wegierski"
         },
         {"label": "COIN",
@@ -190,7 +196,8 @@ def rule_patterns_coin() -> list:
          "id": "floren_wegierski"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "zł"}, {"TEXT": "w"}, {"LEMMA":"czysty", "OP":"?"}, {"LEMMA": "złoto"}],
+         "pattern": [{"TEXT": "zł"}, {"TEXT": "w"}, {"LEMMA":"czysty", "OP":"?"},
+                     {"LEMMA": "złoto"}],
          "id": "floren_wegierski"
         },
         {"label": "COIN",
@@ -212,11 +219,13 @@ def rule_patterns_coin() -> list:
          "id": "grosz_czeski"
         },
         {"label": "COIN",
-         "pattern": [{"LOWER": "gr"}, {"TEXT": {"IN": ["czes", "pras", "szer"]}}, {"IS_PUNCT": True}],
+         "pattern": [{"LOWER": "gr"}, {"TEXT": {"IN": ["czes", "pras", "szer"]}},
+                     {"IS_PUNCT": True}],
          "id": "grosz_czeski"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "szer"}, {"IS_PUNCT": True}, {"TEXT": {"IN": ["czes", "pras"]}}, {"IS_PUNCT": True}],
+         "pattern": [{"TEXT": "szer"}, {"IS_PUNCT": True}, {"TEXT": {"IN": ["czes", "pras"]}},
+                     {"IS_PUNCT": True}],
          "id": "grosz_czeski"
         },
         # grosz litewski
@@ -234,11 +243,13 @@ def rule_patterns_coin() -> list:
          "id": "grosz_monety_polskiej"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "gr"}, {"LEMMA": "moneta"}, {"LEMMA": {"IN": ["bieżący","obiegowy","pospolity"]}}],
+         "pattern": [{"TEXT": "gr"}, {"LEMMA": "moneta"},
+                     {"LEMMA": {"IN": ["bieżący","obiegowy","pospolity"]}}],
          "id": "grosz_monety_polskiej"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "gr"}, {"LEMMA": "moneta"}, {"TEXT": {"IN":["krak", "posp"]}}, {"IS_PUNCT": True}],
+         "pattern": [{"TEXT": "gr"}, {"LEMMA": "moneta"}, {"TEXT": {"IN":["krak", "posp"]}},
+                     {"IS_PUNCT": True}],
          "id": "grosz_monety_polskiej"
         },
         {"label": "COIN",
@@ -256,11 +267,13 @@ def rule_patterns_coin() -> list:
          "id": "grzywna"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True, "OP": "?"}, {"LEMMA": "różny"}, {"LEMMA": "moneta"}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True, "OP": "?"}, {"LEMMA": "różny"},
+                     {"LEMMA": "moneta"}],
          "id": "grzywna"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True, "OP": "?"}, {"LEMMA": "gotowy"}, {"LEMMA": "pieniądz"}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True, "OP": "?"}, {"LEMMA": "gotowy"},
+                     {"LEMMA": "pieniądz"}],
          "id": "grzywna"
         },
         # grzywna_denarów
@@ -269,41 +282,54 @@ def rule_patterns_coin() -> list:
          "id": "grzywna_denarów"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"LEMMA": {"IN": ["drobny", "lekki", "mały"]}}, {"LEMMA": {"IN":["moneta", "pieniądz"]}}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True},
+                     {"LEMMA": {"IN": ["drobny", "lekki", "mały"]}},
+                     {"LEMMA": {"IN":["moneta", "pieniądz"]}}],
          "id": "grzywna_denarów"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"LEMMA": {"IN": ["drobny", "lekki", "mały"]}}, {"TEXT": "den"}, {"IS_PUNCT": True}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True},
+                     {"LEMMA": {"IN": ["drobny", "lekki", "mały"]}},
+                     {"TEXT": "den"}, {"IS_PUNCT": True}],
          "id": "grzywna_denarów"
         },
         # grzywna groszy
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"LEMMA": "dobry", "OP":"?"}, {"TEXT": "gr"}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"LEMMA": "dobry", "OP":"?"},
+                     {"TEXT": "gr"}],
          "id": "grzywna_groszy"
         },
         # grzywna_groszy_czeskich
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT": "gr"}, {"TEXT": {"IN": ["czes", "pras"]}}, {"IS_PUNCT": True}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT": "gr"},
+                     {"TEXT": {"IN": ["czes", "pras"]}}, {"IS_PUNCT": True}],
          "id": "grzywna_groszy_czeskich"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT": "gr"}, {"TEXT": {"IN": ["czeskich", "praskich"]}}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT": "gr"},
+                     {"TEXT": {"IN": ["czeskich", "praskich"]}}],
          "id": "grzywna_groszy_czeskich"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT": {"IN": ["czeskich", "praskich"]}}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True},
+                     {"TEXT": {"IN": ["czeskich", "praskich"]}}],
          "id": "grzywna_groszy_czeskich"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT": "szer"}, {"IS_PUNCT":True},  {"TEXT": {"IN": ["czeskich", "praskich"]}}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True},
+                     {"TEXT": "szer"}, {"IS_PUNCT":True},
+                     {"TEXT": {"IN": ["czeskich", "praskich"]}}],
          "id": "grzywna_groszy_czeskich"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"LEMMA": "szeroki"}, {"IS_PUNCT":True},  {"TEXT": {"IN": ["czeskich", "praskich"]}}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True},
+                     {"LEMMA": "szeroki"}, {"IS_PUNCT":True},
+                     {"TEXT": {"IN": ["czeskich", "praskich"]}}],
          "id": "grzywna_groszy_czeskich"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT": "w"}, {"TEXT": "gr"}, {"LEMMA": "praski"}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT": "w"}, {"TEXT": "gr"},
+                     {"LEMMA": "praski"}],
          "id": "grzywna_groszy_czeskich"
         },
         {"label": "COIN",
@@ -317,11 +343,13 @@ def rule_patterns_coin() -> list:
         },
         # grzywna_monety_polskiej
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"LEMMA":"dobry"}, {"LEMMA": "moneta"}, {"LEMMA":"polski", "OP":"?"}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"LEMMA":"dobry"}, {"LEMMA": "moneta"},
+                     {"LEMMA":"polski", "OP":"?"}],
          "id": "grzywna_monety_polskiej"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT":"gr"}, {"LEMMA": {"IN":["polski", "pospolity", "obiegowy"]}}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT":"gr"},
+                     {"LEMMA": {"IN":["polski", "pospolity", "obiegowy"]}}],
          "id": "grzywna_monety_polskiej"
         },
         {"label": "COIN",
@@ -329,23 +357,29 @@ def rule_patterns_coin() -> list:
          "id": "grzywna_monety_polskiej"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"LEMMA": "moneta"}, {"LEMMA": {"IN":["polski", "pospolity", "obiegowy", "drobny"]}}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"LEMMA": "moneta"},
+                     {"LEMMA": {"IN":["polski", "pospolity", "obiegowy", "drobny"]}}],
          "id": "grzywna_monety_polskiej"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT": {"IN":["krak", "posp"]}}, {"IS_PUNCT": True}, {"TEXT":"gr", "OP":"?"}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT": {"IN":["krak", "posp"]}},
+                     {"IS_PUNCT": True}, {"TEXT":"gr", "OP":"?"}],
          "id": "grzywna_monety_polskiej"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"LEMMA":{"IN":["lepszy","pospolity", "wspólny", "zwykły"]}}, {"LEMMA":"moneta"}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True},
+                     {"LEMMA":{"IN":["lepszy","pospolity", "wspólny", "zwykły"]}},
+                     {"LEMMA":"moneta"}],
          "id": "grzywna_monety_polskiej"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT":"w"}, {"LEMMA":{"IN": ["bieżący", "drobny"]}}, {"LEMMA": "moneta"}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT":"w"},
+                     {"LEMMA":{"IN": ["bieżący", "drobny"]}}, {"LEMMA": "moneta"}],
          "id": "grzywna_monety_polskiej"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT":"w"}, {"LEMMA": "moneta"}, {"LEMMA":{"IN": ["bieżący", "drobny"]}}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT":"w"}, {"LEMMA": "moneta"},
+                     {"LEMMA":{"IN": ["bieżący", "drobny"]}}],
          "id": "grzywna_monety_polskiej"
         },
         # grzywna_polgroszy
@@ -358,15 +392,19 @@ def rule_patterns_coin() -> list:
          "id": "grzywna_polgroszy"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT": "półgr"}, {"LEMMA":"lepszy", "OP":"?"}, {"LEMMA":"moneta"}, {"TEXT":"krak"}, {"IS_PUNCT": "?"}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT": "półgr"},
+                     {"LEMMA":"lepszy", "OP":"?"}, {"LEMMA":"moneta"},
+                     {"TEXT":"krak"}, {"IS_PUNCT": "?"}],
          "id": "grzywna_polgroszy"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT": "półgr"}, {"TEXT":{"IN": ["pol", "szer"]}}, {"IS_PUNCT": "?"}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT": "półgr"},
+                     {"TEXT":{"IN": ["pol", "szer"]}}, {"IS_PUNCT": "?"}],
          "id": "grzywna_polgroszy"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT": "szer"}, {"IS_PUNCT": True}, {"LEMMA":"kwartnik"}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"TEXT": "szer"}, {"IS_PUNCT": True},
+                     {"LEMMA":"kwartnik"}],
          "id": "grzywna_polgroszy"
         },
         {"label": "COIN",
@@ -378,12 +416,14 @@ def rule_patterns_coin() -> list:
          "id": "grzywna_polgroszy"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"LEMMA":"wielki"}, {"LEMMA": "kwartnik"}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"LEMMA":"wielki"},
+                     {"LEMMA": "kwartnik"}],
          "id": "grzywna_polgroszy"
         },
         # grzywna_srebra
         {"label": "COIN",
-         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True}, {"LEMMA": {"IN": ["czyste", "lane"]}, "OP":"?"}, {"LEMMA": "serbro"}],
+         "pattern": [{"TEXT": "grz"}, {"IS_PUNCT": True},
+                     {"LEMMA": {"IN": ["czyste", "lane"]}, "OP":"?"}, {"LEMMA": "serbro"}],
          "id": "grzywna_srebra"
         },
         # grzywna_pruska
@@ -417,16 +457,19 @@ def rule_patterns_coin() -> list:
          "id": "groszy_czeskich"
         },
         {"label": "COIN",
-         "pattern": [{"LEMMA": "kopa"},{"TEXT":"w"}, {"TEXT": "szer"}, {"IS_PUNCT": True}, {"TEXT": "gr"}, {"TEXT":"czes"}, {"IS_PUNCT":True}],
+         "pattern": [{"LEMMA": "kopa"},{"TEXT":"w"}, {"TEXT": "szer"}, {"IS_PUNCT": True},
+                     {"TEXT": "gr"}, {"TEXT":"czes"}, {"IS_PUNCT":True}],
          "id": "groszy_czeskich"
         },
         {"label": "COIN",
-         "pattern": [{"LEMMA": "kopa"}, {"TEXT": "gr"}, {"TEXT": "szer"}, {"IS_PUNCT": True}, {"TEXT":"pras"}, {"IS_PUNCT":True}],
+         "pattern": [{"LEMMA": "kopa"}, {"TEXT": "gr"}, {"TEXT": "szer"}, {"IS_PUNCT": True},
+                     {"TEXT":"pras"}, {"IS_PUNCT":True}],
          "id": "groszy_czeskich"
         },
         # kopa_groszy_monety_polskiej
         {"label": "COIN",
-         "pattern": [{"LEMMA": "kopa"}, {"TEXT": "gr"}, {"LEMMA": "moneta"}, {"LEMMA":{"IN":["bieżący", "pospolity"]}}],
+         "pattern": [{"LEMMA": "kopa"}, {"TEXT": "gr"}, {"LEMMA": "moneta"},
+                     {"LEMMA":{"IN":["bieżący", "pospolity"]}}],
          "id": "kopa_groszy_monety_polskiej"
         },
         {"label": "COIN",
@@ -450,7 +493,8 @@ def rule_patterns_coin() -> list:
          "id": "kopa_groszy_monety_polskiej"
         },
         {"label": "COIN",
-         "pattern": [{"LEMMA": "kopa"}, {"TEXT":"gr"}, {"IS_PUNCT": True}, {"LEMMA": "moneta"}, {"LEMMA": "pospolity"}],
+         "pattern": [{"LEMMA": "kopa"}, {"TEXT":"gr"}, {"IS_PUNCT": True},
+                     {"LEMMA": "moneta"}, {"LEMMA": "pospolity"}],
          "id": "kopa_groszy_monety_polskiej"
         },
         {"label": "COIN",
@@ -481,7 +525,8 @@ def rule_patterns_coin() -> list:
         },
         # kopa_szelagow_pruskich
         {"label": "COIN",
-         "pattern": [{"LEMMA": "kopa"}, {"TEXT":"gr"}, {"LEMMA":"szeląg"}, {"TEXT": "prus"}, {"IS_PUNCT": True}],
+         "pattern": [{"LEMMA": "kopa"}, {"TEXT":"gr"}, {"LEMMA":"szeląg"}, {"TEXT": "prus"},
+                     {"IS_PUNCT": True}],
          "id": "kopa_szelagow_pruskich"
         },
         {"label": "COIN",
@@ -541,7 +586,8 @@ def rule_patterns_coin() -> list:
         },
         # skojec_groszy_czeskich
         {"label": "COIN",
-         "pattern": [{"TEXT":"sk"}, {"IS_PUNCT":True}, {"TEXT":"gr"}, {"TEXT":"czes"}, {"IS_PUNCT":True}],
+         "pattern": [{"TEXT":"sk"}, {"IS_PUNCT":True}, {"TEXT":"gr"}, {"TEXT":"czes"},
+                     {"IS_PUNCT":True}],
          "id": "skojec_groszy_czeskich"
         },
         {"label": "COIN",
@@ -550,11 +596,13 @@ def rule_patterns_coin() -> list:
         },
         # skojec_groszy_monety_polskiej
         {"label": "COIN",
-         "pattern": [{"TEXT":"sk"}, {"IS_PUNCT":True}, {"LEMMA":"moneta"}, {"TEXT":"krak"}, {"IS_PUNCT":True}],
+         "pattern": [{"TEXT":"sk"}, {"IS_PUNCT":True}, {"LEMMA":"moneta"}, {"TEXT":"krak"},
+                     {"IS_PUNCT":True}],
          "id": "skojec_groszy_monety_polskiej"
         },
         {"label": "COIN",
-         "pattern": [{"TEXT":"sk"}, {"IS_PUNCT":True}, {"LEMMA":"moneta"}, {"LEMMA":{"IN":["obiegowy","pospolity"]}}],
+         "pattern": [{"TEXT":"sk"}, {"IS_PUNCT":True}, {"LEMMA":"moneta"},
+                     {"LEMMA":{"IN":["obiegowy","pospolity"]}}],
          "id": "skojec_groszy_monety_polskiej"
         },
         # solid
@@ -592,17 +640,20 @@ def rule_patterns_coin() -> list:
         },
         # wiardunek_groszy_monety_polskiej
         {"label": "COIN",
-         "pattern": [{"TEXT":"wiard"}, {"IS_PUNCT":True}, {"LEMMA":"moneta"}, {"LEMMA":{"IN":["obiegowy","pospolity"]}}],
+         "pattern": [{"TEXT":"wiard"}, {"IS_PUNCT":True}, {"LEMMA":"moneta"},
+                     {"LEMMA":{"IN":["obiegowy","pospolity"]}}],
          "id": "wiardunek_groszy_monety_polskiej"
         },
         # wiardunek_monety_chelminskiej
         {"label": "COIN",
-         "pattern": [{"TEXT":"wiard"}, {"IS_PUNCT":True}, {"TEXT":"chełm"},{"IS_PUNCT":True}, {"LEMMA":"moneta"}],
+         "pattern": [{"TEXT":"wiard"}, {"IS_PUNCT":True}, {"TEXT":"chełm"},{"IS_PUNCT":True},
+                     {"LEMMA":"moneta"}],
          "id": "wiardunek_monety_chelminskiej"
         },
         # wiardunek_monety_torunskiej
         {"label": "COIN",
-         "pattern": [{"TEXT":"wiard"}, {"IS_PUNCT":True}, {"LEMMA":"moneta"}, {"TEXT":"tor"}, {"IS_PUNCT":True}],
+         "pattern": [{"TEXT":"wiard"}, {"IS_PUNCT":True}, {"LEMMA":"moneta"}, {"TEXT":"tor"},
+                     {"IS_PUNCT":True}],
          "id": "wiardunek_monety_torunskiej"
         },
         # wiardunek_polgroszy

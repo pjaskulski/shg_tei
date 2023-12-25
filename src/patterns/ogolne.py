@@ -1,7 +1,8 @@
 """ definicja reguł ogólnych w SHG """
+# cspell: disable
 
 
-def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list, imiona:list, miejscowosci:list) -> list:
+def patterns_ogolne(obiekty:list, fizjografia:list, imiona:list, miejscowosci:list) -> list:
     """ definicje reguł """
 
     shortcuts = ["krak", "lel", "biec", "chęc", "czchow", "czech", "czes", "frank", "gnieźn",
@@ -47,25 +48,20 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list, imiona:list, miej
            {"label":"COATOFARMS",
             "pattern": [{"TEXT": "h"}, {"IS_PUNCT": True}, {"POS": "PROPN"}]
            },
-           # skrót bieżącej miejscowości
-           {"label":"PLACENAME",
-            "pattern": [{"TEXT":f"{skrot}"}, {"IS_PUNCT":True}]
-           },
            # osoba z miejscowości
            {"label": "PERSON",
-            "pattern": [{"ENT_TYPE": "PERSNAME", "OP":"+"}, {"TEXT": "z"}, {"ENT_TYPE":"PLACENAME"}],
+            "pattern": [{"ENT_TYPE": "PERSNAME", "OP":"+"}, {"TEXT": "z"},
+                        {"ENT_TYPE":"PLACENAME"}],
             "id": "person_1"
            },
            {"label": "PERSON",
-            "pattern": [{"ENT_TYPE": "PERSNAME", "OP":"+"}, {"TEXT": "z"}, {"TEXT":f"{skrot}"}, {"IS_PUNCT":True}],
-            "id": "person_2"
-           },
-           {"label": "PERSON",
-            "pattern": [{"ENT_TYPE": "PERSNAME", "OP":"+"}, {"TEXT": "ze"}, {"ENT_TYPE":"PLACENAME"}],
+            "pattern": [{"ENT_TYPE": "PERSNAME", "OP":"+"}, {"TEXT": "ze"},
+                        {"ENT_TYPE":"PLACENAME"}],
             "id": "person_3"
            },
            {"label": "PERSON",
-            "pattern": [{"ENT_TYPE": "PERSNAME", "OP":"+"}, {"TEXT": "s"}, {"IS_PUNCT":True}, {"ENT_TYPE":"PERSNAME"}],
+            "pattern": [{"ENT_TYPE": "PERSNAME", "OP":"+"}, {"TEXT": "s"}, {"IS_PUNCT":True},
+                        {"ENT_TYPE":"PERSNAME"}],
             "id": "person_3"
            },
            # plebani
@@ -78,11 +74,13 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list, imiona:list, miej
             "id": "pleban"
            },
            {"label": "OCCUPATION_CHURCH_LOW",
-            "pattern": [{"LEMMA": "pleb"}, {"IS_PUNCT": True}, {"TEXT": "w"}, {"ENT_TYPE": "PLACENAME"}],
+            "pattern": [{"LEMMA": "pleb"}, {"IS_PUNCT": True}, {"TEXT": "w"},
+                        {"ENT_TYPE": "PLACENAME"}],
             "id":"pleban"
            },
            {"label": "OCCUPATION_CHURCH_LOW",
-            "pattern": [{"LEMMA": "pleb"}, {"IS_PUNCT": True}, {"LEMMA": "kościół"}, {"ENT_TYPE": "PLACENAME"}],
+            "pattern": [{"LEMMA": "pleb"}, {"IS_PUNCT": True}, {"LEMMA": "kościół"},
+                        {"ENT_TYPE": "PLACENAME"}],
             "id": "pleban"
            },
            # wyższe kościelne
@@ -296,11 +294,13 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list, imiona:list, miej
             "id": "łowczy"
            },
            {"label":"OCCUPATION_LAND",
-            "pattern":  [{"LEMMA": "łowczy"}, {"TEXT": {"IN": ["lub", "krak", "sand", "lel"]}}, {"IS_PUNCT": True}],
+            "pattern":  [{"LEMMA": "łowczy"}, {"TEXT": {"IN": ["lub", "krak", "sand", "lel"]}},
+                         {"IS_PUNCT": True}],
             "id": "łowczy"
            },
            {"label":"OCCUPATION_LAND",
-            "pattern":  [{"LEMMA": "marszałek"}, {"LEMMA": {"IN": ["dworski", "koronny", "nadworny", "wielki", "królestwo"] }}],
+            "pattern":  [{"LEMMA": "marszałek"},
+                         {"LEMMA": {"IN": ["dworski", "koronny", "nadworny", "wielki", "królestwo"]}}],
             "id": "marszałek"
            },
            {"label":"OCCUPATION_LAND",
@@ -458,7 +458,9 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list, imiona:list, miej
            },
            # star. + skrót
            {"label":"OCCUPATION_LAND",
-            "pattern":  [{"TEXT": "star"},{"IS_PUNCT": True}, {"TEXT": {"IN": ["lub", "krak", "sand", "lel"]}}, {"IS_PUNCT": True}],
+            "pattern":  [{"TEXT": "star"},{"IS_PUNCT": True},
+                         {"TEXT": {"IN": ["lub", "krak", "sand", "lel"]}},
+                         {"IS_PUNCT": True}],
             "id": "starosta"
            },
            {"label":"OCCUPATION_LAND",
@@ -466,7 +468,8 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list, imiona:list, miej
             "id": "stolnik"
            },
            {"label": "OCCUPATION_LAND",
-            "pattern": [{"LEMMA": "stolnik"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "pattern": [{"LEMMA": "stolnik"}, {"LOWER": {"IN": shortcuts}},
+                        {"IS_PUNCT":True}],
             "id": "stolnik"
            },
            {"label":"OCCUPATION_LAND",
@@ -564,41 +567,35 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list, imiona:list, miej
             "pattern": [{"TEXT": "prep"}, {"IS_PUNCT": True}, {"POS":"ADJ", "OP": "*"}],
             "id": "prepozyt"
            },
-           # prep. kl. z M.
-           {"label": "OCCUPATION_CHURCH_HIGH",
-            "pattern": [{"TEXT": "prep"}, {"IS_PUNCT": True},{"TEXT":"kl"},
-                       {"IS_PUNCT": True}, {"TEXT":"z"}, {"TEXT":f"{skrot}"}, {"IS_PUNCT": True}],
-            "id": "prepozyt"
-           },
-           # prep. w M.
-           {"label": "OCCUPATION_CHURCH_HIGH",
-            "pattern": [{"TEXT": "prep"}, {"IS_PUNCT": True},{"TEXT":{"IN":["w","z"]}}, {"TEXT":f"{skrot}"},
-                       {"IS_PUNCT": True}],
-            "id": "prepozyt"
-           },
            # skróty urzędów z kropkami + skróty geograficzne
            {"label": "OCCUPATION_LAND",
-            "pattern": [{"TEXT": "kaszt"}, {"IS_PUNCT": True}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "pattern": [{"TEXT": "kaszt"}, {"IS_PUNCT": True}, {"LOWER": {"IN": shortcuts}},
+                        {"IS_PUNCT":True}],
             "id": "kasztelan"
            },
            {"label": "OCCUPATION_LAND",
-            "pattern": [{"TEXT": "komor"}, {"IS_PUNCT": True}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "pattern": [{"TEXT": "komor"}, {"IS_PUNCT": True}, {"LOWER": {"IN": shortcuts}},
+                        {"IS_PUNCT":True}],
             "id": "komornik"
            },
            {"label": "OCCUPATION_LAND",
-            "pattern": [{"TEXT": "pkancl"}, {"IS_PUNCT": True}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "pattern": [{"TEXT": "pkancl"}, {"IS_PUNCT": True}, {"LOWER": {"IN": shortcuts}},
+                        {"IS_PUNCT":True}],
             "id": "podkanclerzy"
            },
            {"label": "OCCUPATION_LAND",
-            "pattern": [{"TEXT": "pkom"}, {"IS_PUNCT": True}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "pattern": [{"TEXT": "pkom"}, {"IS_PUNCT": True}, {"LOWER": {"IN": shortcuts}},
+                        {"IS_PUNCT":True}],
             "id": "podkomorzy"
            },
            {"label": "OCCUPATION_LAND",
-            "pattern": [{"TEXT": "burgr"}, {"IS_PUNCT": True}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "pattern": [{"TEXT": "burgr"}, {"IS_PUNCT": True}, {"LOWER": {"IN": shortcuts}},
+                        {"IS_PUNCT":True}],
             "id": "burgrabia"
            },
            {"label": "OCCUPATION_CHURCH_HIGH",
-            "pattern": [{"TEXT": "prep"}, {"IS_PUNCT": True}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],
+            "pattern": [{"TEXT": "prep"}, {"IS_PUNCT": True}, {"LOWER": {"IN": shortcuts}},
+                        {"IS_PUNCT":True}],
             "id": "prepozyt"
            },
            # urzędy kościelne + skróty geo
@@ -667,5 +664,37 @@ def patterns_ogolne(skrot:str, obiekty:list, fizjografia:list, imiona:list, miej
             "id": "sufragan"
            }
         ]
+
+    # w zeszycie 1 z części V SHG występują tylko miejscowości na M i N
+    # litery = 'ABCDEFGHIJKLMNOPRSTUWZŚŻŹĆŁ'
+    litery = 'MN'
+
+    # skróty miejscowości
+    for litera in litery:
+        patterns.append(
+           {"label":"PLACENAME",
+            "pattern": [{"TEXT":f"{litera}"}, {"IS_PUNCT":True}]
+           })
+        # osoba z bieżącej miejscowości
+        patterns.append({"label": "PERSON",
+            "pattern": [{"ENT_TYPE": "PERSNAME", "OP":"+"}, {"TEXT": "z"},
+                        {"TEXT":f"{litera}"}, {"IS_PUNCT":True}],
+            "id": "person_2"
+           })
+        # prep. kl. z M.
+        patterns.append(
+           {"label": "OCCUPATION_CHURCH_HIGH",
+            "pattern": [{"TEXT": "prep"}, {"IS_PUNCT": True},{"TEXT":"kl"},
+                        {"IS_PUNCT": True}, {"TEXT":"z"}, {"TEXT":f"{litera}"},
+                        {"IS_PUNCT": True}],
+            "id": "prepozyt"
+           })
+        # prep. w M.
+        patterns.append({"label": "OCCUPATION_CHURCH_HIGH",
+            "pattern": [{"TEXT": "prep"}, {"IS_PUNCT": True},
+                        {"TEXT": {"IN":["w","z"]}}, {"TEXT":f"{litera}"},
+                        {"IS_PUNCT": True}],
+            "id": "prepozyt"
+           })
 
     return patterns

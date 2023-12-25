@@ -1,4 +1,5 @@
-""" json to TEI converter """
+""" json to TEI converter for SHG (historical geographical dictionary) entries"""
+# cspell: disable
 import os
 import json
 import time
@@ -56,9 +57,6 @@ with open(path_miejscowosci, 'r', encoding='utf-8') as f:
     lines = f.readlines()
     miejscowosci = [x.strip() for x in lines]
 
-# Skrót bieżącej miejscowości
-skrot = 'M'
-
 # translacja tagów z modelu na TEI
 label2tag = {
             "GEOGNAME":"geogName",
@@ -78,8 +76,8 @@ label2tag = {
             "COIN": "unit"
         }
 
-# reguły ogólne i kościelne
-pattern = patterns_ogolne(skrot=skrot, obiekty=obiekty, fizjografia=fizjografia,
+# reguły ogólne: obiekty gospodarcze, fizjograficzne, urzędy kościelne, urzędy ziemskie
+pattern = patterns_ogolne(obiekty=obiekty, fizjografia=fizjografia,
                           imiona=imiona, miejscowosci=miejscowosci)
 
 # uzupełnienia reguł dla urzędów
@@ -188,6 +186,7 @@ autorzy = {"JL":"Jacek Laberschek",
            "Zuzanna Kulpa": "Zuzanna Kulpa",
            "None": ""
           }
+
 item_foot = None
 
 
@@ -309,8 +308,10 @@ if __name__ == '__main__':
 
     # źródłowe pliki json do konwersji na pliki TEI XML
     data_folder = Path("..") / "json"
-    output_folder = Path("..") / "tei"
     data_folder_list = data_folder.glob('*.json')
+
+    # folder na pliki wyjściowe TEI XML
+    output_folder = Path("..") / "tei"
 
     for data_file in data_folder_list:
         filename = os.path.basename(data_file)
@@ -319,16 +320,12 @@ if __name__ == '__main__':
         # if filename != "30659.json":
         #    continue
 
-        if filename == "xxxxx.json":
-            print("Plik wzorcowy: xxxxx.json pominięty")
+        output_path = Path("..") / "tei" / filename.replace('.json', '.xml')
+        if os.path.exists(output_path):
+            print(f"Plik {filename.replace('.json','.xml')} już istnieje")
             continue
-        else:
-            output_path = Path("..") / "tei" / filename.replace('.json', '.xml')
-            if os.path.exists(output_path):
-                print(f"Plik {filename.replace('.json','.xml')} już istnieje")
-                continue
 
-            print(f"Przetwarzanie: {filename}")
+        print(f"Przetwarzanie: {filename}")
 
         path = Path("..") / "json" / filename
 
@@ -350,6 +347,7 @@ if __name__ == '__main__':
 
             if not item_auth:
                 item_auth = "None"
+
             tei_header = fstr(header)
 
             # head
@@ -478,21 +476,22 @@ if __name__ == '__main__':
                             tei_text += ';</seg>'
 
                         previous_item = 'regest'
-                    # lista elementów (w formie tekstu ze znakami końca wiersza)
-                    # przetwarzana na sekcje <seg>
+                    # lista elementów przetwarzana na sekcje <seg>
                     elif "elements" in item:
                         tmp_list = item["elements"]
-
                         for el in tmp_list:
                             el = ner_to_xml(el)
                             el = add_footnotes(el, num_of_footnotes)
                             tei_text += f'<seg>{el}</seg>'
                         tei_text += '</p>\n'
+                    # lista elementów przetwarzana na sekcje <p>
                     elif "paragraphs" in item:
                         for par in item["paragraphs"]:
                             par = ner_to_xml(par)
                             par = add_footnotes(par, num_of_footnotes)
                             tei_text += f'<p>{par}</p>\n'
+                    # akapit z ppozycjami bibliograficznymi oddzielonymi znakiem
+                    # średnika, przetwarzany na sekcje <bibl>
                     elif "bibliography" in item:
                         tei_text += '<p>\n'
                         bibl_text = item['bibliography']

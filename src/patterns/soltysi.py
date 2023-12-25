@@ -1,4 +1,5 @@
-""" definicja reguł dla wyszukiwania urzedów w SHG """
+""" definicja reguł dla wyszukiwania urzędów w SHG """
+# cspell: disable
 
 
 def rule_patterns_soltysi() -> list:
@@ -43,22 +44,30 @@ def rule_patterns_soltysi() -> list:
                     "świętokrz", "świętop", "tyn", "wąch", "węg", "wiel", "wiśl", "wojn", "zator",
                     "zawich", "zwierzyn", "żarn", "żyd"]
 
-    litery = 'ABCDEFGHIJKLMNOPRSTUWZŚŻŹĆŁ'
+    # w zeszycie 1 z części V SHG występują tylko miejscowości na M i N
+    # litery = 'ABCDEFGHIJKLMNOPRSTUWZŚŻŹĆŁ'
+    litery = 'MN'
 
     for shortcut in shortcuts:
         # sołtys + skrót (geograficzny) np krak. biec. lel.
         patterns.append([{"LEMMA":"sołtys"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
         patterns.append([{"LEMMA":"sołtyska"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
         # sołtys + 'z' + skrót (geograficzny) np krak. biec. lel.
-        patterns.append([{"LEMMA":"sołtys"}, {"LOWER":"z"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"sołtyska"}, {"LOWER":"z"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"sołtys"}, {"LOWER":"z"}, {"LOWER":f"{shortcut}"},
+                         {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"sołtyska"}, {"LOWER":"z"}, {"LOWER":f"{shortcut}"},
+                         {"IS_PUNCT":True}])
         # sołtys + 'w' + skrót (geograficzny) np krak. biec. lel.
-        patterns.append([{"LEMMA":"sołtys"}, {"LOWER":"w"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"sołtyska"}, {"LOWER":"w"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"sołtys"}, {"LOWER":"w"}, {"LOWER":f"{shortcut}"},
+                         {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"sołtyska"}, {"LOWER":"w"}, {"LOWER":f"{shortcut}"},
+                         {"IS_PUNCT":True}])
 
     # sołtys z + skrót miejscowości np.: A.
     for litera in litery:
-        patterns.append([{"LEMMA":"sołtys"}, {"LOWER":"z"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"sołtyska"}, {"LOWER":"z"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"sołtys"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
+                         {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"sołtyska"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
+                         {"IS_PUNCT":True}])
 
     return patterns

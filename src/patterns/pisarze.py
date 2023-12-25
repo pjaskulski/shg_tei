@@ -1,4 +1,5 @@
-""" definicja reguł dla wyszukiwania urzedów w SHG """
+""" definicja reguł dla wyszukiwania urzędów w SHG """
+# cspell: disable
 
 
 def rule_patterns_pisarze() -> list:
@@ -21,7 +22,8 @@ def rule_patterns_pisarze() -> list:
         # pisarz przymiotnik + nazwa
         [{"LEMMA":"pisarz"}, {"POS":"ADJ"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # pisarz sądu wyższego pr. niem.
-        [{"LEMMA":"pisarz"}, {"LEMMA":"sąd"}, {"LEMMA":"wysoki"}, {"LOWER":"pr"}, {"IS_PUNCT":True}, {"LOWER":"niem"}, {"IS_PUNCT":True}],
+        [{"LEMMA":"pisarz"}, {"LEMMA":"sąd"}, {"LEMMA":"wysoki"}, {"LOWER":"pr"},
+         {"IS_PUNCT":True}, {"LOWER":"niem"}, {"IS_PUNCT":True}],
         # pisarz + rzeczownik
         [{"LEMMA":"pisarz"}, {"POS":"NOUN", "OP":"+"}],
         # pisarz król.
@@ -46,26 +48,42 @@ def rule_patterns_pisarze() -> list:
                     "świętokrz", "świętop", "tyn", "wąch", "węg", "wiel", "wiśl", "wojn", "zator",
                     "zawich", "zwierzyn", "żarn", "żyd"]
 
-    litery = 'ABCDEFGHIJKLMNOPRSTUWZŚŻŹĆŁ'
+    # w zeszycie 1 z części V SHG występują tylko miejscowości na M i N
+    # litery = 'ABCDEFGHIJKLMNOPRSTUWZŚŻŹĆŁ'
+    litery = 'MN'
+
     for shortcut in shortcuts:
         # pisarz + skrót geogr.
         patterns.append([{"LEMMA":"pisarz"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"pisarz"}, {"LEMMA":"miejski"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"pisarz"}, {"POS":"ADJ"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"pisarz"}, {"POS":"NOUN"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"pisarz"}, {"POS":"ADJ"}, {"LOWER":"ziemi"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"pisarz"}, {"LEMMA":"sędzia"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"pisarz"}, {"LOWER":"bpów"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"pisarz"}, {"LEMMA":"kapituła"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"pisarz"}, {"LEMMA":"miejski"}, {"LOWER":f"{shortcut}"},
+                         {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"pisarz"}, {"POS":"ADJ"}, {"LOWER":f"{shortcut}"},
+                         {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"pisarz"}, {"POS":"NOUN"}, {"LOWER":f"{shortcut}"},
+                         {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"pisarz"}, {"POS":"ADJ"}, {"LOWER":"ziemi"},
+                         {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"pisarz"}, {"LEMMA":"sędzia"}, {"LOWER":f"{shortcut}"},
+                         {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"pisarz"}, {"LOWER":"bpów"}, {"LOWER":f"{shortcut}"},
+                         {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"pisarz"}, {"LEMMA":"kapituła"}, {"LOWER":f"{shortcut}"},
+                         {"IS_PUNCT":True}])
 
     # pisarz z + skrót miejscowości np.: pisarz z A., pisarz A.
     for litera in litery:
-        patterns.append([{"LEMMA":"pisarz"}, {"LOWER":"z"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"pisarz"}, {"LEMMA":"miejski"}, {"LOWER":"z"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"pisarz"}, {"POS":"ADJ"}, {"LOWER":"z"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"pisarz"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
+                         {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"pisarz"}, {"LEMMA":"miejski"}, {"LOWER":"z"},
+                         {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"pisarz"}, {"POS":"ADJ"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
+                         {"IS_PUNCT":True}])
         patterns.append([{"LEMMA":"pisarz"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"pisarz"}, {"LOWER":"m"}, {"IS_PUNCT":True}, {"LOWER":"z"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"pisarz"}, {"LOWER":"m"}, {"IS_PUNCT":True}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"pisarz"}, {"LOWER":"w"}, {"LOWER":"m"}, {"IS_PUNCT":True}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"pisarz"}, {"LOWER":"m"}, {"IS_PUNCT":True}, {"LOWER":"z"},
+                         {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"pisarz"}, {"LOWER":"m"}, {"IS_PUNCT":True},
+                         {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"pisarz"}, {"LOWER":"w"}, {"LOWER":"m"}, {"IS_PUNCT":True},
+                         {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
 
     return patterns

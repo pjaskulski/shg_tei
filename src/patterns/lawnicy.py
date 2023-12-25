@@ -1,4 +1,5 @@
-""" definicja reguł dla wyszukiwania urzedów w SHG """
+""" definicja reguł dla wyszukiwania urzędów w SHG """
+# cspell: disable
 
 
 def rule_patterns_lawnicy() -> list:
@@ -8,31 +9,44 @@ def rule_patterns_lawnicy() -> list:
         [{"LEMMA":"ławnik"}],
         # ławnik + przymiotnik (lub parę przymiotników)
         # opcjonalnie 'sądu leńskiego'
-        [{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"}, {"POS":"ADJ", "OP": "+"}],
+        [{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"},
+         {"POS":"ADJ", "OP": "+"}],
         # ławnik + przymiotnik i przymiotnik
-        [{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"}, {"POS":"ADJ"}, {"LOWER":"i"}, {"POS":"ADJ"}],
+        [{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"},
+         {"POS":"ADJ"}, {"LOWER":"i"}, {"POS":"ADJ"}],
         # ławnik + nazwa własna (lub parę nazw)
-        [{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        [{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"},
+         {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # ławnik + przymiotnik + nazwa własna (lub parę nazw)
-        [{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"}, {"POS":"ADJ"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        [{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"},
+         {"POS":"ADJ"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # ławnik + rzeczownik
-        [{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"}, {"POS":"NOUN"}],
+        [{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"},
+         {"POS":"NOUN"}],
         # ławnik w nazwa (lub parę)
-        [{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"}, {"LOWER":"w"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        [{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"},
+         {"LOWER":"w"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # ławnik z nazwa
-        [{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"}, {"LOWER":"z"}, {"ENT_TYPE":"ENT_TYPE", "OP": "+"}],
+        [{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"},
+         {"LOWER":"z"}, {"ENT_TYPE":"ENT_TYPE", "OP": "+"}],
         # ławnik m. nazwa
-        [{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"}, {"LOWER":"m"}, {"IS_PUNCT":True}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        [{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"},
+         {"LOWER":"m"}, {"IS_PUNCT":True}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
 
         # ławnik sądu najwyższego pr. niem. na zamku krak.
         [{"TEXT":"ławnik sądu najwyższego pr. niem. na zamku krak."}],
         # ławnik sądu wyższego pr. niem. w + nazwa (klasztor, zamek, miasto)
         # ławnik sądu pr. niem. w + nazwa
-        [{"LEMMA":"ławnik"}, {"LEMMA":"sąd"}, {"POS":"ADJ", "OP":"?"}, {"LOWER":"pr"}, {"IS_PUNCT":True}, {"LOWER":"niem"}, {"IS_PUNCT":True}, {"LOWER":"w"}, {"ENT_TYPE":"PLACENAME"}],
+        [{"LEMMA":"ławnik"}, {"LEMMA":"sąd"}, {"POS":"ADJ", "OP":"?"}, {"LOWER":"pr"},
+         {"IS_PUNCT":True}, {"LOWER":"niem"}, {"IS_PUNCT":True}, {"LOWER":"w"},
+         {"ENT_TYPE":"PLACENAME"}],
         # ławnik sądu pr. niem. na zamku krak
-        [{"LEMMA":"ławnik"}, {"LEMMA":"sąd"}, {"LOWER":"pr"}, {"IS_PUNCT":True}, {"LOWER":"niem"}, {"IS_PUNCT":True}, {"LOWER":"na"}, {"LEMMA":"zamek"}, {"LOWER":"krak"}],
+        [{"LEMMA":"ławnik"}, {"LEMMA":"sąd"}, {"LOWER":"pr"}, {"IS_PUNCT":True},
+         {"LOWER":"niem"}, {"IS_PUNCT":True}, {"LOWER":"na"}, {"LEMMA":"zamek"}, {"LOWER":"krak"}],
         # ławnik sądu wyż. pr. niem. w + nazwa
-        [{"LEMMA":"ławnik"}, {"LEMMA":"sąd"}, {"LOWER":"wyż"}, {"IS_PUNCT":True}, {"LOWER":"pr"}, {"IS_PUNCT":True}, {"LOWER":"niem"}, {"IS_PUNCT":True}, {"LOWER":"w"}, {"ENT_TYPE":"PLACENAME"}],
+        [{"LEMMA":"ławnik"}, {"LEMMA":"sąd"}, {"LOWER":"wyż"}, {"IS_PUNCT":True},
+         {"LOWER":"pr"}, {"IS_PUNCT":True}, {"LOWER":"niem"}, {"IS_PUNCT":True}, {"LOWER":"w"},
+         {"ENT_TYPE":"PLACENAME"}],
         # ławnik sądu gajonego + nazwa
         [{"LEMMA":"ławnik"}, {"LEMMA":"sąd"}, {"POS":"ADJ"}, {"ENT_TYPE":"PLACENAME"}],
         [{"LEMMA":"ławnik"}, {"LEMMA":"sąd"}, {"POS":"ADJ"}, {"ENT_TYPE":"PLACENAME"}],
@@ -54,19 +68,31 @@ def rule_patterns_lawnicy() -> list:
                     "świętokrz", "świętop", "tyn", "wąch", "węg", "wiel", "wiśl", "wojn", "zator",
                     "zawich", "zwierzyn", "żarn", "żyd"]
 
-    litery = 'ABCDEFGHIJKLMNOPRSTUWZŚŻŹĆŁ'
+    # w zeszycie 1 z części V SHG występują tylko miejscowości na M i N
+    # litery = 'ABCDEFGHIJKLMNOPRSTUWZŚŻŹĆŁ'
+    litery = 'MN'
+
     for shortcut in shortcuts:
         # ławnik + skrót (geograficzny) np krak. biec. lel.
-        patterns.append([{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"},
+                         {"LOWER":"leńskiego", "OP":"?"}, {"LOWER":f"{shortcut}"},
+                         {"IS_PUNCT":True}])
         # ławnik + 'z' + skrót (geograficzny) np krak. biec. lel.
-        patterns.append([{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"}, {"LOWER":"z"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"},
+                         {"LOWER":"leńskiego", "OP":"?"}, {"LOWER":"z"}, {"LOWER":f"{shortcut}"},
+                         {"IS_PUNCT":True}])
         # ławnik + 'w' + skrót (geograficzny) np krak. biec. lel.
-        patterns.append([{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"}, {"LOWER":"w"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"},
+                         {"LOWER":"leńskiego", "OP":"?"}, {"LOWER":"w"},
+                         {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
         # ławnik sądu ziemskiego + skrót geogr.
-        patterns.append([{"LEMMA":"ławnik"}, {"LEMMA":"sąd"}, {"POS":"ADJ"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"ławnik"}, {"LEMMA":"sąd"}, {"POS":"ADJ"},
+                         {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
 
     # ławnik, ławnicy z + skrót miejscowości np.: A.
     for litera in litery:
-        patterns.append([{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"}, {"LOWER":"leńskiego", "OP":"?"}, {"LOWER":"z"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"ławnik"}, {"LOWER":"sądu", "OP":"?"},
+                         {"LOWER":"leńskiego", "OP":"?"}, {"LOWER":"z"},
+                         {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
 
     return patterns

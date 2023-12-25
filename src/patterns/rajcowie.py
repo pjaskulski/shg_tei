@@ -1,4 +1,6 @@
-""" definicja reguł dla wyszukiwania urzedów w SHG """
+""" definicja reguł dla wyszukiwania urzędów w SHG """
+# cSpell:disable
+
 
 # rajca + przymiotnik (lub parę przymiotników) np. rajca krakowski
 # rajca + przymiotnik i przymiotnik np. rajcy starzy i nowi
@@ -26,20 +28,23 @@ def rule_patterns_rajcowie() -> list:
         # rajca z nazwa
         [{"LEMMA":"rajca"}, {"LOWER":"z"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
          # rajca m. nazwa
-        [{"LEMMA":"rajca"}, {"LOWER":"m"}, {"IS_PUNCT":True}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        [{"LEMMA":"rajca"}, {"LOWER":"m"}, {"IS_PUNCT":True},
+         {"ENT_TYPE":"PLACENAME", "OP": "+"}],
         # to zo wyżej ale w l.m.
-        [{"LEMMA":"rajcowie"}, {"POS":"ADJ", "OP": "+"}],
-        [{"LEMMA":"rajcowie"}, {"POS":"ADJ"}, {"LOWER":"i"}, {"POS":"ADJ"}],
-        [{"LEMMA":"rajcowie"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        [{"LEMMA":"rajcowie"}, {"LOWER":"w"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        [{"LEMMA":"rajcowie"}, {"LOWER":"z"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        [{"LEMMA":"rajcowie"}, {"LOWER":"m"}, {"IS_PUNCT":True}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        [{"LEMMA":"rajce"}, {"POS":"ADJ", "OP": "+"}],
-        [{"LEMMA":"rajce"}, {"POS":"ADJ"}, {"LOWER":"i"}, {"POS":"ADJ"}],
-        [{"LEMMA":"rajce"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        [{"LEMMA":"rajce"}, {"LOWER":"w"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        [{"LEMMA":"rajce"}, {"LOWER":"z"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        [{"LEMMA":"rajce"}, {"LOWER":"m"}, {"IS_PUNCT":True}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        # [{"LEMMA":"rajcowie"}, {"POS":"ADJ", "OP": "+"}],
+        # [{"LEMMA":"rajcowie"}, {"POS":"ADJ"}, {"LOWER":"i"}, {"POS":"ADJ"}],
+        # [{"LEMMA":"rajcowie"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        # [{"LEMMA":"rajcowie"}, {"LOWER":"w"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        # [{"LEMMA":"rajcowie"}, {"LOWER":"z"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        # [{"LEMMA":"rajcowie"}, {"LOWER":"m"}, {"IS_PUNCT":True},
+        #  {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        # [{"LEMMA":"rajce"}, {"POS":"ADJ", "OP": "+"}],
+        # [{"LEMMA":"rajce"}, {"POS":"ADJ"}, {"LOWER":"i"}, {"POS":"ADJ"}],
+        # [{"LEMMA":"rajce"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        # [{"LEMMA":"rajce"}, {"LOWER":"w"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        # [{"LEMMA":"rajce"}, {"LOWER":"z"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
+        # [{"LEMMA":"rajce"}, {"LOWER":"m"}, {"IS_PUNCT":True},
+        #  {"ENT_TYPE":"PLACENAME", "OP": "+"}],
     ]
 
     shortcuts = ["krak", "lel", "biec", "chęc", "czchow", "czech", "czes", "frank", "gnieźn",
@@ -50,10 +55,16 @@ def rule_patterns_rajcowie() -> list:
                     "świętokrz", "świętop", "tyn", "wąch", "węg", "wiel", "wiśl", "wojn", "zator",
                     "zawich", "zwierzyn", "żarn", "żyd"]
 
+    # w zeszycie 1 z części V SHG występują tylko miejscowości na M i N
+    # litery = 'ABCDEFGHIJKLMNOPRSTUWZŚŻŹĆŁ'
+    litery = 'MN'
+
     for shortcut in shortcuts:
         # rajca, rajcy + skrót (geograficzny) np krak. biec. lel.
         patterns.append([{"LEMMA":"rajca"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"rajce"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
-        patterns.append([{"LEMMA":"rajcowie"}, {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
+
+    for litera in litery:
+        patterns.append([{"LEMMA":"rajca"}, {"LOWER": {"IN": ["w", "z"]}},
+                         {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
 
     return patterns
