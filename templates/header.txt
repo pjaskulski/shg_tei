@@ -60,4 +60,5 @@
             <bibl>Słownik historyczno-geograficzny województwa krakowskiego w średniowieczu część V zeszyt 1: Mstów-Nagłowice</bibl>
          </sourceDesc>
       </fileDesc>
+      {profile_desc}
    </teiHeader>

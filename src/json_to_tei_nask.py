@@ -21,6 +21,7 @@ from patterns.landwojtowie import rule_patterns_landwojtowie
 from patterns.przysiezni import rule_patterns_przysiezni
 from patterns.wicesoltysi import rule_patterns_wicesoltysi
 from patterns.monety import rule_patterns_coin
+from tools.wikilinker import wikilinker_people
 
 
 warnings.filterwarnings("ignore")
@@ -189,6 +190,7 @@ autorzy = {"JL":"Jacek Laberschek",
 
 item_foot = None
 
+people = {}
 
 ################################### FUNKCJE ####################################
 def fstr(template):
@@ -206,7 +208,7 @@ def add_footnotes(text_to_complete:str, max_footnotes:int) -> str:
     return text_to_complete
 
 
-def ner_to_xml(text_to_process:str) -> str:
+def ner_to_xml(text_to_process:str, r_date:str="") -> str:
     """ wyszukiwanie encji - nazw własnych """
     # w trybie bez NER zwraca po prostu wartość wejściową
     if not MAKE_NER:
@@ -259,6 +261,19 @@ def ner_to_xml(text_to_process:str) -> str:
             elif ent.label_ == "COIN":
                 tagged_text += (text_to_process[last_index:ent.start_char] +
                                 f'<{label2tag[ent.label_]} type="currency" subtype="{ent.ent_id_}">{ent.text}</{label2tag[ent.label_]}>')
+            elif ent.label_ == 'PERSNAME':
+                qid = ''
+                # tylko dla osób z nazwiskiem, wieloma imionami lub miejscowością z której się piszą
+                if ' ' in ent.text:
+                    qid = wikilinker_people(search_entity=ent.text, year=r_date)
+
+                if qid:
+                    tagged_text += (text_to_process[last_index:ent.start_char] +
+                                    f'<{label2tag[ent.label_]} xml:id="{qid}">{ent.text}</{label2tag[ent.label_]}>')
+                    people[ent.lemma_] = qid
+                else:
+                    tagged_text += (text_to_process[last_index:ent.start_char] +
+                                    f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
             else:
                 tagged_text += (text_to_process[last_index:ent.start_char] +
                                 f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
@@ -348,8 +363,6 @@ if __name__ == '__main__':
             if not item_auth:
                 item_auth = "None"
 
-            tei_header = fstr(header)
-
             # head
             tei_text = f"""<text>
                 <body>
@@ -378,6 +391,7 @@ if __name__ == '__main__':
                             previous_item = 'text'
                     # lista regestów
                     elif 'regest' in item:
+                        regest_date = ""
                         if previous_item != 'regest':
                             tei_text += '\n<p>'
                         tei_text += '\n<seg>'
@@ -429,7 +443,7 @@ if __name__ == '__main__':
                                 else:
                                     tei_text += f'<date when="{item["regest"]["date"]}">{item["regest"]["date"]}</date>' + ' '
                         if 'content' in item['regest']:
-                            content = ner_to_xml(item["regest"]["content"])
+                            content = ner_to_xml(item["regest"]["content"], r_date=regest_date)
                             content = add_footnotes(content, num_of_footnotes)
                             tei_text += f'{content}' + ' '
                         if 'source' in item['regest']:
@@ -520,6 +534,16 @@ if __name__ == '__main__':
                     value_ner = ner_to_xml(value)
                     tei_text += f'<seg type="footnote" n="{key}">{key}. {value_ner}</seg>\n'
                 tei_text += '\n</p>\n</div>\n'
+
+            # lista rozpoznanych w wiki osób
+            profile_desc = ""
+            if len(people) > 0:
+                profile_desc += "<profileDesc>\n<particDesc>\n<listPerson>\n"
+                for key, value in people.items():
+                    profile_desc += f'<person xml:id="{value}"><persName>{key}</persName></person>\n'
+                profile_desc += "</listPerson>\n</particDesc>\n</profileDesc>\n"
+            # nagłówek
+            tei_header = fstr(header)
 
             tei_text = tei_header + tei_text + '</body></text></TEI>'
 
