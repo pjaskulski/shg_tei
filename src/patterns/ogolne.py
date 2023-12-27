@@ -66,7 +66,7 @@ def patterns_ogolne(obiekty:list, fizjografia:list, imiona:list, miejscowosci:li
            },
            # plebani
            {"label": "OCCUPATION_CHURCH_LOW",
-            "pattern": [{"LEMMA": "pleban"}, {"TEXT": "w"}, {"ENT_TYPE": "PLACENAME"}],
+            "pattern": [{"LEMMA": "pleban"}, {"TEXT": {"IN": ["w", "z"]}}, {"ENT_TYPE": "PLACENAME"}],
             "id": "pleban"
            },
            {"label": "OCCUPATION_CHURCH_LOW",
@@ -74,7 +74,7 @@ def patterns_ogolne(obiekty:list, fizjografia:list, imiona:list, miejscowosci:li
             "id": "pleban"
            },
            {"label": "OCCUPATION_CHURCH_LOW",
-            "pattern": [{"LEMMA": "pleb"}, {"IS_PUNCT": True}, {"TEXT": "w"},
+            "pattern": [{"LEMMA": "pleb"}, {"IS_PUNCT": True}, {"TEXT": {"IN": ["w", "z"]}},
                         {"ENT_TYPE": "PLACENAME"}],
             "id":"pleban"
            },

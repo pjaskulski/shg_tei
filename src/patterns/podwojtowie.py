@@ -198,33 +198,40 @@ def rule_patterns_podwojtowie() -> list:
         patterns.append([{"LOWER":"podwójcina"}, {"LOWER":"m"}, {"IS_PUNCT":True},
                          {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
 
-        # podwójt z + skrót miejscowości np.: A.
-        for litera in litery:
-            patterns.append([{"LEMMA":"podwójt"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
-                             {"IS_PUNCT":True}])
-            patterns.append([{"LOWER":"podwójci"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
-                             {"IS_PUNCT":True}])
-            patterns.append([{"LOWER":"podwójci"}, {"LOWER":"w"}, {"TEXT":f"{litera}"},
-                             {"IS_PUNCT":True}])
-            patterns.append([{"LEMMA":"podwójt"}, {"LEMMA":"wieś"}, {"TEXT":f"{litera}"},
-                             {"IS_PUNCT":True}])
-            patterns.append([{"LOWER":"podwójci"}, {"LEMMA":"wieś"}, {"TEXT":f"{litera}"},
-                             {"IS_PUNCT":True}])
-            patterns.append([{"LEMMA":"podwójt"}, {"LEMMA":"miasto"}, {"TEXT":f"{litera}"},
-                             {"IS_PUNCT":True}])
-            patterns.append([{"LOWER":"podwójci"}, {"LEMMA":"miasto"}, {"TEXT":f"{litera}"},
-                             {"IS_PUNCT":True}])
-            patterns.append([{"LOWER":"podwójci"}, {"LOWER":"m"}, {"IS_PUNCT":True},
-                             {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-            patterns.append([{"LOWER":"podwójci"}, {"LOWER":"z"}, {"LOWER":"m"}, {"IS_PUNCT":True},
-                             {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-            patterns.append([{"LOWER":"podwójci"}, {"LOWER":"w"}, {"LOWER":"m"}, {"IS_PUNCT":True},
-                             {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-            patterns.append([{"LEMMA":"podwójtowy"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
-                             {"IS_PUNCT":True}])
-            patterns.append([{"LEMMA":"podwójcina"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
-                             {"IS_PUNCT":True}])
-            patterns.append([{"LOWER":"podwójcina"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
-                             {"IS_PUNCT":True}])
+    # podwójt z + skrót miejscowości np.: A.
+    for litera in litery:
+        patterns.append([{"LEMMA":"podwójt"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
+                            {"IS_PUNCT":True}])
+        patterns.append([{"LOWER":"podwójci"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
+                            {"IS_PUNCT":True}])
+        patterns.append([{"LOWER":"podwójci"}, {"LOWER":"w"}, {"TEXT":f"{litera}"},
+                            {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"podwójt"}, {"LEMMA":"wieś"}, {"TEXT":f"{litera}"},
+                            {"IS_PUNCT":True}])
+        patterns.append([{"LOWER":"podwójci"}, {"LEMMA":"wieś"}, {"TEXT":f"{litera}"},
+                            {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"podwójt"}, {"LEMMA":"miasto"}, {"TEXT":f"{litera}"},
+                            {"IS_PUNCT":True}])
+        patterns.append([{"LOWER":"podwójci"}, {"LEMMA":"miasto"}, {"TEXT":f"{litera}"},
+                            {"IS_PUNCT":True}])
+        patterns.append([{"LOWER":"podwójci"}, {"LOWER":"m"}, {"IS_PUNCT":True},
+                            {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LOWER":"podwójci"}, {"LOWER":"z"}, {"LOWER":"m"}, {"IS_PUNCT":True},
+                            {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LOWER":"podwójci"}, {"LOWER":"w"}, {"LOWER":"m"}, {"IS_PUNCT":True},
+                            {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"podwójtowy"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
+                            {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"podwójcina"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
+                            {"IS_PUNCT":True}])
+        patterns.append([{"LOWER":"podwójcina"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
+                            {"IS_PUNCT":True}])
 
-    return patterns
+    patterns_output = []
+    for item in patterns:
+        patterns_output.append({"label": "OCCUPATION_MUNICIPAL",
+                        "pattern": item,
+                        "id": "podwójt"})
+
+
+    return patterns_output

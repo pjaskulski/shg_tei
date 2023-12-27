@@ -77,24 +77,16 @@ label2tag = {
             "COIN": "unit"
         }
 
-# reguły ogólne: obiekty gospodarcze, fizjograficzne, urzędy kościelne, urzędy ziemskie
-pattern = patterns_ogolne(obiekty=obiekty, fizjografia=fizjografia,
+# reguły (entity ruler)
+pattern = (
+            # reguły ogólne: obiekty gospodarcze, fizjograficzne, urzędy kościelne, urzędy ziemskie
+            patterns_ogolne(obiekty=obiekty, fizjografia=fizjografia,
                           imiona=imiona, miejscowosci=miejscowosci)
-
-# uzupełnienia reguł dla urzędów
-# reguły dla burmistrzów
-patterns_burmistrzowie = rule_patterns_burmistrzowie()
-for item in patterns_burmistrzowie:
-    pattern.append({"label": "OCCUPATION_MUNICIPAL",
-                    "pattern": item,
-                    "id": "burmistrz"})
-
-# reguły dla podwojtow
-patterns_podwojtowie = rule_patterns_podwojtowie()
-for item in patterns_podwojtowie:
-    pattern.append({"label": "OCCUPATION_MUNICIPAL",
-                    "pattern": item,
-                    "id": "podwójt"})
+            # reguły dla burmistrzów
+            + rule_patterns_burmistrzowie()
+            # reguły dla podwojtow
+            + rule_patterns_podwojtowie()
+        )
 
 # reguły dla sędziów
 patterns_sedziowie = rule_patterns_sedziowie()
@@ -188,6 +180,17 @@ autorzy = {"JL":"Jacek Laberschek",
            "None": ""
           }
 
+person_shortcuts = {"jag.":"Jagiellończyk",
+                    "Jag.":"Jagiellończyk",
+                    "wstydl.": "Wstydliwy",
+                    "Wstydl.": "Wstydliwy",
+                    "mik.": "Mikołaj",
+                    "Mik.": "Mikołaj",
+                    "Stan.": "Stanisław",
+                    "stan.": "Stanisław",
+                    "Olbr.": "Olbracht",
+                    "olbr.": "Olbracht",}
+
 item_foot = None
 
 people = {}
@@ -261,16 +264,35 @@ def ner_to_xml(text_to_process:str, r_date:str="") -> str:
             elif ent.label_ == "COIN":
                 tagged_text += (text_to_process[last_index:ent.start_char] +
                                 f'<{label2tag[ent.label_]} type="currency" subtype="{ent.ent_id_}">{ent.text}</{label2tag[ent.label_]}>')
+            elif ent.label_ == "DATE":
+                tmp_date = str(ent.text)
+                if tmp_date.isdigit() and len(tmp_date) == 4:
+                    tagged_text += (text_to_process[last_index:ent.start_char] +
+                                    f'<{label2tag[ent.label_]} when="{tmp_date}">{ent.text}</{label2tag[ent.label_]}>')
+                else:
+                    tagged_text += (text_to_process[last_index:ent.start_char] +
+                                    f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
             elif ent.label_ == 'PERSNAME':
                 qid = ''
                 # tylko dla osób z nazwiskiem, wieloma imionami lub miejscowością z której się piszą
                 if ' ' in ent.text:
-                    qid = wikilinker_people(search_entity=ent.text, year=r_date)
+                    text_to_search = ent.lemma_
+                    text_to_search = text_to_search.replace('[','').replace(']','')
+                    text_to_search = text_to_search.title()
+                    if " Z " in text_to_search:
+                        text_to_search = text_to_search.replace(" Z ", " z ")
+
+                    for short, long in person_shortcuts.items():
+                        if short in text_to_search:
+                            text_to_search = text_to_search.replace(short, long)
+
+                    qid, description = wikilinker_people(search_entity=text_to_search, year=r_date)
+                    print(ent.text, '->', text_to_search, '->', qid)
 
                 if qid:
                     tagged_text += (text_to_process[last_index:ent.start_char] +
-                                    f'<{label2tag[ent.label_]} xml:id="{qid}">{ent.text}</{label2tag[ent.label_]}>')
-                    people[ent.lemma_] = qid
+                                    f'<{label2tag[ent.label_]} ref="#{qid}">{ent.text}</{label2tag[ent.label_]}>')
+                    people[text_to_search] = (qid, description)
                 else:
                     tagged_text += (text_to_process[last_index:ent.start_char] +
                                     f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
@@ -540,7 +562,13 @@ if __name__ == '__main__':
             if len(people) > 0:
                 profile_desc += "<profileDesc>\n<particDesc>\n<listPerson>\n"
                 for key, value in people.items():
-                    profile_desc += f'<person xml:id="{value}"><persName>{key}</persName></person>\n'
+                    value_qid, value_desc = value
+                    profile_desc += f'''<person xml:id="{value_qid}">
+                    <persName>{key}</persName>
+                    <idno>https://wikihum.lab.dariah.pl/wiki/Item:{value_qid}</idno>
+                    <note>{value_desc}</note>
+                    </person>
+                    '''
                 profile_desc += "</listPerson>\n</particDesc>\n</profileDesc>\n"
             # nagłówek
             tei_header = fstr(header)

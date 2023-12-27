@@ -12,7 +12,9 @@ wbi_config['WIKIBASE_URL'] = 'https://wikihum.lab.dariah.pl'
 
 
 def wikilinker_people(search_entity:str, year:str="", number_of_candidates=10, instance='Q5') -> str:
-    """ funkcja wyszukuje w wikibase najlepiej pasujący identyfikator dla osoby """
+    """ funkcja wyszukuje w wikibase najlepiej pasujący identyfikator dla osoby
+        z kontrolą daty śmierci osoby w zakresie sensownym dla SHG
+    """
     wbi = WikibaseIntegrator()
     lista_qid = wbi_helpers.search_entities(search_entity, language='pl', search_type='item', max_results=number_of_candidates, allow_anonymous=True)
 
@@ -22,6 +24,7 @@ def wikilinker_people(search_entity:str, year:str="", number_of_candidates=10, i
         year = 0
 
     best_qid = ''
+    best_description = ''
     for item_qid in lista_qid:
         my_item = wbi.item.get(entity_id=item_qid)
         claims = my_item.claims.claims
@@ -36,10 +39,11 @@ def wikilinker_people(search_entity:str, year:str="", number_of_candidates=10, i
         for item_instance_of in list_instance_of:
             if 'value' in item_instance_of.mainsnak.datavalue:
                 instance_of_value = item_instance_of.mainsnak.datavalue['value']['id']
-                if instance_of_value == instance and year:
-                    for item_date_death in list_date_death:
-                        #print(item_date_death.mainsnak.datavalue)
-                        if 'value' in item_date_death.mainsnak.datavalue:
+                if instance_of_value == instance:
+                    if year:
+                        for item_date_death in list_date_death:
+                            if 'value' not in item_date_death.mainsnak.datavalue:
+                                continue
                             date_death_value = item_date_death.mainsnak.datavalue['value']['time']
                             if len(date_death_value) > 5:
                                 tmp_year = date_death_value[1:5]
@@ -47,7 +51,20 @@ def wikilinker_people(search_entity:str, year:str="", number_of_candidates=10, i
                                     year_of_death = int(tmp_year)
                                     if year_of_death >= year and year_of_death - year < 45:
                                         best_qid = item_qid
+                                        best_description = my_item.descriptions.get(language='pl')
                                         print(best_qid)
                                         break
+                    else:
+                        for item_date_death in list_date_death:
+                            if 'value' not in item_date_death.mainsnak.datavalue:
+                                continue
+                            date_death_value = item_date_death.mainsnak.datavalue['value']['time']
+                            if len(date_death_value) > 5:
+                                tmp_year = date_death_value[1:5]
+                                if tmp_year.isdigit():
+                                    year_of_death = int(tmp_year)
+                                    if year_of_death >= 1000 and year_of_death <= 1625:
+                                        best_qid = item_qid
+                                        best_description = my_item.descriptions.get(language='pl')
 
-    return best_qid
+    return best_qid, best_description
