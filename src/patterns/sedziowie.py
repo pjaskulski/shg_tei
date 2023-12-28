@@ -116,15 +116,21 @@ def rule_patterns_sedziowie() -> list:
         patterns.append([{"LEMMA":"sędzia"}, {"LEMMA":"sąd"}, {"POS":"ADJ"},
                          {"LOWER":f"{shortcut}"}, {"IS_PUNCT":True}])
 
-        # sędzia z + skrót miejscowości np.: A.
-        for litera in litery:
-            patterns.append([{"LEMMA":"sędzia"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
-                             {"IS_PUNCT":True}])
-            patterns.append([{"LEMMA":"sędzia"}, {"LOWER":"w"}, {"TEXT":f"{litera}"},
-                             {"IS_PUNCT":True}])
-            patterns.append([{"LEMMA":"sędzia"}, {"LEMMA":"sąd"}, {"POS":"ADJ", "OP":"+"},
-                             {"LOWER":"w"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
-            patterns.append([{"LEMMA":"sędzia"}, {"LEMMA":"sąd"}, {"POS":"ADJ", "OP":"+"},
-                             {"LOWER":"z"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+    # sędzia z + skrót miejscowości np.: A.
+    for litera in litery:
+        patterns.append([{"LEMMA":"sędzia"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
+                            {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"sędzia"}, {"LOWER":"w"}, {"TEXT":f"{litera}"},
+                            {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"sędzia"}, {"LEMMA":"sąd"}, {"POS":"ADJ", "OP":"+"},
+                            {"LOWER":"w"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
+        patterns.append([{"LEMMA":"sędzia"}, {"LEMMA":"sąd"}, {"POS":"ADJ", "OP":"+"},
+                            {"LOWER":"z"}, {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
 
-    return patterns
+    patterns_output = []
+    for item in patterns:
+        patterns_output.append({"label": "OCCUPATION_MUNICIPAL",
+                        "pattern": item,
+                        "id": "sędzia"})
+
+    return patterns_output

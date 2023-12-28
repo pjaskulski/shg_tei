@@ -84,4 +84,10 @@ def rule_patterns_notariusze() -> list:
         patterns.append([{"LEMMA":"notariusz"}, {"POS":"ADJ"}, {"LOWER":"w"},
                          {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
 
-    return patterns
+    patterns_output = []
+    for item in patterns:
+        patterns_output.append({"label": "OCCUPATION_MUNICIPAL",
+                                "pattern": item,
+                                "id": "notariusz"})
+
+    return patterns_output

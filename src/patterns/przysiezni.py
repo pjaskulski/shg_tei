@@ -20,4 +20,10 @@ def rule_patterns_przysiezni() -> list:
                          {"LOWER":{"IN":["w", "z", "ze"]}}, {"TEXT":f"{litera}"},
                          {"IS_PUNCT": True}])
 
-    return patterns
+    patterns_output = []
+    for item in patterns:
+        patterns_output.append({"label": "OCCUPATION_MUNICIPAL",
+                                "pattern": item,
+                                "id": "przysiężny"})
+
+    return patterns_output

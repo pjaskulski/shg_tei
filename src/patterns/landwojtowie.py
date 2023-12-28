@@ -76,4 +76,10 @@ def rule_patterns_landwojtowie() -> list:
         patterns.append([{"LEMMA":"landwójt"}, {"LOWER":"w"}, {"TEXT":f"{litera}"},
                          {"IS_PUNCT":True}])
 
-    return patterns
+    patterns_output = []
+    for item in patterns:
+        patterns_output.append({"label": "OCCUPATION_MUNICIPAL",
+                                "pattern": item,
+                                "id": "landwójt"})
+
+    return patterns_output

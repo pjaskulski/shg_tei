@@ -77,91 +77,25 @@ label2tag = {
             "COIN": "unit"
         }
 
-# reguły (entity ruler)
+# reguły (entity ruler), ogólne: obiekty gospodarcze, fizjograficzne, urzędy kościelne,
+# urzędy ziemskie, reguły dla urzędów miejskich burmistrzów, wójtów itp.
 pattern = (
-            # reguły ogólne: obiekty gospodarcze, fizjograficzne, urzędy kościelne, urzędy ziemskie
             patterns_ogolne(obiekty=obiekty, fizjografia=fizjografia,
                           imiona=imiona, miejscowosci=miejscowosci)
-            # reguły dla burmistrzów
             + rule_patterns_burmistrzowie()
-            # reguły dla podwojtow
             + rule_patterns_podwojtowie()
+            + rule_patterns_sedziowie()
+            + rule_patterns_pisarze()
+            + rule_patterns_notariusze()
+            + rule_patterns_lawnicy()
+            + rule_patterns_rajcowie()
+            + rule_patterns_soltysi()
+            + rule_patterns_wojtowie()
+            + rule_patterns_landwojtowie()
+            + rule_patterns_przysiezni()
+            + rule_patterns_wicesoltysi()
+            + rule_patterns_coin()
         )
-
-# reguły dla sędziów
-patterns_sedziowie = rule_patterns_sedziowie()
-for item in patterns_sedziowie:
-    pattern.append({"label": "OCCUPATION_MUNICIPAL",
-                    "pattern": item,
-                    "id": "sędzia"})
-
-# reguły dla pisarzy
-patterns_pisarze = rule_patterns_pisarze()
-for item in patterns_pisarze:
-    pattern.append({"label": "OCCUPATION_MUNICIPAL",
-                    "pattern": item,
-                    "id": "pisarz"})
-
-# reguły dla notariuszy
-patterns_notariusze = rule_patterns_notariusze()
-for item in patterns_notariusze:
-    pattern.append({"label": "OCCUPATION_MUNICIPAL",
-                    "pattern": item,
-                    "id": "notariusz"})
-
-# reguły dla ławników
-patterns_lawnicy = rule_patterns_lawnicy()
-for item in patterns_lawnicy:
-    pattern.append({"label": "OCCUPATION_MUNICIPAL",
-                    "pattern": item,
-                    "id": "ławnik"})
-
-# reguły dla rajców
-patterns_rajcowie = rule_patterns_rajcowie()
-for item in patterns_rajcowie:
-    pattern.append({"label": "OCCUPATION_MUNICIPAL",
-                    "pattern": item,
-                    "id": "rajca"})
-
-# reguły dla sołtysów
-patterns_soltysi = rule_patterns_soltysi()
-for item in patterns_soltysi:
-    pattern.append({"label": "OCCUPATION_MUNICIPAL",
-                    "pattern": item,
-                    "id": "sołtys"})
-
-# reguły dla wójtów
-patterns_wojtowie = rule_patterns_wojtowie()
-for item in patterns_wojtowie:
-    pattern.append({"label": "OCCUPATION_MUNICIPAL",
-                    "pattern": item,
-                    "id": "wójt"})
-
-# reguły dla landwójtów
-patterns_landwojtowie = rule_patterns_landwojtowie()
-for item in patterns_landwojtowie:
-    pattern.append({"label": "OCCUPATION_MUNICIPAL",
-                    "pattern": item,
-                    "id": "landwójt"})
-
-# reguły dla przysiężnych
-patterns_przysiezni = rule_patterns_przysiezni()
-for item in patterns_przysiezni:
-    pattern.append({"label": "OCCUPATION_MUNICIPAL",
-                    "pattern": item,
-                    "id": "przysiężny"})
-
-# reguły dla wicesołtysów
-patterns_wicesoltysi = rule_patterns_wicesoltysi()
-for item in patterns_wicesoltysi:
-    pattern.append({"label": "OCCUPATION_MUNICIPAL",
-                    "pattern": item,
-                    "id": "wicesołtysi"})
-
-# reguły dla monet
-patterns_coin = rule_patterns_coin()
-for item in patterns_coin:
-    pattern.append(item)
 
 print(len(pattern))
 # wzorce encji
@@ -287,7 +221,7 @@ def ner_to_xml(text_to_process:str, r_date:str="") -> str:
                             text_to_search = text_to_search.replace(short, long)
 
                     qid, description = wikilinker_people(search_entity=text_to_search, year=r_date)
-                    print(ent.text, '->', text_to_search, '->', qid)
+                    #print(ent.text, '->', text_to_search, '->', qid)
 
                 if qid:
                     tagged_text += (text_to_process[last_index:ent.start_char] +

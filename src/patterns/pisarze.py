@@ -86,4 +86,10 @@ def rule_patterns_pisarze() -> list:
         patterns.append([{"LEMMA":"pisarz"}, {"LOWER":"w"}, {"LOWER":"m"}, {"IS_PUNCT":True},
                          {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
 
-    return patterns
+    patterns_output = []
+    for item in patterns:
+        patterns_output.append({"label": "OCCUPATION_MUNICIPAL",
+                                "pattern": item,
+                                "id": "pisarz"})
+
+    return patterns_output

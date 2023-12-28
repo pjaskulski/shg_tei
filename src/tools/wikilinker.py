@@ -52,7 +52,7 @@ def wikilinker_people(search_entity:str, year:str="", number_of_candidates=10, i
                                     if year_of_death >= year and year_of_death - year < 45:
                                         best_qid = item_qid
                                         best_description = my_item.descriptions.get(language='pl')
-                                        print(best_qid)
+                                        # print(best_qid)
                                         break
                     else:
                         for item_date_death in list_date_death:

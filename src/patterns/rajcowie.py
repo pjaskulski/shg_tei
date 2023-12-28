@@ -30,21 +30,6 @@ def rule_patterns_rajcowie() -> list:
          # rajca m. nazwa
         [{"LEMMA":"rajca"}, {"LOWER":"m"}, {"IS_PUNCT":True},
          {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        # to zo wyżej ale w l.m.
-        # [{"LEMMA":"rajcowie"}, {"POS":"ADJ", "OP": "+"}],
-        # [{"LEMMA":"rajcowie"}, {"POS":"ADJ"}, {"LOWER":"i"}, {"POS":"ADJ"}],
-        # [{"LEMMA":"rajcowie"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        # [{"LEMMA":"rajcowie"}, {"LOWER":"w"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        # [{"LEMMA":"rajcowie"}, {"LOWER":"z"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        # [{"LEMMA":"rajcowie"}, {"LOWER":"m"}, {"IS_PUNCT":True},
-        #  {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        # [{"LEMMA":"rajce"}, {"POS":"ADJ", "OP": "+"}],
-        # [{"LEMMA":"rajce"}, {"POS":"ADJ"}, {"LOWER":"i"}, {"POS":"ADJ"}],
-        # [{"LEMMA":"rajce"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        # [{"LEMMA":"rajce"}, {"LOWER":"w"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        # [{"LEMMA":"rajce"}, {"LOWER":"z"}, {"ENT_TYPE":"PLACENAME", "OP": "+"}],
-        # [{"LEMMA":"rajce"}, {"LOWER":"m"}, {"IS_PUNCT":True},
-        #  {"ENT_TYPE":"PLACENAME", "OP": "+"}],
     ]
 
     shortcuts = ["krak", "lel", "biec", "chęc", "czchow", "czech", "czes", "frank", "gnieźn",
@@ -67,4 +52,10 @@ def rule_patterns_rajcowie() -> list:
         patterns.append([{"LEMMA":"rajca"}, {"LOWER": {"IN": ["w", "z"]}},
                          {"TEXT":f"{litera}"}, {"IS_PUNCT":True}])
 
-    return patterns
+    patterns_output = []
+    for item in patterns:
+        patterns_output.append({"label": "OCCUPATION_MUNICIPAL",
+                                "pattern": item,
+                                "id": "rajca"})
+
+    return patterns_output

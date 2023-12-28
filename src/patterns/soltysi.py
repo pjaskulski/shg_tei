@@ -70,4 +70,10 @@ def rule_patterns_soltysi() -> list:
         patterns.append([{"LEMMA":"sołtyska"}, {"LOWER":"z"}, {"TEXT":f"{litera}"},
                          {"IS_PUNCT":True}])
 
-    return patterns
+    patterns_output = []
+    for item in patterns:
+        patterns_output.append({"label": "OCCUPATION_MUNICIPAL",
+                                "pattern": item,
+                                "id": "sołtys"})
+
+    return patterns_output
