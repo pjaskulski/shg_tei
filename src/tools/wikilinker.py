@@ -3,12 +3,52 @@
 from wikibaseintegrator import wbi_helpers
 from wikibaseintegrator import WikibaseIntegrator
 from wikibaseintegrator.wbi_config import config as wbi_config
+from rapidfuzz import process
 
 
 wbi_config['USER_AGENT'] = 'MyWikibaseBot/1.0'
 wbi_config['MEDIAWIKI_API_URL'] = 'https://wikihum.lab.dariah.pl/api.php'
 wbi_config['SPARQL_ENDPOINT_URL'] = 'https://wikihum.lab.dariah.pl/bigdata/sparql'
 wbi_config['WIKIBASE_URL'] = 'https://wikihum.lab.dariah.pl'
+
+
+def fuzzylinker_people(search_entity:str, df, year:str="") -> str:
+    """ funkcja wyszukuje najbardziej prawdopodobną kndydaturę osoby z bazy
+        na podstawe imienia i nazwiska oraz daty śmierci, z użyciem biblioteki rapidfuzz
+    """
+    best_qid = ''
+    best_description = ''
+
+    if year and year.isdigit():
+        year = int(year)
+    else:
+        year = 0
+
+    result = process.extract(search_entity, df['Alias'], score_cutoff=90, limit=150)
+    for item in result:
+        name, score, line_number = item
+        qid = df['QID'][line_number]
+        description = df['Description'][line_number]
+
+        alias = df['Alias'][line_number]
+        # pomijane pojedyncze imiona, w 99% to powoduje fałszywe dopasowania
+        if not ' ' in alias:
+            continue
+
+        death_date = df['DateOfDeath'][line_number]
+
+        if death_date and year:
+            if (int(death_date) >= int(year)) and (int(death_date) - int(year) < 45):
+                best_qid = qid
+                best_description = description
+                break
+        elif death_date and not year:
+            if int(death_date)>= 1000 and int(death_date) <= 1625:
+                best_qid = qid
+                best_description = description
+                break
+
+    return best_qid, best_description
 
 
 def wikilinker_people(search_entity:str, year:str="", number_of_candidates=10, instance='Q5') -> str:
@@ -66,5 +106,25 @@ def wikilinker_people(search_entity:str, year:str="", number_of_candidates=10, i
                                     if year_of_death >= 1000 and year_of_death <= 1625:
                                         best_qid = item_qid
                                         best_description = my_item.descriptions.get(language='pl')
+
+    return best_qid, best_description
+
+
+def fuzzylinker_places(search_entity:str, df) -> str:
+    """ funkcja wyszukuje najbardziej prawdopodobną kandydaturę miejscowości z bazy
+        na podstawe nazwy, z użyciem biblioteki rapidfuzz
+    """
+    best_qid = best_description = ''
+
+    if len(search_entity) >= 3:
+        result = process.extract(search_entity, df['Miejscowosc'], score_cutoff=90, limit=150)
+        # obecnie pobiera pierwszą miejscowość z proponowanych
+        for item in result:
+            name, score, line_number = item
+            best_qid = df['QID'][line_number]
+            wbi = WikibaseIntegrator()
+            place_item = wbi.item.get(entity_id=best_qid)
+            best_description = place_item.descriptions.get('pl')
+            break
 
     return best_qid, best_description

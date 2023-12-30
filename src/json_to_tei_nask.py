@@ -7,6 +7,7 @@ import time
 from pathlib import Path
 import warnings
 import spacy
+import pandas as pd
 from patterns.burmistrzowie import rule_patterns_burmistrzowie
 from patterns.podwojtowie import rule_patterns_podwojtowie
 from patterns.sedziowie import rule_patterns_sedziowie
@@ -21,7 +22,8 @@ from patterns.landwojtowie import rule_patterns_landwojtowie
 from patterns.przysiezni import rule_patterns_przysiezni
 from patterns.wicesoltysi import rule_patterns_wicesoltysi
 from patterns.monety import rule_patterns_coin
-from tools.wikilinker import wikilinker_people
+# from tools.wikilinker import wikilinker_people
+from tools.wikilinker import fuzzylinker_people, fuzzylinker_places
 
 
 warnings.filterwarnings("ignore")
@@ -125,9 +127,22 @@ person_shortcuts = {"jag.":"Jagiellończyk",
                     "Olbr.": "Olbracht",
                     "olbr.": "Olbracht",}
 
+# baza osób z WikiHum
+people_path = Path('..') / 'slowniki' / 'people.csv'
+df_people = pd.read_csv(people_path, sep=',', header=0, low_memory=False,
+                        quotechar='"', encoding='utf-8')
+df_people['DateOfDeath'] = df_people['DateOfDeath'].fillna(0)
+df_people['DateOfDeath'] = df_people['DateOfDeath'].astype(int)
+
+# baza miejscowości z WikiHum
+places_path = Path('..') / 'slowniki' / 'places.csv'
+df_places = pd.read_csv(places_path, sep=',', header=0, low_memory=False,
+                        encoding='utf-8')
+
 item_foot = None
 
 people = {}
+places = {}
 
 ################################### FUNKCJE ####################################
 def fstr(template):
@@ -220,7 +235,9 @@ def ner_to_xml(text_to_process:str, r_date:str="") -> str:
                         if short in text_to_search:
                             text_to_search = text_to_search.replace(short, long)
 
-                    qid, description = wikilinker_people(search_entity=text_to_search, year=r_date)
+                    # qid, description = wikilinker_people(search_entity=text_to_search, year=r_date)
+                    qid, description = fuzzylinker_people(search_entity=text_to_search, df=df_people, year=r_date)
+
                     #print(ent.text, '->', text_to_search, '->', qid)
 
                 if qid:
@@ -230,6 +247,17 @@ def ner_to_xml(text_to_process:str, r_date:str="") -> str:
                 else:
                     tagged_text += (text_to_process[last_index:ent.start_char] +
                                     f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
+            elif ent.label_ == 'PLACENAME':
+                text_to_search = ent.lemma_
+                qid, description = fuzzylinker_places(search_entity=text_to_search, df=df_places)
+                if qid:
+                    print(ent.text, '->', text_to_search, '->', qid)
+                    tagged_text += (text_to_process[last_index:ent.start_char] +
+                                    f'<{label2tag[ent.label_]} ref="#{qid}">{ent.text}</{label2tag[ent.label_]}>')
+                    places[text_to_search] = (qid, description)
+                else:
+                    tagged_text += (text_to_process[last_index:ent.start_char] +
+                                f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
             else:
                 tagged_text += (text_to_process[last_index:ent.start_char] +
                                 f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
@@ -503,7 +531,28 @@ if __name__ == '__main__':
                     <note>{value_desc}</note>
                     </person>
                     '''
-                profile_desc += "</listPerson>\n</particDesc>\n</profileDesc>\n"
+                profile_desc += "</listPerson>\n</particDesc>\n"
+
+            # lista rozpoznanych w wiki miejscowości
+            if len(places) > 0:
+                if not profile_desc:
+                    profile_desc += "<profileDesc>\n"
+
+                profile_desc += "<settingDesc>\n<listPlace>\n"
+                for key, value in places.items():
+                    value_qid, value_desc = value
+                    profile_desc += f'''<place xml:id="{value_qid}">
+                    <placeName>{key}</placeName>
+                    <idno>https://wikihum.lab.dariah.pl/wiki/Item:{value_qid}</idno>
+                    <note>{value_desc}</note>
+                    </place>
+                    '''
+
+                profile_desc += "</listPlace>\n</settingDesc>\n"
+
+            if profile_desc:
+                profile_desc += "</profileDesc>\n"
+
             # nagłówek
             tei_header = fstr(header)
 
