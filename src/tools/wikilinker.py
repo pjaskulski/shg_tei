@@ -114,7 +114,7 @@ def fuzzylinker_places(search_entity:str, df) -> str:
     """ funkcja wyszukuje najbardziej prawdopodobną kandydaturę miejscowości z bazy
         na podstawe nazwy, z użyciem biblioteki rapidfuzz
     """
-    best_qid = best_description = ''
+    best_qid = best_description = best_latitude = best_longitude = ''
 
     if len(search_entity) >= 3:
         result = process.extract(search_entity, df['Miejscowosc'], score_cutoff=90, limit=150)
@@ -122,9 +122,13 @@ def fuzzylinker_places(search_entity:str, df) -> str:
         for item in result:
             name, score, line_number = item
             best_qid = df['QID'][line_number]
-            wbi = WikibaseIntegrator()
-            place_item = wbi.item.get(entity_id=best_qid)
-            best_description = place_item.descriptions.get('pl')
+            best_description = df['Description'][line_number]
+            best_latitude = df['Latitude'][line_number]
+            best_longitude = df['Longitude'][line_number]
+
+            #wbi = WikibaseIntegrator()
+            #place_item = wbi.item.get(entity_id=best_qid)
+            #best_description = place_item.descriptions.get('pl')
             break
 
-    return best_qid, best_description
+    return best_qid, best_description, best_latitude, best_longitude

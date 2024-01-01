@@ -137,7 +137,7 @@ df_people['DateOfDeath'] = df_people['DateOfDeath'].astype(int)
 # baza miejscowości z WikiHum
 places_path = Path('..') / 'slowniki' / 'places.csv'
 df_places = pd.read_csv(places_path, sep=',', header=0, low_memory=False,
-                        encoding='utf-8')
+                        quotechar='"', encoding='utf-8')
 
 item_foot = None
 
@@ -249,12 +249,12 @@ def ner_to_xml(text_to_process:str, r_date:str="") -> str:
                                     f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
             elif ent.label_ == 'PLACENAME':
                 text_to_search = ent.lemma_
-                qid, description = fuzzylinker_places(search_entity=text_to_search, df=df_places)
+                qid, description, latitude, longitude = fuzzylinker_places(search_entity=text_to_search, df=df_places)
                 if qid:
                     print(ent.text, '->', text_to_search, '->', qid)
                     tagged_text += (text_to_process[last_index:ent.start_char] +
                                     f'<{label2tag[ent.label_]} ref="#{qid}">{ent.text}</{label2tag[ent.label_]}>')
-                    places[text_to_search] = (qid, description)
+                    places[text_to_search] = (qid, description, latitude, longitude)
                 else:
                     tagged_text += (text_to_process[last_index:ent.start_char] +
                                 f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
@@ -535,14 +535,18 @@ if __name__ == '__main__':
 
             # lista rozpoznanych w wiki miejscowości
             if len(places) > 0:
+                print(f"places: {len(places)}")
                 if not profile_desc:
                     profile_desc += "<profileDesc>\n"
 
                 profile_desc += "<settingDesc>\n<listPlace>\n"
                 for key, value in places.items():
-                    value_qid, value_desc = value
+                    value_qid, value_desc, value_lat, value_lon = value
                     profile_desc += f'''<place xml:id="{value_qid}">
                     <placeName>{key}</placeName>
+                    <location>
+                    <geo>{value_lat}, {value_lon}</geo>
+                    </location>
                     <idno>https://wikihum.lab.dariah.pl/wiki/Item:{value_qid}</idno>
                     <note>{value_desc}</note>
                     </place>

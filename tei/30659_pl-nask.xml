@@ -81,7 +81,7 @@
                <person xml:id="Q154460">
                   <persName>Jakub Grzywa</persName>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q154460</idno>
-                  <note>[TO BŁĘDNA IDENTYFIKACJA](zm. 1531) lekarz i profesor Akad. Krak</note>
+                  <note>(zm. 1531) lekarz i profesor Akad. Krak</note>
                </person>
                <person xml:id="Q156970">
                   <persName>Kazimierz Jagiellończyk</persName>
@@ -129,356 +129,665 @@
             <listPlace>
                <place xml:id="Q46043">
                   <placeName>Kraków</placeName>
+                  <location>
+                     <geo>50.0617812, 19.93736971</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q46043</idno>
                   <note>miasto (gmina: Kraków, powiat: Kraków, wojewódzwo: małopolskie)</note>
                </place>
+               <place xml:id="Q112197">
+                  <placeName>Kuchary</placeName>
+                  <location>
+                     <geo>50.16888002800006, 20.45277229000004</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q112197</idno>
+                  <note>część wsi: Kuchary (gmina: Nowe Brzesko, powiat: proszowicki, wojewódzwo: małopolskie)</note>
+               </place>
                <place xml:id="Q74708">
                   <placeName>Siedlec</placeName>
+                  <location>
+                     <geo>50.69932899900005, 19.371131505000008</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q74708</idno>
                   <note>wieś (gmina: Janów, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
-               <place xml:id="Q49373">
+               <place xml:id="Q51796">
                   <placeName>Lgota</placeName>
-                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q49373</idno>
-                  <note>wieś (gmina: Kłobuck, powiat: kłobucki, wojewódzwo: śląskie)</note>
+                  <location>
+                     <geo>50.40263196400011, 19.76973878300007</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q51796</idno>
+                  <note>wieś (gmina: Wolbrom, powiat: olkuski, wojewódzwo: małopolskie)</note>
                </place>
                <place xml:id="Q48216">
                   <placeName>Kusięta</placeName>
+                  <location>
+                     <geo>50.77621217700003, 19.264406651000066</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q48216</idno>
                   <note>wieś (gmina: Olsztyn, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q72807">
                   <placeName>Rudniki</placeName>
+                  <location>
+                     <geo>50.87876694700003, 19.25131961500009</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q72807</idno>
                   <note>wieś (gmina: Rędziny, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q71431">
                   <placeName>Rędziny</placeName>
+                  <location>
+                     <geo>50.85925536700007, 19.21443797000008</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q71431</idno>
                   <note>wieś (gmina: Rędziny, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q89755">
                   <placeName>Wyczerpy</placeName>
+                  <location>
+                     <geo>50.84188530100005, 19.17446302499998</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q89755</idno>
                   <note>część miasta: Częstochowa (gmina: Częstochowa, powiat: Częstochowa, wojewódzwo: śląskie)</note>
                </place>
+               <place xml:id="Q53446">
+                  <placeName>Małusz</placeName>
+                  <location>
+                     <geo>50.79577134700005, 19.32422630100005</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q53446</idno>
+                  <note>wieś (gmina: Mstów, powiat: częstochowski, wojewódzwo: śląskie)</note>
+               </place>
                <place xml:id="Q22598">
                   <placeName>Brzyszów</placeName>
+                  <location>
+                     <geo>50.79696107800002, 19.285631443000035</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q22598</idno>
                   <note>wieś (gmina: Mstów, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q93120">
                   <placeName>Zawada</placeName>
+                  <location>
+                     <geo>50.81690096000005, 19.329270758000064</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q93120</idno>
                   <note>wieś (gmina: Mstów, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q56900">
                   <placeName>Mstów</placeName>
+                  <location>
+                     <geo>50.82879826600003, 19.288201261000022</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q56900</idno>
                   <note>wieś (gmina: Mstów, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q89424">
                   <placeName>Wrocław</placeName>
+                  <location>
+                     <geo>51.10784175, 17.03865614</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q89424</idno>
                   <note>miasto (gmina: Wrocław, powiat: Wrocław, wojewódzwo: dolnośląskie)</note>
                </place>
                <place xml:id="Q64804">
                   <placeName>Pilica</placeName>
+                  <location>
+                     <geo>50.47094833200003, 19.66056914200002</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q64804</idno>
                   <note>miasto (gmina: Pilica, powiat: zawierciański, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q61275">
                   <placeName>Olsztyn</placeName>
+                  <location>
+                     <geo>50.75217962100005, 19.269165573000112</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q61275</idno>
                   <note>miasto (gmina: Olsztyn, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q74149">
                   <placeName>Sandomierz</placeName>
+                  <location>
+                     <geo>50.67934835, 21.74956218</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q74149</idno>
                   <note>miasto (gmina: Sandomierz, powiat: sandomierski, wojewódzwo: świętokrzyskie)</note>
                </place>
                <place xml:id="Q50743">
                   <placeName>Lusławice</placeName>
+                  <location>
+                     <geo>50.76838095800007, 19.39711521900002</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q50743</idno>
                   <note>wieś (gmina: Janów, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q48895">
                   <placeName>Lelów</placeName>
+                  <location>
+                     <geo>50.50295598800006, 20.394139094000057</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q48895</idno>
                   <note>część wsi: Wrocieryż (gmina: Michałów, powiat: pińczowski, wojewódzwo: świętokrzyskie)</note>
                </place>
                <place xml:id="Q56366">
                   <placeName>Mokrzeszą</placeName>
+                  <location>
+                     <geo>50.81021188200005, 19.390405139000045</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q56366</idno>
                   <note>wieś (gmina: Mstów, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q55662">
                   <placeName>Mirów</placeName>
+                  <location>
+                     <geo>50.817138907000064, 19.19825763500003</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q55662</idno>
                   <note>część miasta: Częstochowa (gmina: Częstochowa, powiat: Częstochowa, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q26724">
                   <placeName>Częstochowa</placeName>
+                  <location>
+                     <geo>50.81356971500003, 19.130442996000028</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q26724</idno>
                   <note>miasto (gmina: Częstochowa, powiat: Częstochowa, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q54827">
                   <placeName>Miechów</placeName>
+                  <location>
+                     <geo>50.35956371900004, 20.03052770900003</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q54827</idno>
                   <note>miasto (gmina: Miechów, powiat: miechowski, wojewódzwo: małopolskie)</note>
                </place>
                <place xml:id="Q94877">
                   <placeName>Żarnowiec</placeName>
+                  <location>
+                     <geo>49.691537410000144, 21.66439390000097</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q94877</idno>
                   <note>wieś (gmina: Jedlicze, powiat: krośnieński, wojewódzwo: podkarpackie)</note>
                </place>
                <place xml:id="Q42930">
                   <placeName>Kłobuck</placeName>
+                  <location>
+                     <geo>50.90565485600011, 18.94127584600007</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q42930</idno>
                   <note>miasto (gmina: Kłobuck, powiat: kłobucki, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q47105">
                   <placeName>Krzepice</placeName>
+                  <location>
+                     <geo>50.73340288100006, 19.84331174700005</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q47105</idno>
                   <note>wieś (gmina: Secemin, powiat: włoszczowski, wojewódzwo: świętokrzyskie)</note>
                </place>
                <place xml:id="Q46531">
                   <placeName>Kromołów</placeName>
+                  <location>
+                     <geo>50.494267050000055, 19.49786159800006</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q46531</idno>
                   <note>część miasta: Zawiercie (gmina: Zawiercie, powiat: zawierciański, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q68902">
                   <placeName>Proszowice</placeName>
+                  <location>
+                     <geo>50.19318038500007, 20.29413651199999</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q68902</idno>
                   <note>miasto (gmina: Proszowice, powiat: proszowicki, wojewódzwo: małopolskie)</note>
                </place>
                <place xml:id="Q22289">
                   <placeName>Brzeźnica</placeName>
+                  <location>
+                     <geo>49.95799092000004, 20.490066467000087</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q22289</idno>
                   <note>wieś (gmina: Bochnia, powiat: bocheński, wojewódzwo: małopolskie)</note>
                </place>
+               <place xml:id="Q128555">
+                  <placeName>Borowy</placeName>
+                  <location>
+                     <geo>50.761935411000046, 19.261789244000056</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q128555</idno>
+                  <note>część miasta: Olsztyn (gmina: Olsztyn, powiat: częstochowski, wojewódzwo: śląskie)</note>
+               </place>
                <place xml:id="Q25384">
                   <placeName>Ciecierzyn</placeName>
+                  <location>
+                     <geo>50.74242383100004, 19.33721815800006</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q25384</idno>
                   <note>część wsi: Zrębice (gmina: Olsztyn, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q19657">
                   <placeName>Biskupice</placeName>
+                  <location>
+                     <geo>50.35033141100004, 19.98822089200007</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q19657</idno>
                   <note>wieś (gmina: Miechów, powiat: miechowski, wojewódzwo: małopolskie)</note>
                </place>
                <place xml:id="Q23382">
                   <placeName>Bukowno</placeName>
+                  <location>
+                     <geo>50.76241130400005, 19.366009636000094</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q23382</idno>
+                  <note>wieś (gmina: Olsztyn, powiat: częstochowski, wojewódzwo: śląskie)</note>
+               </place>
+               <place xml:id="Q66263">
+                  <placeName>Przemiłowice</placeName>
+                  <location>
+                     <geo>50.75817586300006, 19.33379173400008</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q66263</idno>
                   <note>wieś (gmina: Olsztyn, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q84339">
                   <placeName>Turów</placeName>
+                  <location>
+                     <geo>50.77002557900005, 19.32151371500008</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q84339</idno>
                   <note>wieś (gmina: Olsztyn, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
-               <place xml:id="Q92697">
+               <place xml:id="Q94456">
                   <placeName>Zrębice</placeName>
-                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q92697</idno>
-                  <note>wieś (gmina: Przyrów, powiat: częstochowski, wojewódzwo: śląskie)</note>
+                  <location>
+                     <geo>50.72243635900005, 19.331507451000054</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q94456</idno>
+                  <note>część wsi: Zrębice (gmina: Olsztyn, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q179318">
                   <placeName>Rybna</placeName>
+                  <location>
+                     <geo>50.93182892700001, 19.125446129000046</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q179318</idno>
                   <note>osada historyczna (parafia Mykanów, powiat lelowski, województwo krakowskie, stan na 2 poł. XVI wieku)</note>
                </place>
                <place xml:id="Q26725">
                   <placeName>Częstochówka</placeName>
+                  <location>
+                     <geo>50.81880452900003, 19.100937680000065</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q26725</idno>
                   <note>część miasta: Częstochowa (gmina: Częstochowa, powiat: Częstochowa, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q41551">
                   <placeName>Kawodrza</placeName>
+                  <location>
+                     <geo>50.80476571, 19.080474315000043</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q41551</idno>
                   <note>część miasta: Częstochowa (gmina: Częstochowa, powiat: Częstochowa, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q80880">
                   <placeName>Szarlejka</placeName>
+                  <location>
+                     <geo>50.84078480100002, 19.02687695599999</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q80880</idno>
                   <note>wieś (gmina: Wręczyca Wielka, powiat: kłobucki, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q38480">
                   <placeName>Jaskrów</placeName>
+                  <location>
+                     <geo>50.834413793000046, 19.250415419999985</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q38480</idno>
                   <note>wieś (gmina: Mstów, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
+               <place xml:id="Q44204">
+                  <placeName>Kunin</placeName>
+                  <location>
+                     <geo>50.866393750000015, 19.26297897400004</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q44204</idno>
+                  <note>wieś (gmina: Rędziny, powiat: częstochowski, wojewódzwo: śląskie)</note>
+               </place>
                <place xml:id="Q95138">
                   <placeName>Żerkowice</placeName>
+                  <location>
+                     <geo>50.512160597000026, 19.53959734400008</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q95138</idno>
                   <note>część miasta: Zawiercie (gmina: Zawiercie, powiat: zawierciański, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q71094">
                   <placeName>Rawa</placeName>
+                  <location>
+                     <geo>50.16807469100008, 20.155604292000096</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q71094</idno>
                   <note>wieś (gmina: Kocmyrzów-Luborzyca, powiat: krakowski, wojewódzwo: małopolskie)</note>
                </place>
                <place xml:id="Q19836">
                   <placeName>Błeszno</placeName>
+                  <location>
+                     <geo>50.76755094000004, 19.154427963000085</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q19836</idno>
                   <note>część miasta: Częstochowa (gmina: Częstochowa, powiat: Częstochowa, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q57204">
                   <placeName>Mzurów</placeName>
+                  <location>
+                     <geo>50.66506476100005, 19.51342327300005</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q57204</idno>
                   <note>wieś (gmina: Niegowa, powiat: myszkowski, wojewódzwo: śląskie)</note>
                </place>
+               <place xml:id="Q57152">
+                  <placeName>Mysłowice</placeName>
+                  <location>
+                     <geo>50.186637501000064, 19.48027792200001</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q57152</idno>
+                  <note>wieś (gmina: Trzebinia, powiat: chrzanowski, wojewódzwo: małopolskie)</note>
+               </place>
                <place xml:id="Q26732">
                   <placeName>Częstoszowice</placeName>
+                  <location>
+                     <geo>50.43044191399999, 20.154497627000083</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q26732</idno>
                   <note>wieś (gmina: Książ Wielki, powiat: miechowski, wojewódzwo: małopolskie)</note>
                </place>
                <place xml:id="Q22070">
                   <placeName>Brzezie</placeName>
+                  <location>
+                     <geo>50.12830898100002, 19.825557543000052</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q22070</idno>
                   <note>wieś (gmina: Zabierzów, powiat: krakowski, wojewódzwo: małopolskie)</note>
                </place>
                <place xml:id="Q48534">
                   <placeName>Lanckorona</placeName>
+                  <location>
+                     <geo>49.84680521500008, 19.71266213900006</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q48534</idno>
                   <note>wieś (gmina: Lanckorona, powiat: wadowicki, wojewódzwo: małopolskie)</note>
                </place>
                <place xml:id="Q87972">
                   <placeName>Wodzisław</placeName>
+                  <location>
+                     <geo>50.52038554000005, 20.19334232900012</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q87972</idno>
                   <note>miasto (gmina: Wodzisław, powiat: jędrzejowski, wojewódzwo: świętokrzyskie)</note>
                </place>
                <place xml:id="Q81225">
                   <placeName>Szczytniki</placeName>
+                  <location>
+                     <geo>50.24124549700007, 20.29032937500008</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q81225</idno>
                   <note>wieś (gmina: Proszowice, powiat: proszowicki, wojewódzwo: małopolskie)</note>
                </place>
                <place xml:id="Q81607">
                   <placeName>Szreniawa</placeName>
+                  <location>
+                     <geo>50.37696265600005, 19.871481141000096</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q81607</idno>
                   <note>wieś (gmina: Gołcza, powiat: miechowski, wojewódzwo: małopolskie)</note>
                </place>
-               <place xml:id="Q69678">
+               <place xml:id="Q69667">
                   <placeName>Przyłęk</placeName>
-                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q69678</idno>
+                  <location>
+                     <geo>50.55539336000005, 20.249081202000102</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q69667</idno>
                   <note>wieś (gmina: Wodzisław, powiat: jędrzejowski, wojewódzwo: świętokrzyskie)</note>
                </place>
                <place xml:id="Q22358">
                   <placeName>Brzostek</placeName>
+                  <location>
+                     <geo>50.71270157000006, 19.778114515000063</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q22358</idno>
                   <note>wieś (gmina: Szczekociny, powiat: zawierciański, wojewódzwo: śląskie)</note>
                </place>
-               <place xml:id="Q72778">
+               <place xml:id="Q109481">
+                  <placeName>Wierzbie</placeName>
+                  <location>
+                     <geo>50.42028756400001, 19.860586604000087</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q109481</idno>
+                  <note>część wsi: Wierzbie (gmina: Charsznica, powiat: miechowski, wojewódzwo: małopolskie)</note>
+               </place>
+               <place xml:id="Q41418">
                   <placeName>Rudnik</placeName>
-                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q72778</idno>
-                  <note>wieś (gmina: Sułkowice, powiat: myślenicki, wojewódzwo: małopolskie)</note>
+                  <location>
+                     <geo>49.91035047700006, 20.09806223800009</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q41418</idno>
+                  <note>część wsi: Rudnik (gmina: Dobczyce, powiat: myślenicki, wojewódzwo: małopolskie)</note>
                </place>
                <place xml:id="Q47253">
                   <placeName>Krzyszkowice</placeName>
+                  <location>
+                     <geo>50.21780174600009, 20.47580547300005</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q47253</idno>
                   <note>wieś (gmina: Kazimierza Wielka, powiat: kazimierski, wojewódzwo: świętokrzyskie)</note>
                </place>
                <place xml:id="Q88811">
                   <placeName>Wolwanowice</placeName>
+                  <location>
+                     <geo>50.182585723000045, 20.429548751000016</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q88811</idno>
                   <note>wieś (gmina: Proszowice, powiat: proszowicki, wojewódzwo: małopolskie)</note>
                </place>
+               <place xml:id="Q100505">
+                  <placeName>Szczekociny</placeName>
+                  <location>
+                     <geo>50.62680302800003, 19.821420706000005</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q100505</idno>
+                  <note>część miasta: Szczekociny (gmina: Szczekociny, powiat: zawierciański, wojewódzwo: śląskie)</note>
+               </place>
                <place xml:id="Q77407">
                   <placeName>Srocko</placeName>
+                  <location>
+                     <geo>50.797389380000034, 19.26274102800001</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q77407</idno>
                   <note>wieś (gmina: Mstów, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q46084">
                   <placeName>Krasawa</placeName>
+                  <location>
+                     <geo>50.70554218600007, 19.34245297200008</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q46084</idno>
                   <note>wieś (gmina: Olsztyn, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
+               <place xml:id="Q111211">
+                  <placeName>Tęgoborze</placeName>
+                  <location>
+                     <geo>49.70707684600007, 20.636158292000086</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q111211</idno>
+                  <note>część wsi: Tęgoborze (gmina: Łososina Dolna, powiat: nowosądecki, wojewódzwo: małopolskie)</note>
+               </place>
                <place xml:id="Q18799">
                   <placeName>Biała</placeName>
+                  <location>
+                     <geo>50.59982588900005, 19.635079166000047</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q18799</idno>
                   <note>wieś (gmina: Kroczyce, powiat: zawierciański, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q37062">
                   <placeName>Irządze</placeName>
+                  <location>
+                     <geo>50.62823070500009, 19.687219105000025</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q37062</idno>
                   <note>wieś (gmina: Irządze, powiat: zawierciański, wojewódzwo: śląskie)</note>
                </place>
-               <place xml:id="Q43246">
+               <place xml:id="Q110330">
                   <placeName>Kobyle</placeName>
-                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q43246</idno>
-                  <note>wieś (gmina: Nowy Wiśnicz, powiat: bocheński, wojewódzwo: małopolskie)</note>
+                  <location>
+                     <geo>49.73662023400004, 20.737580439000084</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q110330</idno>
+                  <note>część wsi: Gródek nad Dunajcem (gmina: Gródek nad Dunajcem, powiat: nowosądecki, wojewódzwo: małopolskie)</note>
                </place>
                <place xml:id="Q27566">
                   <placeName>Dąbrowno</placeName>
+                  <location>
+                     <geo>50.67291698200005, 19.54411832000009</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q27566</idno>
                   <note>wieś (gmina: Niegowa, powiat: myszkowski, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q57533">
                   <placeName>Nakło</placeName>
+                  <location>
+                     <geo>50.657973967000025, 19.72838378000002</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q57533</idno>
                   <note>wieś (gmina: Lelów, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q49800">
                   <placeName>Lipnica</placeName>
+                  <location>
+                     <geo>49.78105587500007, 21.386365862000456</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q49800</idno>
                   <note>wieś (gmina: Brzyska, powiat: jasielski, wojewódzwo: podkarpackie)</note>
                </place>
                <place xml:id="Q49831">
                   <placeName>Lipnik</placeName>
+                  <location>
+                     <geo>50.77547175200004, 19.438470251000027</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q49831</idno>
                   <note>wieś (gmina: Janów, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q94859">
                   <placeName>Żarki</placeName>
+                  <location>
+                     <geo>50.626041601000026, 19.36803820600002</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q94859</idno>
                   <note>miasto (gmina: Żarki, powiat: myszkowski, wojewódzwo: śląskie)</note>
                </place>
+               <place xml:id="Q46043">
+                  <placeName>Krak</placeName>
+                  <location>
+                     <geo>50.0617812, 19.93736971</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q46043</idno>
+                  <note>miasto (gmina: Kraków, powiat: Kraków, wojewódzwo: małopolskie)</note>
+               </place>
                <place xml:id="Q26360">
                   <placeName>Czchów</placeName>
+                  <location>
+                     <geo>49.83622923100003, 20.677146887000077</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q26360</idno>
                   <note>miasto (gmina: Czchów, powiat: brzeski, wojewódzwo: małopolskie)</note>
                </place>
                <place xml:id="Q75461">
                   <placeName>Skarżyce</placeName>
+                  <location>
+                     <geo>50.52638977400007, 19.51037756300009</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q75461</idno>
                   <note>część miasta: Zawiercie (gmina: Zawiercie, powiat: zawierciański, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q41593">
                   <placeName>Kazimierz</placeName>
+                  <location>
+                     <geo>50.05223598400004, 19.94223253500006</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q41593</idno>
                   <note>część miasta: Kraków (gmina: Kraków, powiat: Kraków, wojewódzwo: małopolskie)</note>
                </place>
                <place xml:id="Q88953">
                   <placeName>Woźniki</placeName>
+                  <location>
+                     <geo>50.6287065970001, 19.626007470000054</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q88953</idno>
                   <note>wieś (gmina: Irządze, powiat: zawierciański, wojewódzwo: śląskie)</note>
                </place>
+               <place xml:id="Q107795">
+                  <placeName>Czechy</placeName>
+                  <location>
+                     <geo>50.22708532400001, 20.14951287200008</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q107795</idno>
+                  <note>część wsi: Czechy (gmina: Słomniki, powiat: krakowski, wojewódzwo: małopolskie)</note>
+               </place>
                <place xml:id="Q45221">
                   <placeName>Kościelec</placeName>
+                  <location>
+                     <geo>50.13547909000005, 19.41692477300009</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q45221</idno>
                   <note>część miasta: Chrzanów (gmina: Chrzanów, powiat: chrzanowski, wojewódzwo: małopolskie)</note>
                </place>
                <place xml:id="Q23775">
                   <placeName>Bzów</placeName>
+                  <location>
+                     <geo>50.47242359800002, 19.51851532000009</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q23775</idno>
                   <note>część miasta: Zawiercie (gmina: Zawiercie, powiat: zawierciański, wojewódzwo: śląskie)</note>
                </place>
-               <place xml:id="Q33404">
+               <place xml:id="Q95494">
+                  <placeName>Żyd</placeName>
+                  <location>
+                     <geo>49.47067898100008, 21.47757060200061</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q95494</idno>
+                  <note>osada (gmina: Krempna, powiat: jasielski, wojewódzwo: podkarpackie)</note>
+               </place>
+               <place xml:id="Q33413">
                   <placeName>Gorzków</placeName>
-                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q33404</idno>
-                  <note>wieś (gmina: Kazimierza Wielka, powiat: kazimierski, wojewódzwo: świętokrzyskie)</note>
+                  <location>
+                     <geo>50.67981741900009, 19.49034250100001</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q33413</idno>
+                  <note>wieś (gmina: Niegowa, powiat: myszkowski, wojewódzwo: śląskie)</note>
                </place>
                <place xml:id="Q78492">
                   <placeName>Staromieście</placeName>
+                  <location>
+                     <geo>50.67315492800006, 19.614550366000017</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q78492</idno>
                   <note>wieś (gmina: Lelów, powiat: częstochowski, wojewódzwo: śląskie)</note>
                </place>
-               <place xml:id="Q47528">
+               <place xml:id="Q47531">
                   <placeName>Książ</placeName>
-                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q47528</idno>
+                  <location>
+                     <geo>50.442785368000045, 20.142213660000007</geo>
+                  </location>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q47531</idno>
                   <note>wieś (gmina: Książ Wielki, powiat: miechowski, wojewódzwo: małopolskie)</note>
                </place>
                <place xml:id="Q47531">
                   <placeName>Książ wielki</placeName>
+                  <location>
+                     <geo>50.442785368000045, 20.142213660000007</geo>
+                  </location>
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q47531</idno>
                   <note>wieś (gmina: Książ Wielki, powiat: miechowski, wojewódzwo: małopolskie)</note>
                </place>
@@ -497,8 +806,8 @@
             </p>
             <p>
                Treść hasła: 1. Przynależność administracyjna i kościelna. 2. -a. Położenie i <objectName type="fiz" subtype="granica">granice</objectName>, -b. Obiekty topograficzne, -c. Obiekty gospodarcze, -d. Drogi, <objectName type="obj" subtype="most">mosty</objectName>, cło, -e. Zabudowa. 3. -a. Sprawy własnościowe, -b. Powinności, -c. Handel, zasięg terytorialny rynku lokalnego mstow., -d. Rzemiosło miejskie, rzemieślnicy i zawody artystyczne, -e. Mieszczanie, -f. Majątek mieszczan, -g. Majątek miasta, -h. <roleName type="miejski" subtype="rajca">Rajcy</roleName>. 4. -a. Lokacja, -b. <roleName type="miejski" subtype="wójt">Wójtowie</roleName>, wójtostwo, <roleName type="miejski" subtype="podwójt">podwójciowie</roleName>, -c. <roleName type="miejski" subtype="ławnik">Ławnicy</roleName>, <roleName type="miejski" subtype="przysiężny">przysięgli</roleName>, -d. Sąd gajony-ławniczy. 5. Kościół, kaplica w mieście. 6. -aa. Duchowni pochodzący z <placeName>M.</placeName> -ab. Osoby z <placeName>M.</placeName> egzaminowane do święceń kapłańskich, -b. Studenci <orgName>Uniw. Krak.</orgName> pochodzący z <placeName>M.</placeName>, -c. Osoby z <placeName>M.</placeName> przyjęte do pr. miej. w <placeName ref="#Q46043">Krakowie</placeName> i zamieszkujące w tym mieście, -d. Osoby z <placeName>M.</placeName> zamieszkujące w innych miastach, -e. Pobyty panujących, -f. Posiedzenia sądowe w <placeName>M.</placeName>, -g. Ważne wydarzenia i incydenty, 7. -a. Źródła, dodatkowe skróty, -b. Literatura, 8. Kultura materialna. Uw.
-            </p>
-         </div>
+               </p>
+            </div>
 
          <div type="point" n="1">
             <p>1. </p>
@@ -518,12 +827,12 @@
          <div type="point" n="2a">
             <p>2a. Położenie i <objectName type="fiz" subtype="granica">granice</objectName>. </p>
             <p>
-               <seg><date when="1446">1446</date> <persName>Dziersław z Kłobukowic</persName> rozgranicza swoją wieś <placeName>Kłobukowice</placeName> od miasta <placeName>M.</placeName> i wsi <placeName>Kuchary</placeName> (<bibl><title>Bon. 10 </title> <biblScope>s. 158</biblScope></bibl>);</seg>
+               <seg><date when="1446">1446</date> <persName>Dziersław z Kłobukowic</persName> rozgranicza swoją wieś <placeName>Kłobukowice</placeName> od miasta <placeName>M.</placeName> i wsi <placeName ref="#Q112197">Kuchary</placeName> (<bibl><title>Bon. 10 </title> <biblScope>s. 158</biblScope></bibl>);</seg>
                <seg><date when="1456">1456</date> miasto <placeName>M.</placeName> położone za [nad] <objectName type="fiz" subtype="rzeka">rz.</objectName> <geogName>Wartą</geogName> w diec. <placeName>krak</placeName>. (<bibl><title>DLb. 3 </title> <biblScope>s. 160—1</biblScope></bibl>);</seg>
                <seg><date when="1470">1470</date> <placeName>Małusze Stare</placeName> k. <placeName>M.</placeName>  (<bibl><title>ZK 314 </title> <biblScope>s. 262</biblScope></bibl>);</seg>
-               <seg><date from="1470" to="1480"> 1470—80</date> miasto <placeName>M.</placeName> graniczy z wsiami: <placeName ref="#Q74708">Siedlec</placeName>, <placeName ref="#Q49373">Lgota</placeName>, <placeName ref="#Q48216">Kusięta</placeName>, <placeName>Małusze</placeName>, <placeName>Klobukowice</placeName> [ziemia sier.], <placeName>Rzerzęczyce</placeName> [ziemia sier.], <placeName>Chorzemice</placeName> [ziemia sier.], <placeName ref="#Q72807">Rudniki</placeName>, <placeName ref="#Q71431">Rędziny</placeName> i <placeName ref="#Q89755">Wyczerpy</placeName> (<bibl><title>DLb. 3 </title> <biblScope>s. 150</biblScope></bibl>);</seg>
+               <seg><date from="1470" to="1480"> 1470—80</date> miasto <placeName>M.</placeName> graniczy z wsiami: <placeName ref="#Q74708">Siedlec</placeName>, <placeName ref="#Q51796">Lgota</placeName>, <placeName ref="#Q48216">Kusięta</placeName>, <placeName>Małusze</placeName>, <placeName>Klobukowice</placeName> [ziemia sier.], <placeName>Rzerzęczyce</placeName> [ziemia sier.], <placeName>Chorzemice</placeName> [ziemia sier.], <placeName ref="#Q72807">Rudniki</placeName>, <placeName ref="#Q71431">Rędziny</placeName> i <placeName ref="#Q89755">Wyczerpy</placeName> (<bibl><title>DLb. 3 </title> <biblScope>s. 150</biblScope></bibl>);</seg>
                <seg><date when="1479">1479</date> wieś <placeName ref="#Q74708">Siedlec</placeName> leżąca k. <placeName>M.</placeName>  (<bibl><title>AG perg. 5213</title></bibl>; <bibl><title> Nabiałek, Starostwo olsztyńskie → p. 7, </title> <biblScope>s. 436</biblScope></bibl>);</seg>
-               <seg><date when="1513">1513</date> <roleName type="ziemski" subtype="podkomorzy">pkom. krak.</roleName> rozgranicza <placeName>M.</placeName>, należący do miejscowego <objectName type="obj" subtype="klasztor">kl.</objectName> od <placeName>Starych i</placeName> Średnich [Pośrednich] <placeName>Małusz</placeName>, należących do <persName>Samsona Koskowskiego</persName>, <persName>Tomasza</persName>, <persName>Filipa</persName>, <persName>Mik. Wójcika</persName> i <persName>Jana Ćwiczka</persName>. Granica zaczyna się od <objectName type="fiz" subtype="narożnik">narożnika</objectName> między <placeName ref="#Q49373">Lgotą</placeName>, <placeName>Starymi Małuszami</placeName> i <placeName>Brzyskowem</placeName> [dziś wieś <placeName ref="#Q22598">Brzyszów</placeName>] <geogName>„seu”</geogName> <placeName>M.</placeName>, a następnie wiedzie przez pola i zarośla <placeName>Brzysków</placeName> i dalej poprzez <objectName type="fiz" subtype="góra">górę</objectName> zw. <geogName>Skarzawa</geogName> do <objectName type="fiz" subtype="droga">drogi</objectName> z <placeName>M.</placeName> do <placeName>Starych Małusz</placeName> i przez następne <objectName type="fiz" subtype="wzgórze">wzgórza</objectName>, zarośla, pola, doły do <objectName type="fiz" subtype="góra">góry</objectName> za wielkim dołem, aż do <objectName type="fiz" subtype="ściana">ściany</objectName> wsi <placeName ref="#Q93120">Zawada</placeName> (<bibl><title>Kopiarz mstowski </title> <biblScope>s. 97—9</biblScope></bibl>).</seg>
+               <seg><date when="1513">1513</date> <roleName type="ziemski" subtype="podkomorzy">pkom. krak.</roleName> rozgranicza <placeName>M.</placeName>, należący do miejscowego <objectName type="obj" subtype="klasztor">kl.</objectName> od <placeName>Starych i</placeName> Średnich [Pośrednich] <placeName ref="#Q53446">Małusz</placeName>, należących do <persName>Samsona Koskowskiego</persName>, <persName>Tomasza</persName>, <persName>Filipa</persName>, <persName>Mik. Wójcika</persName> i <persName>Jana Ćwiczka</persName>. Granica zaczyna się od <objectName type="fiz" subtype="narożnik">narożnika</objectName> między <placeName ref="#Q51796">Lgotą</placeName>, <placeName>Starymi Małuszami</placeName> i <placeName>Brzyskowem</placeName> [dziś wieś <placeName ref="#Q22598">Brzyszów</placeName>] <geogName>„seu”</geogName> <placeName>M.</placeName>, a następnie wiedzie przez pola i zarośla <placeName>Brzysków</placeName> i dalej poprzez <objectName type="fiz" subtype="góra">górę</objectName> zw. <geogName>Skarzawa</geogName> do <objectName type="fiz" subtype="droga">drogi</objectName> z <placeName>M.</placeName> do <placeName>Starych Małusz</placeName> i przez następne <objectName type="fiz" subtype="wzgórze">wzgórza</objectName>, zarośla, pola, doły do <objectName type="fiz" subtype="góra">góry</objectName> za wielkim dołem, aż do <objectName type="fiz" subtype="ściana">ściany</objectName> wsi <placeName ref="#Q93120">Zawada</placeName> (<bibl><title>Kopiarz mstowski </title> <biblScope>s. 97—9</biblScope></bibl>).</seg>
             </p>
          </div>
 
@@ -531,7 +840,7 @@
             <p>-b. Obiekty topograficzne. </p>
             <p>
                <seg><date when="1406">1406</date>, <date when="1513">1513</date>niwa i <objectName type="fiz" subtype="góra">góra</objectName> zw. <geogName>Skarzawa</geogName> w <placeName>Starych Małusach</placeName> [dziś pole <geogName>Skarzawa</geogName> w <placeName>Małusach Małych</placeName> i <placeName>M.</placeName> — UN 202 s. 23; Mapa Obrębów] (<bibl><title>ZK 311 </title> <biblScope>s. 54</biblScope></bibl>; <bibl><title> Kopiarz mstowski </title> <biblScope>s. 97—9</biblScope></bibl>);</seg>
-               <seg><date when="1417">1417</date> łąka w <placeName>Gadoku</placeName> (in <placeName>Gadok</placeName>) [dziś łąki i pastwiska <geogName>Gatka</geogName> w <placeName>M.</placeName> — UN 202 s. 23] → p. 3e (<bibl><title>ZDM 1</title>, <biblScope> 317</biblScope></bibl>);</seg>
+               <seg><date when="1417">1417</date> <objectName type="fiz" subtype="łąka">łąka</objectName> w <placeName>Gadoku</placeName> (in <placeName>Gadok</placeName>) [dziś <objectName type="fiz" subtype="łąka">łąki</objectName> i pastwiska <geogName>Gatka</geogName> w <placeName>M.</placeName> — UN 202 s. 23] → p. 3e (<bibl><title>ZDM 1</title>, <biblScope> 317</biblScope></bibl>);</seg>
                <seg><date when="1437">1437</date> <geogName>Góra Rudna</geogName> żelazna w <placeName>M.</placeName> → <placeName ref="#Q56900">Mstów</placeName> <objectName type="obj" subtype="klasztor">klasztor</objectName> p. 3a (<bibl><title>ZK 313 </title> <biblScope>s. 42</biblScope></bibl>);</seg>
                <seg><date when="1456">1456</date>, <date from="1470" to="1480"> 1470—80</date> , <date when="1570">1570</date>, <date when="1598">1598</date><objectName type="fiz" subtype="rzeka">rz.</objectName> Warta (<bibl><title>DLb. 3 </title> <biblScope>s. 149—50</biblScope></bibl>; <bibl><title> 160—1</title></bibl>; <bibl><title> LDK </title> <biblScope>s. 66</biblScope></bibl>; <bibl><title> WR k. 114v</title></bibl>);</seg>
                <seg><date when="1464">1464</date> siostry rodz. <persName>Elżbieta</persName> wd. po <persName>Janie z Sowiny</persName> [niezid.], <persName>Katarzyna</persName> ż. <persName>Jana z M.</persName> i <persName>Jadwiga</persName> ż. Szczepana z <placeName>Chomętowa</placeName> [niezid.] dzielą się dobrami po ojcu w → <placeName>Małuszach Starych</placeName> i Pośrednich. <persName>Elżbiecie</persName> przypada m.in. łan na <placeName>Rędzinkach</placeName> [dziś pole <placeName>Rędzina</placeName> w <placeName>Małusach Małych</placeName> i pole <placeName>Rędzinki</placeName> w <placeName>M.</placeName> — UN 202 s. 23], <persName>Katarzynie</persName> przypada m.in. niwa pod miastem <placeName>M.</placeName>, trzecia cz. <objectName type="fiz" subtype="gaj">gajów</objectName> od strony miasta [<placeName>M.</placeName>], <persName>Jadwidze</persName> przypada m.in. niwa pod <placeName>M.</placeName> k. <placeName>Brzeszczanki</placeName> (<bibl><title>ZK 314 </title> <biblScope>s. 173—4</biblScope></bibl>);</seg>
@@ -636,7 +945,7 @@
                <seg><date when="1547">1547</date> <persName>Zygmunt I</persName> poleca <persName ref="#Q164288">Piotrowi Opalińskiemu</persName> <roleName type="ziemski" subtype="kasztelan">kaszt. gnieźn.</roleName>, <roleName type="ziemski" subtype="starosta">star. kościańskiemu</roleName> i <placeName>olsztyńskiemu</placeName>, by uwzględnił prośby prowincjała <objectName type="obj" subtype="klasztor">kl.</objectName> <orgName>Paulinów</orgName> z <placeName ref="#Q26724">Częstochowy</placeName> i utrzymał oddawanie przez poddanych klaszt. daniny w owsie w mierze wiel. rezygnując tym samym z miary <placeName>mstow</placeName>. (<bibl><title>DP 2</title>, <biblScope> 745</biblScope></bibl>);</seg>
                <seg><date when="1548">1548</date> tenże król uwzględniając prośby <persName>Wojciecha</persName> prowincjała <objectName type="obj" subtype="klasztor">kl.</objectName> <orgName>Paulinów</orgName> z <placeName ref="#Q26724">Częstochowy</placeName>, zezwala <persName ref="#Q164288">Piotrowi Opalińskiemu</persName> <roleName type="ziemski" subtype="starosta">star. olsztyńskiemu</roleName> na dożywotnie pobieranie dla <objectName type="obj" subtype="zamek">zamku</objectName> <placeName ref="#Q61275">Olsztyn</placeName> od mieszkańców wsi należących do <objectName type="obj" subtype="klasztor">kl.</objectName> <orgName>paulinów</orgName> daniny owsianej w mierze <placeName>mstow</placeName>. Po śmierci <persName>Piotra</persName> ma obowiązywać danina owsiana według miary wiel. zgodnie z przyw. <persName>Władysława Jag.</persName> [z <date>1393 r.</date> — DP 1, 31] (<bibl><title>DP 2</title>, <biblScope> 755</biblScope></bibl>);</seg>
                <seg><date when="1557">1557</date> niewymienieni imiennie mieszczanie <placeName>mstow</placeName>. wożą ołów z <objectName type="obj" subtype="kopalnia">kopalń</objectName> <placeName>olkuskich</placeName> (<bibl><title>Kiryk, Rozwój → p. 7, </title> <biblScope>s. 175, 407</biblScope></bibl>);</seg>
-               <seg><date when="1564">1564</date> miara zbożowa mstow. [korzec równy i korzec wierzchowaty mstow.] obowiązuje w niektórych posiadłościach stwa <placeName>olsztyńskiego</placeName>, a mianowicie w <objectName type="obj" subtype="folwark">folwarkach</objectName> <placeName>Borowy</placeName>, <placeName ref="#Q25384">Ciecierzyn</placeName>, we wsiach <placeName ref="#Q19657">Biskupice</placeName>, <placeName ref="#Q23382">Bukowno</placeName>, <placeName ref="#Q48216">Kusięta</placeName>, <placeName ref="#Q55662">Mirów</placeName>, <placeName>Przemiłowice</placeName>, <placeName ref="#Q74708">Siedlec</placeName>, <placeName ref="#Q84339">Turów</placeName>, Wierzchowisko, <placeName ref="#Q92697">Zrębice</placeName>, w niektórych wsiach <objectName type="obj" subtype="klasztor">kl.</objectName> <placeName>Klarysek</placeName> z <placeName ref="#Q46043">Krakowa</placeName> zamiennie z miarą <placeName>brzeźnicką</placeName>, a mianowicie w: <placeName>Cykarzewie</placeName>, <placeName>Mykanowie</placeName> i <placeName ref="#Q179318">Rybnej</placeName>, w niektórych wsiach <objectName type="obj" subtype="klasztor">kl.</objectName> Paulinów w <placeName ref="#Q26724">Częstochowie</placeName>, a mianowicie w: <placeName ref="#Q26725">Częstochówce</placeName>, <placeName ref="#Q41551">Kawodrzy</placeName>, <placeName ref="#Q49373">Lgocie</placeName>, <placeName ref="#Q80880">Szarlejce</placeName>, we wsiach <objectName type="obj" subtype="klasztor">kl.</objectName> mstow., a mianowicie w: <placeName ref="#Q38480">Jaskrowie</placeName>, <placeName>Kuninie</placeName>, <placeName ref="#Q93120">Zawadzie</placeName>, <placeName ref="#Q95138">Żerkowicach</placeName>. Służba <objectName type="obj" subtype="zamek">zamku</objectName> <placeName ref="#Q61275">Olsztyn</placeName> uzyskuje słód w mierze słodowej mstow. (<bibl><title>LK 2 </title> <biblScope>s. 22—6, 29—32, 34—5, 37—40</biblScope></bibl>);</seg>
+               <seg><date when="1564">1564</date> miara zbożowa mstow. [korzec równy i korzec wierzchowaty mstow.] obowiązuje w niektórych posiadłościach stwa <placeName>olsztyńskiego</placeName>, a mianowicie w <objectName type="obj" subtype="folwark">folwarkach</objectName> <placeName ref="#Q128555">Borowy</placeName>, <placeName ref="#Q25384">Ciecierzyn</placeName>, we wsiach <placeName ref="#Q19657">Biskupice</placeName>, <placeName ref="#Q23382">Bukowno</placeName>, <placeName ref="#Q48216">Kusięta</placeName>, <placeName ref="#Q55662">Mirów</placeName>, <placeName ref="#Q66263">Przemiłowice</placeName>, <placeName ref="#Q74708">Siedlec</placeName>, <placeName ref="#Q84339">Turów</placeName>, Wierzchowisko, <placeName ref="#Q94456">Zrębice</placeName>, w niektórych wsiach <objectName type="obj" subtype="klasztor">kl.</objectName> <placeName>Klarysek</placeName> z <placeName ref="#Q46043">Krakowa</placeName> zamiennie z miarą <placeName>brzeźnicką</placeName>, a mianowicie w: <placeName>Cykarzewie</placeName>, <placeName>Mykanowie</placeName> i <placeName ref="#Q179318">Rybnej</placeName>, w niektórych wsiach <objectName type="obj" subtype="klasztor">kl.</objectName> Paulinów w <placeName ref="#Q26724">Częstochowie</placeName>, a mianowicie w: <placeName ref="#Q26725">Częstochówce</placeName>, <placeName ref="#Q41551">Kawodrzy</placeName>, <placeName ref="#Q51796">Lgocie</placeName>, <placeName ref="#Q80880">Szarlejce</placeName>, we wsiach <objectName type="obj" subtype="klasztor">kl.</objectName> mstow., a mianowicie w: <placeName ref="#Q38480">Jaskrowie</placeName>, <placeName ref="#Q44204">Kuninie</placeName>, <placeName ref="#Q93120">Zawadzie</placeName>, <placeName ref="#Q95138">Żerkowicach</placeName>. Służba <objectName type="obj" subtype="zamek">zamku</objectName> <placeName ref="#Q61275">Olsztyn</placeName> uzyskuje słód w mierze słodowej mstow. (<bibl><title>LK 2 </title> <biblScope>s. 22—6, 29—32, 34—5, 37—40</biblScope></bibl>);</seg>
                <seg><date when="1566">1566</date> <persName>Zygmunt Szaszowski z Buszkowa</persName> podwojewodzi (vicepalatinus) ksiąski i lel. rekwiruje w <placeName>M.</placeName> podczas jarmarku w dniu ś. <persName>Szymona</persName> i <persName>Judy</persName> postawy sukienne sukiennikom z <placeName ref="#Q71094">Rawy</placeName>, <placeName>Wielunia</placeName> i <placeName ref="#Q48895">Lelowa</placeName> ponieważ nie miały odpowiedniej, określonej w konstytucji szerokości 2 łokci i długości 30 łokci. Sukna te szarego i czarnego koloru były zbyt wąskie, gdyż posiadały 1½ łokcia szerokości (<bibl><title>BJ rps 5348 cz. 2, </title> <biblScope>s. 468</biblScope></bibl>);</seg>
                <seg><date when="1568">1568</date> <persName>Wacław</persName> przewoźnik z <placeName>M.</placeName> (<bibl><title>Kiryk, Rozwój → p. 7, </title> <biblScope>s. 175, 407</biblScope></bibl>).</seg>
             </p>
@@ -647,11 +956,11 @@
             <p>
                <seg><date from="1401" to="1417"> 1401—17</date> <persName>Marcin szewc</persName>, <roleName type="miejski" subtype="rajca">rajca mstow.</roleName> <date when="1417">1417</date> (<bibl><title>KSN 1071</title></bibl>; <bibl><title>ZDM 1</title>, <biblScope> 317</biblScope></bibl>);</seg>
                <seg><date when="1412">1412</date> <persName>Klemens kowal z M.</persName> procesuje się z <roleName type="miejski" subtype="ławnik">przysiężnymi z Kunina</roleName> (<bibl><title>KSN 3091</title></bibl>);</seg>
-               <seg><date when="1413">1413</date> <persName>Grzegorz</persName> zachodźca <roleName type="miejski" subtype="sołtys">sołtysa</roleName> i <roleName type="miejski" subtype="ławnik">ławników</roleName> z <placeName>Kunina</placeName> przekłada termin sąd. z ww. <persName>Klemensem</persName> z powodu choroby (<bibl><title>KSN 3115</title></bibl>);</seg>
+               <seg><date when="1413">1413</date> <persName>Grzegorz</persName> zachodźca <roleName type="miejski" subtype="sołtys">sołtysa</roleName> i <roleName type="miejski" subtype="ławnik">ławników</roleName> z <placeName ref="#Q44204">Kunina</placeName> przekłada termin sąd. z ww. <persName>Klemensem</persName> z powodu choroby (<bibl><title>KSN 3115</title></bibl>);</seg>
                <seg><date from="1417" to="1425"> 1417—25</date> <persName>Kuso</persName> garncarz, <roleName type="miejski" subtype="ławnik">ławnik mstow.</roleName> <date when="1517">1517</date>, <date when="1525">1525</date> (<bibl><title>ZDM 1</title>, <biblScope> 317</biblScope></bibl>);</seg>
                <seg><date when="1425">1425</date> Tworek szewc (<bibl><title>Teut. 1a </title> <biblScope>s. 241</biblScope></bibl>);</seg>
                <seg><date from="1445" to="1447"> 1445—7</date> <persName>Mikołaj tkacz</persName> mąż <persName>Piechny</persName> c. Pielsza z <geogName>Żurawia</geogName>, siostry Pielgrzyma czyli Pielsza z <geogName>Żurawia</geogName> (<bibl><title>ZK 313 </title> <biblScope>s. 284, 344</biblScope></bibl>) <note n="5" type="footnote">Wzmianki o tym tkaczu kładą kres wątpliwościom J. Wyrozumskiego, Tkactwo małopolskie w późnym średniowieczu, Kr. 1972, s. 57, jakoby w M. nie było w średniowieczu sukienników.</note>;</seg>
-               <seg><date when="1445">1445</date> Pielsz z <geogName>Żurawia</geogName> zobowiązuje się zapłacić 20 <unit type="currency" subtype="grzywna">grz.</unit> swej siostrze Piechnie ż. <persName>Mikołaja</persName> (textori) tkacza z <placeName>M.</placeName> pod rygorem wwiązania jej do cz. dziedziny w <geogName>Żurawiu</geogName> z wyjątkiem: <objectName type="fiz" subtype="gaj">gajów</objectName>, <objectName type="fiz" subtype="bór">borów</objectName>, <objectName type="fiz" subtype="zarośle">zarośli</objectName>, <objectName type="fiz" subtype="las">lasów</objectName>, barci i łąki pod <placeName ref="#Q50743">Lusławicami</placeName> (<bibl><title>ZK 313 </title> <biblScope>s. 284</biblScope></bibl>);</seg>
+               <seg><date when="1445">1445</date> Pielsz z <geogName>Żurawia</geogName> zobowiązuje się zapłacić 20 <unit type="currency" subtype="grzywna">grz.</unit> swej siostrze Piechnie ż. <persName>Mikołaja</persName> (textori) tkacza z <placeName>M.</placeName> pod rygorem wwiązania jej do cz. dziedziny w <geogName>Żurawiu</geogName> z wyjątkiem: <objectName type="fiz" subtype="gaj">gajów</objectName>, <objectName type="fiz" subtype="bór">borów</objectName>, <objectName type="fiz" subtype="zarośle">zarośli</objectName>, <objectName type="fiz" subtype="las">lasów</objectName>, barci i <objectName type="fiz" subtype="łąka">łąki</objectName> pod <placeName ref="#Q50743">Lusławicami</placeName> (<bibl><title>ZK 313 </title> <biblScope>s. 284</biblScope></bibl>);</seg>
                <seg><date when="1447">1447</date> Piechna ż. <persName>Mik. Takacza z M.</persName> c. Pielsza z <geogName>Żurawia</geogName> rezygnuje ze swych dóbr ojczystych macierzystych w <geogName>Żurawiu</geogName> na rzecz swego br. rodz. Pielgrzyma z <geogName>Żurawia</geogName> (<bibl><title>ZK 313 </title> <biblScope>s. 344</biblScope></bibl>);</seg>
                <seg><date when="1450">1450</date> <persName>Jan kuśnierz z M.</persName> zobowiązuje się zapłacić 1 <unit type="currency" subtype="wiardunek">wiard.</unit> <persName>Mikołajowi</persName> <roleName type="kościelny_wyższy" subtype="kleryk">klerykowi</roleName> z <placeName ref="#Q19836">Błeszna</placeName> (<bibl><title>OK 9 </title> <biblScope>s. 13</biblScope></bibl>);</seg>
                <seg><date when="1451">1451</date> domniemany przyw. dla cechu rzeźników w <placeName>M.</placeName> (<bibl><title>SG 6, </title> <biblScope>s. 779</biblScope></bibl>) <note n="6" type="footnote">Istnieje duże prawdopodobieństwo wystawienia tego przywileju w tym właśnie czasie, skoro Jan Długosz w DLb. 3, s. 150, spisanym w latach 1470—80, notuje aż 15 jatek rzeźniczych w M., z których każda dawała kl. mstow. z tytułu rocznego czynszu 3 kamienie łoju.</note>;</seg>
@@ -693,7 +1002,7 @@
                <seg><date when="1455">1455</date>, <date when="1471">1471</date>przy kościele w <placeName>M.</placeName> działa bractwo żebracze (<bibl><title>Koczerska, Zbigniew Oleśnicki → Mstów klasztor p. 7, </title> <biblScope>s. 105, aneks 1 nr 235</biblScope></bibl>; <bibl><title> AG perg. 5852</title></bibl>; <bibl><title> Łatak, Prepozytura → Mstów klasztor p. 7, </title> <biblScope>s. 152</biblScope></bibl>);</seg>
                <seg><persName>Mik. Łata z M.</persName> (<bibl><title>GK 12 </title> <biblScope>s. 467</biblScope></bibl>);</seg>
                <seg><date from="1461" to="1464"> 1461—4</date> <persName>Mik. Franczkowicz</persName>, <persName>Franczowicz</persName> (<bibl><title>Decreta 1</title>, <biblScope> nr 434</biblScope>, <biblScope> 458</biblScope>, <biblScope> 495</biblScope>, <biblScope> 530</biblScope>, <biblScope> 554</biblScope>, <biblScope> 574</biblScope>, <biblScope> 591—2</biblScope></bibl>; <bibl><title>Teut. 3 = SWPM I—9 </title> <biblScope>s. 260, 263—4, 267</biblScope></bibl>);</seg>
-               <seg><date from="1462" to="1463"> 1462—3</date> <persName>Jan Zębiec</persName> mieszcz. z <placeName>M.</placeName> w sprawie z <persName>Andrzejem z Kłobukowic</persName> oraz <placeName>Małusz</placeName> [<placeName>Starych</placeName>] (<bibl><title>ZK 315 </title> <biblScope>s. 11, 17</biblScope></bibl>);</seg>
+               <seg><date from="1462" to="1463"> 1462—3</date> <persName>Jan Zębiec</persName> mieszcz. z <placeName>M.</placeName> w sprawie z <persName>Andrzejem z Kłobukowic</persName> oraz <placeName ref="#Q53446">Małusz</placeName> [<placeName>Starych</placeName>] (<bibl><title>ZK 315 </title> <biblScope>s. 11, 17</biblScope></bibl>);</seg>
                <seg><date when="1462">1462</date> tenże <persName>Jan Zębiec</persName> w sprawie z <orgName>Tralem</orgName> z <placeName ref="#Q57204">Mzurowa</placeName> (<bibl><title>ZK 315 </title> <biblScope>s. 11</biblScope></bibl>);</seg>
                <seg><date when="1464">1464</date> <persName>Jan z M.</persName> mąż <persName>Katarzyny</persName> z <persName>Małusz Starych</persName> (<bibl><title>ZK 314 </title> <biblScope>s. 173—4</biblScope></bibl>);</seg>
                <seg><persName>Więcesław</persName> i jego br. rodz. Gozd (<bibl><title>Decreta 1</title>, <biblScope> nr 597</biblScope></bibl>);</seg>
@@ -722,7 +1031,7 @@
          <div type="point" n="3f">
             <p>-f. Majątek mieszczan. </p>
             <p>
-               <seg><date when="1401">1401</date> <persName>Andrzej</persName> <roleName type="ziemski" subtype="woźny">woźny</roleName> sąd. zeznaje, że za namową <persName>Jana Kawalca</persName> [mieszcz. z <placeName ref="#Q22289">Brzeźnicy</placeName>] zabrał 4 woły <persName>Marcinowi szewcowi z M.</persName>, zeznaje też po raz drugi, że z trzody całej społeczności [<placeName>M.</placeName>] zabrał do ciążenia owce i kozy, które znalazł i wszystkie popędził do <objectName type="obj" subtype="karczma">karczmy</objectName> w <placeName ref="#Q49373">Lgocie</placeName> [par. <placeName ref="#Q56900">Mstów</placeName>] (<bibl><title>KSN 1071</title></bibl>);</seg>
+               <seg><date when="1401">1401</date> <persName>Andrzej</persName> <roleName type="ziemski" subtype="woźny">woźny</roleName> sąd. zeznaje, że za namową <persName>Jana Kawalca</persName> [mieszcz. z <placeName ref="#Q22289">Brzeźnicy</placeName>] zabrał 4 woły <persName>Marcinowi szewcowi z M.</persName>, zeznaje też po raz drugi, że z trzody całej społeczności [<placeName>M.</placeName>] zabrał do ciążenia owce i kozy, które znalazł i wszystkie popędził do <objectName type="obj" subtype="karczma">karczmy</objectName> w <placeName ref="#Q51796">Lgocie</placeName> [par. <placeName ref="#Q56900">Mstów</placeName>] (<bibl><title>KSN 1071</title></bibl>);</seg>
                <seg>tenże <persName>Janusz</persName> oddala sądownie roszczenia <persName>Wyszomira</persName> ze [<geogName>Starych]</geogName> <persName>Małusz</persName> o wycięcie 26 dębów (<bibl><title>ZK 311 </title> <biblScope>s. 35</biblScope></bibl>);</seg>
                <seg><persName>Wyszomir ze Starych</persName> Małusz uzyskuje sądownie na <persName>Januszu Łacie</persName> mieszcz. z <placeName>M.</placeName> pole czyli niwę zw. Skarzawa w <placeName>Starych Małuszach</placeName> (<bibl><title>ZK 311 </title> <biblScope>s. 54</biblScope></bibl>);</seg>
                <seg><date when="1432">1432</date> <persName>Klimasz</persName> <roleName type="miejski" subtype="sołtys">sołtys z Siedlca</roleName> ręcząc za <persName>Jana</persName> ze Szczekocin <roleName type="ziemski" subtype="kasztelan">kaszt. lub.</roleName> i <roleName type="ziemski" subtype="starosta">star. dobczyckiego</roleName> ma zapłacić do dnia Ś. <persName>Marcina</persName> [<date>11 XI</date>] 10 <unit type="currency" subtype="grzywna_polgroszy">grz. półgr</unit> <persName>Janowi Łacie</persName> mieszcz. z <placeName>M.</placeName> pod rygorem zapłaty 15 <unit type="currency" subtype="grzywna">grz.</unit> (<bibl><title>ZK 312 </title> <biblScope>s. 422</biblScope></bibl>);</seg>
@@ -735,9 +1044,9 @@
                <seg><date when="1463">1463</date> <persName>Wojc. Baranek</persName> wraz ze swym synem odstępuje 1 ł. roli <persName>Chuchcie Staremu</persName> i jego córce <persName>Annie</persName> (<bibl><title>Decreta 1</title>, <biblScope> nr 513</biblScope></bibl>);</seg>
                <seg><date when="1479">1479</date> <persName>Andrzej Łaszyński</persName> zawiera ugodę z <persName>Maciejem Labajem</persName> w sprawie ogrodu (<bibl><title>Decreta 1</title>, <biblScope> nr 1542</biblScope></bibl>).</seg>
                <seg><date when="1513">1513</date> Druzjana ż. <persName>Stan.</persName> <persName>Jankowskiego</persName> i <persName>Elżbieta ż.</persName> <persName>Jakuba Rączki</persName> mieszczan z <placeName>M.</placeName> rezygnują ze swych dóbr po ojcu i matce szlachetnym br. rodz. <persName>Stan.</persName> i <persName>Janowi Grotom</persName> (<bibl><title>ZK 316 </title> <biblScope>s. 344</biblScope></bibl>);</seg>
-               <seg><date from="1515" to="1516"> 1515—6</date> <persName>Mik.</persName> <placeName>Małuski</placeName> Piotraszek dzierż. <placeName ref="#Q49373">Lgoty</placeName> [<geogName>Gawronnej</geogName>] sprzedaje za 200 <unit type="currency" subtype="grzywna">grz.</unit> <persName>Piotrowi Stajennemu</persName> mieszcz. z <placeName>M.</placeName> cz. w <placeName>Błotnych,</placeName> Pośrednich i <placeName>Starych Małuszach</placeName>, które odstąpił mu <persName>Mik. Wójcik Małuski</persName>. Sprzedaż zatwierdza <roleName type="miejski" subtype="sędzia">sędzia ziemski krak</roleName>. <persName>Jakub z Lubomierza</persName> (<bibl><title>ZK 317 </title> <biblScope>s. 44—5</biblScope></bibl>; <bibl><title> AG perg. 5878</title></bibl>; <bibl><title> Regesty → Mstów klasztor p. 7</title>, <biblScope> nr 45</biblScope></bibl>);</seg>
-               <seg><date when="1518">1518</date> <persName>Tomasz Małuski z Małusz</persName> [Błotnych] w sprawie z <persName>Jakubem Stajennym z M.</persName> i jego synami <persName>Janem</persName> i <persName>Wojciechem</persName> oświadcza, że jest gotów dokonać zapisu z tytułu podziału dóbr, tj. <objectName type="fiz" subtype="las">lasu</objectName>, łąki i <objectName type="fiz" subtype="sadzawka">sadzawki</objectName> w <placeName>Błotnych Małuszach</placeName> (<bibl><title>ZK 317 </title> <biblScope>s. 102</biblScope></bibl>);</seg>
-               <seg>na mocy ugody między <persName>Tomaszem Koskowskim</persName> i <persName>Jakubem Stajennym</persName> [z <placeName>M.</placeName>] oraz jego synami <persName>Janem</persName> i <persName>Wojciechem</persName> <persName>Tomasz</persName> może założyć <objectName type="fiz" subtype="sadzawka">sadzawkę</objectName> w wielkim <objectName type="fiz" subtype="las">lesie</objectName> i uzyskuje od <persName>Jakuba</persName> łąkę <geogName>Kobylnik</geogName> oraz łąkę <geogName>Kloszowską</geogName>, która leży przy <objectName type="fiz" subtype="sadzawka">sadzawce</objectName> zw. Błota, a ponadto 5 <unit type="currency" subtype="grzywna">grz.</unit> i pr. użytkowania <objectName type="fiz" subtype="las">lasu</objectName> i <objectName type="fiz" subtype="sadzawka">sadzawek</objectName> do <objectName type="fiz" subtype="znak">znaków</objectName>, które ww. uczynią. Z kolei <persName>Tomasz</persName> ustępuje <persName>Jakubowi</persName> <objectName type="fiz" subtype="sadzawka">sadzawkę</objectName> zw. <geogName>Błotne</geogName>, leżącą w <placeName>Błotnych Małuszach</placeName> (<bibl><title>ZK 317 </title> <biblScope>s. 111</biblScope></bibl>);</seg>
+               <seg><date from="1515" to="1516"> 1515—6</date> <persName>Mik.</persName> <placeName>Małuski</placeName> Piotraszek dzierż. <placeName ref="#Q51796">Lgoty</placeName> [<geogName>Gawronnej</geogName>] sprzedaje za 200 <unit type="currency" subtype="grzywna">grz.</unit> <persName>Piotrowi Stajennemu</persName> mieszcz. z <placeName>M.</placeName> cz. w <placeName>Błotnych,</placeName> Pośrednich i <placeName>Starych Małuszach</placeName>, które odstąpił mu <persName>Mik. Wójcik Małuski</persName>. Sprzedaż zatwierdza <roleName type="miejski" subtype="sędzia">sędzia ziemski krak</roleName>. <persName>Jakub z Lubomierza</persName> (<bibl><title>ZK 317 </title> <biblScope>s. 44—5</biblScope></bibl>; <bibl><title> AG perg. 5878</title></bibl>; <bibl><title> Regesty → Mstów klasztor p. 7</title>, <biblScope> nr 45</biblScope></bibl>);</seg>
+               <seg><date when="1518">1518</date> <persName>Tomasz Małuski z Małusz</persName> [Błotnych] w sprawie z <persName>Jakubem Stajennym z M.</persName> i jego synami <persName>Janem</persName> i <persName>Wojciechem</persName> oświadcza, że jest gotów dokonać zapisu z tytułu podziału dóbr, tj. <objectName type="fiz" subtype="las">lasu</objectName>, <objectName type="fiz" subtype="łąka">łąki</objectName> i <objectName type="fiz" subtype="sadzawka">sadzawki</objectName> w <placeName>Błotnych Małuszach</placeName> (<bibl><title>ZK 317 </title> <biblScope>s. 102</biblScope></bibl>);</seg>
+               <seg>na mocy ugody między <persName>Tomaszem Koskowskim</persName> i <persName>Jakubem Stajennym</persName> [z <placeName>M.</placeName>] oraz jego synami <persName>Janem</persName> i <persName>Wojciechem</persName> <persName>Tomasz</persName> może założyć <objectName type="fiz" subtype="sadzawka">sadzawkę</objectName> w wielkim <objectName type="fiz" subtype="las">lesie</objectName> i uzyskuje od <persName>Jakuba</persName> <objectName type="fiz" subtype="łąka">łąkę</objectName> <geogName>Kobylnik</geogName> oraz <objectName type="fiz" subtype="łąka">łąkę</objectName> <geogName>Kloszowską</geogName>, która leży przy <objectName type="fiz" subtype="sadzawka">sadzawce</objectName> zw. Błota, a ponadto 5 <unit type="currency" subtype="grzywna">grz.</unit> i pr. użytkowania <objectName type="fiz" subtype="las">lasu</objectName> i <objectName type="fiz" subtype="sadzawka">sadzawek</objectName> do <objectName type="fiz" subtype="znak">znaków</objectName>, które ww. uczynią. Z kolei <persName>Tomasz</persName> ustępuje <persName>Jakubowi</persName> <objectName type="fiz" subtype="sadzawka">sadzawkę</objectName> zw. <geogName>Błotne</geogName>, leżącą w <placeName>Błotnych Małuszach</placeName> (<bibl><title>ZK 317 </title> <biblScope>s. 111</biblScope></bibl>);</seg>
                <seg><persName>Małgorzata</persName> ż. sław. <persName>Jana Kłębka</persName> mieszcz. z <placeName>M.</placeName> rezygnuje ze wszystkich dóbr po ojcu i matce na rzecz swego br. rodz. szl. <persName>Bernarda Międzygórskiego</persName> (<bibl><title>ZK 317 </title> <biblScope>s. 103</biblScope></bibl>);</seg>
                <seg><date when="1528">1528</date> <persName>Jan</persName> kapłan z <placeName>M.</placeName> kwituje <roleName type="miejski" subtype="burmistrz">burmistrza</roleName>, <roleName type="miejski" subtype="rajca">rajców</roleName>, mieszcz. <persName>Stan. Staterkę</persName> i innych mieszczan mstow. z zapłaty 2 <unit type="currency" subtype="grzywna">grz.</unit> za dom w <placeName>M.</placeName> jego zm. brata, którego ksiądz był spadkobiercą (<bibl><title>DP 2</title>, <biblScope> 374</biblScope></bibl>);</seg>
                <seg><date when="1541">1541</date> <persName>Jakub Hanus</persName> mieszcz. z <placeName>M.</placeName> zobowiązuje się zapłacić 2 <unit type="currency" subtype="grzywna">grz.</unit> długu <persName>Jakubowi Mleczce</persName> mieszcz. z <placeName ref="#Q48895">Lelowa</placeName>, ale wcześniej ma zawrzeć umowę z innym mieszcz. z <placeName>M.</placeName> <persName>Jakubem Sartochowskim</persName> (<bibl><title>Archiwum Diecezjalne w Kielcach, Liber Officialatus foralis Leloviensis 1530—1568, nr 319, </title> <biblScope>s. 96</biblScope></bibl>);</seg>
@@ -750,7 +1059,7 @@
          <div type="point" n="3g">
             <p>-g. Majątek miasta. </p>
             <p>
-               <seg><date when="1417">1417</date> <persName>Dobiesław z Żurawia</persName> <roleName type="miejski" subtype="wójt">wójt mstow.</roleName> wraz z ż. <persName>Hanką</persName> sprzedaje miastu <placeName>M.</placeName> pewną łąkę, położoną „in <placeName>Gadok</placeName>” [dziś zapewne łąki i pastwiska w <placeName>M.</placeName> zw. Gatka — UN 202 s. 23] (<bibl><title>ZDM 1</title>, <biblScope> 317</biblScope></bibl>);</seg>
+               <seg><date when="1417">1417</date> <persName>Dobiesław z Żurawia</persName> <roleName type="miejski" subtype="wójt">wójt mstow.</roleName> wraz z ż. <persName>Hanką</persName> sprzedaje miastu <placeName>M.</placeName> pewną <objectName type="fiz" subtype="łąka">łąkę</objectName>, położoną „in <placeName>Gadok</placeName>” [dziś zapewne <objectName type="fiz" subtype="łąka">łąki</objectName> i pastwiska w <placeName>M.</placeName> zw. Gatka — UN 202 s. 23] (<bibl><title>ZDM 1</title>, <biblScope> 317</biblScope></bibl>);</seg>
                <seg><date from="1470" to="1480"> 1470—80</date> w mieście <placeName>M.</placeName> jest 10 ł. mieszcz. (<bibl><title>DLb. 3 </title> <biblScope>s. 149</biblScope></bibl>);</seg>
                <seg><date when="1568">1568</date> mieszczanie mstow. dostają od miejscowego <objectName type="obj" subtype="klasztor">kl.</objectName> w użytkowanie <objectName type="fiz" subtype="las">las</objectName> zw. Garnek (<bibl><title>AG perg. 3927</title></bibl>).</seg>
             </p>
@@ -770,7 +1079,7 @@
             <p>
                <seg><date from="1400" to="1410"> 1400—10</date> <persName>Adam</persName>, <persName>Adamek</persName> <roleName type="miejski" subtype="wójt">wójt</roleName> <placeName>M.</placeName>, dz. <geogName>Żurawia</geogName> 1400—6, mąż <persName>Stachny</persName> (<bibl><title>SP 8 uw. 312/42</title>, <biblScope> nr 9772</biblScope>, <biblScope> 10615—6</biblScope></bibl>; <bibl><title>ZK 3a </title> <biblScope>s. 245</biblScope></bibl>; <bibl><title>4 </title> <biblScope>s. 230</biblScope></bibl>; <bibl><title>311 </title> <biblScope>s. 37, 39, 51</biblScope></bibl>; <bibl><title>KSN 1085</title>, <biblScope> 1096</biblScope>, <biblScope> 1099</biblScope></bibl>; <bibl><title>GK 1b </title> <biblScope>s. 11</biblScope></bibl>; <bibl><title>OK 4 k. 6r</title></bibl>).</seg>
                <seg><date when="1400">1400</date> Pielgrzym <persName>Żurawski</persName> spowiada się u kapelana w sprawie przeciwko <persName>Stachnie</persName> ż. <persName>Adama</persName> <roleName type="miejski" subtype="wójt">wójta z M.</roleName> (<bibl><title>SP 8 uw. 312/42</title></bibl>);</seg>
-               <seg>→ <placeName>Mysłowice</placeName> p. 3a (<bibl><title>SP 8</title>, <biblScope> 9772</biblScope></bibl>);</seg>
+               <seg>→ <placeName ref="#Q57152">Mysłowice</placeName> p. 3a (<bibl><title>SP 8</title>, <biblScope> 9772</biblScope></bibl>);</seg>
                <seg><persName>Wawrzyniec z Lipnika</persName> procesuje się ze <persName>Stachną</persName> ż. <persName>Adama</persName> <roleName type="miejski" subtype="wójt">wójta z M.</roleName> dz. Żurawia o ¼ dziedziny Żuraw i o to, że w czasie dzierżawy tejże <persName>Stachny</persName> wbito 60 pali [granicznych] (<bibl><title>SP 8</title>, <biblScope> 10615</biblScope></bibl>);</seg>
                <seg>tenże <persName>Wawrzyniec</persName> procesuje się z <roleName type="miejski" subtype="wójt">wójtem</roleName> <persName>Adamem</persName> o 2 kmieci w <placeName>Żurawiu</placeName> (<bibl><title>SP 8</title>, <biblScope> 10616</biblScope></bibl>);</seg>
                <seg><date when="1401">1401</date> <persName>Wawrzyniec z Lipnika</persName> procesuje się z ww. <persName>Stachną</persName> i osobno z jej mężem <persName>Adamem</persName> <roleName type="miejski" subtype="wójt">wójtem z M.</roleName> (<bibl><title>ZK 3a </title> <biblScope>s. 245</biblScope></bibl>);</seg>
@@ -808,8 +1117,8 @@
                <seg><persName>Dobek</persName> z <geogName>Żurawia</geogName> zobowiązuje się nie przeszkadzać <persName>Mikołajowi z Wilkowa</persName> w budowie <objectName type="obj" subtype="młyn">młyna</objectName> w <placeName>Lubojnie</placeName> powyżej istniejącego już <objectName type="obj" subtype="młyn">młyna</objectName> tamże (<bibl><title>ZK 312 </title> <biblScope>s. 132</biblScope></bibl>);</seg>
                <seg><persName>Stachna</persName> ż. <persName>Przedbora z Siadczy</persName> [niegdyś ż. <persName>Adama</persName> <roleName type="miejski" subtype="wójt">wójta z M.</roleName>] odstępuje <persName>Dobiesławowi z Żurawia</persName> cz. swej dziedziny po ojcu i matce w <placeName>Żurawiu</placeName> i wójtostwo (advocaciam) w <placeName>M.</placeName> (<bibl><title>ZK 312 </title> <biblScope>s. 134</biblScope></bibl>);</seg>
                <seg><date when="1418">1418</date> <persName>Dobek</persName> <roleName type="miejski" subtype="wójt">wójt z M.</roleName> sprzedaje za 24 <unit type="currency" subtype="grzywna">grz.</unit> z dodaniem sołectwa w <placeName>Lubojnie</placeName> <persName>Mik.</persName> <persName>Mrukowi</persName> cz. dziedziny w <placeName>Małuszach</placeName> zwanych <persName>Wojtka Piłata</persName> (<bibl><title>ZK 312 </title> <biblScope>s. 140</biblScope></bibl>);</seg>
-               <seg><persName>Wojtek</persName> niegdyś z <placeName>Małusz</placeName> [Pośrednich] sprzedaje za 70 <unit type="currency" subtype="grzywna_polgroszy">grz. półgr</unit>. temuż <persName>Dobkowi</persName> cz. dziedziny w <placeName>Małuszach</placeName> [Pośrednich] (<bibl><title>ZK 312 </title> <biblScope>s. 143</biblScope></bibl>);</seg>
-               <seg><persName>Dobek</persName> z <geogName>Żurawia</geogName> odstępuje za 16 <unit type="currency" subtype="grzywna">grz.</unit> Stachnie ż. <persName>Tomka z Małusz</persName> [Pośrednich] 2 kmieci w <placeName>Małuszach</placeName>, których miał w zastawie (<bibl><title>ZK 312 </title> <biblScope>s. 157</biblScope></bibl>);</seg>
+               <seg><persName>Wojtek</persName> niegdyś z <placeName ref="#Q53446">Małusz</placeName> [Pośrednich] sprzedaje za 70 <unit type="currency" subtype="grzywna_polgroszy">grz. półgr</unit>. temuż <persName>Dobkowi</persName> cz. dziedziny w <placeName>Małuszach</placeName> [Pośrednich] (<bibl><title>ZK 312 </title> <biblScope>s. 143</biblScope></bibl>);</seg>
+               <seg><persName>Dobek</persName> z <geogName>Żurawia</geogName> odstępuje za 16 <unit type="currency" subtype="grzywna">grz.</unit> <persName>Stachnie</persName> ż. <persName>Tomka z Małusz</persName> [Pośrednich] 2 kmieci w <placeName>Małuszach</placeName>, których miał w zastawie (<bibl><title>ZK 312 </title> <biblScope>s. 157</biblScope></bibl>);</seg>
                <seg>tenże zobowiązuje się uwolnić <persName>Mik.</persName> <persName>Mrukowi</persName> czwartą cz. dziedziny w Wielkich Małuszach i Małych Małuszach (<bibl><title>ZK 312 </title> <biblScope>s. 160 zp.</biblScope></bibl>).</seg>
                <seg><date>[po 1418—1425]</date> <persName>Zbigniew</persName> z → <placeName ref="#Q22070">Brzezia</placeName>, → <placeName ref="#Q48534">Lanckorony</placeName> i <placeName ref="#Q87972">Wodzisławia</placeName> <heraldry>h. Zadora</heraldry> <roleName type="miejski" subtype="wójt">wójt</roleName> <placeName>M.</placeName>, marszałek kor. <date when="1399">1399</date>—<date when="1425">1425</date>, <roleName type="ziemski" subtype="starosta">star. lel.</roleName> 1407—<date>25</date> (<bibl><title>GK 2 </title> <biblScope>s. 603—4</biblScope></bibl>; <bibl><title>ZK 312 </title> <biblScope>s. 351</biblScope></bibl>);</seg>
                <seg><date when="1422">1422</date> Tomasz <roleName type="miejski" subtype="podwójt">podwójci</roleName> (viceadvocatus) <placeName>M.</placeName> (<bibl><title>OK 4 k. 302r</title></bibl>);</seg>
@@ -820,30 +1129,30 @@
                <seg><date when="1428">1428</date> <persName>Stanisław z Rędzin</persName> zobowiązuje się zapłacić pod karami 10 <unit type="currency" subtype="grzywna">grz.</unit> <persName>Januszowi wójtowi z M.</persName> z racji poręki za <persName>Marcisza</persName> z Wyczerp ;</seg>
                <seg><persName>Marcin</persName> z Wyczerp zobowiązuje się uwolnić <persName>Stanisława z Rędzin</persName> od poręki w zapłacie 10 <unit type="currency" subtype="grzywna">grz.</unit> długu <persName>Januszowi wójtowi z M.</persName> (<bibl><title>ZK 312 </title> <biblScope>s. 344, 361</biblScope></bibl>);</seg>
                <seg><persName>Mikołaj dz.</persName> <placeName ref="#Q22070">Brzezia</placeName> ręcząc za swego br. <persName>Jana</persName> zobowiązuje się chronić od jakichkolwiek przeszkód <persName>Janusza</persName> niegdyś ze <placeName ref="#Q81607">Szreniawy</placeName> z tytułu wójtostwa w mieście <placeName>M.</placeName>, które sprzedał [w <date>1426 r.</date>] temuż <persName>Januszowi</persName> przed sądem wyższym pr. niem. w <placeName ref="#Q46043">Krakowie</placeName> (<bibl><title>ZK 312 </title> <biblScope>s. 351</biblScope></bibl>).</seg>
-               <seg><date from="1428" to="1441"> 1428—41</date> szl. <persName>Mik.</persName> Łapsz <roleName type="miejski" subtype="wójt">wójt</roleName> <placeName>M.</placeName>, dz. <placeName ref="#Q69678">Przyłęku</placeName> i <placeName ref="#Q22358">Brzostku</placeName> do <date>1432 r.</date>, zastawnik w <placeName>Wierzbiu</placeName> od <date when="1432">1432</date>, w <date>l. 1441</date>—<date>60</date> niegdyś z <placeName>M.</placeName>, nazywany lantwójtem w <date>1441 r.</date>, mąż <persName>Jadwigi z Rząsaw</persName> c. <persName>Jana Służki z Mirowa</persName> <date when="1455">1455</date>—<date>60</date>, ojciec <persName>Jakuba</persName> i <persName>Stanisława</persName> (<bibl><title>ZK 146 </title> <biblScope>s. 168, 221, 312</biblScope></bibl>; <bibl><title>9 </title> <biblScope>s. 175, 191, 307</biblScope></bibl>; <bibl><title>10 </title> <biblScope>s. 17—8, 26—7, 47, 57</biblScope></bibl>; <bibl><title>11 </title> <biblScope>s. 454, 460, 464</biblScope></bibl>; <bibl><title>312 </title> <biblScope>s. 373, 423, 427, 432—3, 440, 446—9, 454, 459, 506</biblScope></bibl>; <bibl><title>313 </title> <biblScope>s. 15, 42, 55, 195</biblScope></bibl>; <bibl><title>150 </title> <biblScope>s. 95, 113</biblScope></bibl>; <bibl><title>GK 4 </title> <biblScope>s. 71, 80, 87, 96, 115, 128—9, 141, 153, 192, 409, 505, 548, 612—3, 629, 706, 724, 739</biblScope></bibl>; <bibl><title>5 </title> <biblScope>s. 71, 177, 256, 259—60, 280, 328</biblScope></bibl>; <bibl><title>6 </title> <biblScope>s. 40, 55</biblScope></bibl>; <bibl><title>7 </title> <biblScope>s. 299, 326, 361, 385—7, 685, 962</biblScope></bibl>; <bibl><title>Teut. 1a </title> <biblScope>s. 355—6, 360</biblScope></bibl>; <bibl><title>DSZ 175</title></bibl>; <bibl><title>SP 7</title>, <biblScope> 682</biblScope></bibl>; <bibl><title>2</title>, <biblScope> 2943</biblScope></bibl>; <bibl><title>OK 8 </title> <biblScope>s. 288</biblScope></bibl>; <bibl><title>Wroniszewski Rawicze 2, </title> <biblScope>s. 38</biblScope></bibl>; <bibl><title>→ Uw.</title></bibl>).</seg>
+               <seg><date from="1428" to="1441"> 1428—41</date> szl. <persName>Mik.</persName> Łapsz <roleName type="miejski" subtype="wójt">wójt</roleName> <placeName>M.</placeName>, dz. <placeName ref="#Q69667">Przyłęku</placeName> i <placeName ref="#Q22358">Brzostku</placeName> do <date>1432 r.</date>, zastawnik w <placeName ref="#Q109481">Wierzbiu</placeName> od <date when="1432">1432</date>, w <date>l. 1441</date>—<date>60</date> niegdyś z <placeName>M.</placeName>, nazywany lantwójtem w <date>1441 r.</date>, mąż <persName>Jadwigi z Rząsaw</persName> c. <persName>Jana Służki z Mirowa</persName> <date when="1455">1455</date>—<date>60</date>, ojciec <persName>Jakuba</persName> i <persName>Stanisława</persName> (<bibl><title>ZK 146 </title> <biblScope>s. 168, 221, 312</biblScope></bibl>; <bibl><title>9 </title> <biblScope>s. 175, 191, 307</biblScope></bibl>; <bibl><title>10 </title> <biblScope>s. 17—8, 26—7, 47, 57</biblScope></bibl>; <bibl><title>11 </title> <biblScope>s. 454, 460, 464</biblScope></bibl>; <bibl><title>312 </title> <biblScope>s. 373, 423, 427, 432—3, 440, 446—9, 454, 459, 506</biblScope></bibl>; <bibl><title>313 </title> <biblScope>s. 15, 42, 55, 195</biblScope></bibl>; <bibl><title>150 </title> <biblScope>s. 95, 113</biblScope></bibl>; <bibl><title>GK 4 </title> <biblScope>s. 71, 80, 87, 96, 115, 128—9, 141, 153, 192, 409, 505, 548, 612—3, 629, 706, 724, 739</biblScope></bibl>; <bibl><title>5 </title> <biblScope>s. 71, 177, 256, 259—60, 280, 328</biblScope></bibl>; <bibl><title>6 </title> <biblScope>s. 40, 55</biblScope></bibl>; <bibl><title>7 </title> <biblScope>s. 299, 326, 361, 385—7, 685, 962</biblScope></bibl>; <bibl><title>Teut. 1a </title> <biblScope>s. 355—6, 360</biblScope></bibl>; <bibl><title>DSZ 175</title></bibl>; <bibl><title>SP 7</title>, <biblScope> 682</biblScope></bibl>; <bibl><title>2</title>, <biblScope> 2943</biblScope></bibl>; <bibl><title>OK 8 </title> <biblScope>s. 288</biblScope></bibl>; <bibl><title>Wroniszewski Rawicze 2, </title> <biblScope>s. 38</biblScope></bibl>; <bibl><title>→ Uw.</title></bibl>).</seg>
                <seg><date when="1428">1428</date> <persName>Stanisław z Mojkowic</persName> zobowiązuje się pod karami zapłacić 52 <unit type="currency" subtype="grzywna_polgroszy">grz. półgr</unit> <persName>Mikołajowi</persName> <roleName type="miejski" subtype="wójt">wójtowi z M.</roleName> (<bibl><title>ZK 146 </title> <biblScope>s. 168</biblScope></bibl>);</seg>
                <seg><date when="1430">1430</date> <persName>Mikołaj wójt z M.</persName> był gotów pobrać 60 <unit type="currency" subtype="grzywna">grz.</unit> od <persName>Stanisława z Mojkowic</persName>, lecz ich nie otrzymał (<bibl><title>ZK 9 </title> <biblScope>s. 191</biblScope></bibl>; <bibl><title>GK 4 </title> <biblScope>s. 71, 80</biblScope></bibl>);</seg>
                <seg>tenże <persName>Stan. Mojkowski</persName> ma zapłacić 3 <unit type="currency" subtype="grzywna">grz.</unit> <persName>Mikołajowi</persName> <roleName type="miejski" subtype="wójt">wójtowi z M.</roleName> z racji kar (<bibl><title>GK 4 </title> <biblScope>s. 96</biblScope></bibl>);</seg>
-               <seg><date when="1430">1430</date>, <date when="1432">1432</date>wyrokiem sądu <placeName>ziemskiego</placeName> <placeName>krak</placeName>. <persName>Prędota z Nakła</persName> jest wolny od pozwu wniesionego przez <persName>Mikołaja wójta z M.</persName> imieniem krewnych w sprawie podziału dziedzictwa w <placeName ref="#Q69678">Przyłęku</placeName> i <placeName ref="#Q22358">Brzostku</placeName> [<placeName>pow.</placeName> lel. par. <placeName ref="#Q69678">Przyłęk</placeName>] po matce tegoż <persName>Prandoty z Nakła</persName> i <placeName ref="#Q69678">Przyłęku</placeName> (<bibl><title>ZK 312 </title> <biblScope>s. 373, 423</biblScope></bibl>);</seg>
-               <seg><date when="1431">1431</date> [<persName>Mikołaj</persName>] <roleName type="miejski" subtype="wójt">wójt z M.</roleName> pozywa <persName>Gawła z Rudnik</persName> (de <placeName ref="#Q72778">Rudnik</placeName>) [par. <placeName>M.</placeName>], <persName>Świętosława z Bliżyc</persName>, <persName>Marcina z Mirowa</persName> [par. <placeName>M.</placeName>], <persName>Grzegorza z Kunina</persName>, <persName>Błażeja z Lusławic</persName>, <persName>Jana z Zawady</persName> [par. <placeName>M.</placeName>], <persName>Bruna</persName>, <persName>Mikołaja z Lgoty</persName> [par. <placeName>M.</placeName>] (<bibl><title>Teut. 1a </title> <biblScope>s. 360</biblScope></bibl>);</seg>
+               <seg><date when="1430">1430</date>, <date when="1432">1432</date>wyrokiem sądu <placeName>ziemskiego</placeName> <placeName>krak</placeName>. <persName>Prędota z Nakła</persName> jest wolny od pozwu wniesionego przez <persName>Mikołaja wójta z M.</persName> imieniem krewnych w sprawie podziału dziedzictwa w <placeName ref="#Q69667">Przyłęku</placeName> i <placeName ref="#Q22358">Brzostku</placeName> [<placeName>pow.</placeName> lel. par. <placeName ref="#Q69667">Przyłęk</placeName>] po matce tegoż <persName>Prandoty z Nakła</persName> i <placeName ref="#Q69667">Przyłęku</placeName> (<bibl><title>ZK 312 </title> <biblScope>s. 373, 423</biblScope></bibl>);</seg>
+               <seg><date when="1431">1431</date> [<persName>Mikołaj</persName>] <roleName type="miejski" subtype="wójt">wójt z M.</roleName> pozywa <persName>Gawła z Rudnik</persName> (de <placeName ref="#Q41418">Rudnik</placeName>) [par. <placeName>M.</placeName>], <persName>Świętosława z Bliżyc</persName>, <persName>Marcina z Mirowa</persName> [par. <placeName>M.</placeName>], <persName>Grzegorza z Kunina</persName>, <persName>Błażeja z Lusławic</persName>, <persName>Jana z Zawady</persName> [par. <placeName>M.</placeName>], <persName>Bruna</persName>, <persName>Mikołaja z Lgoty</persName> [par. <placeName>M.</placeName>] (<bibl><title>Teut. 1a </title> <biblScope>s. 360</biblScope></bibl>);</seg>
                <seg><persName>Mikołaj wójt z M.</persName> wnioskuje o kary XV dla <persName>Stanisława z Mojkowic</persName> za niezapłacenie 60 <unit type="currency" subtype="grzywna">grz.</unit> (<bibl><title>GK 4 </title> <biblScope>s. 409</biblScope></bibl>);</seg>
                <seg><date when="1432">1432</date> <persName>Piotr</persName> niegdyś z <placeName ref="#Q47253">Krzyszkowic</placeName> [<placeName>pow. prosz.</placeName>] ma dostarczyć dok. król. <persName>Stanisławowi</persName> z Mojkowic w sprawie szkód wyrządzonych przez tegoż <persName>Stanisława Mik</persName>. <persName>Łapszowi</persName> <roleName type="miejski" subtype="wójt">wójtowi z M.</roleName> (<bibl><title>ZK 9 </title> <biblScope>s. 307</biblScope></bibl>);</seg>
                <seg><persName>Stanisław z Mojkowic</persName> zastawia na rok <persName>Mikołajowi</persName> <roleName type="miejski" subtype="wójt">wójtowi z M.</roleName> 4 kmieci w dziedzinie Wierzbie, płacących 4 <unit type="currency" subtype="grzywna">grz.</unit> czynszu rocznie w sumie 40 <unit type="currency" subtype="grzywna">grz.</unit> i 1 kmiecia w <placeName>Wojwanowicach</placeName> [dziś <placeName ref="#Q88811">Wolwanowice</placeName>], płacącego 2 <unit type="currency" subtype="grzywna">grz.</unit> 1 <unit type="currency" subtype="wiardunek">wiard.</unit> czynszu rocznie w sumie 22 <unit type="currency" subtype="grzywna">grz.</unit> (<bibl><title>ZK 10 </title> <biblScope>s. 17, 47</biblScope></bibl>);</seg>
                <seg><persName>Szczepan z Mozgawy</persName> i <persName>Mikołaj</persName> <roleName type="miejski" subtype="wójt">wójt z M.</roleName> ręcząc za <persName>Jana z Turzyna</persName> mają zapłacić 8 <unit type="currency" subtype="grzywna">grz.</unit> <persName>Mikołajowi z Damic</persName> pod rygorem wwiązania go do 1 kmiecia w <placeName>Mozgawie</placeName>, płacącego 1 <unit type="currency" subtype="grzywna">grz.</unit> czynszu rocznie (<bibl><title>ZK 10 </title> <biblScope>s. 26—7</biblScope></bibl>);</seg>
                <seg><persName>Mikołaj</persName> <roleName type="miejski" subtype="wójt">wójt z M.</roleName> jest winien ½ <unit type="currency" subtype="grzywna">grz.</unit> <roleName type="miejski" subtype="pisarz">pisarzowi</roleName> <persName>Mikołajowi z Tęgoborza</persName> (<bibl><title>ZK 10 </title> <biblScope>s. 57</biblScope></bibl>);</seg>
                <seg><persName>Dziersław z Żurawia</persName> nie stawia się w sądzie w sprawie z <persName>Mikołajem</persName> <roleName type="miejski" subtype="wójt">wójtem z M.</roleName> o to, że <roleName type="miejski" subtype="wójt">wójt</roleName> nie dokonał niezbędnych napraw w <objectName type="obj" subtype="młyn">młynach</objectName>, które mu <persName>Dziersław</persName> zastawił, przez co poczynił szkodę 10 <unit type="currency" subtype="grzywna">grz.</unit> (<bibl><title>ZK 312 </title> <biblScope>s. 432—3</biblScope></bibl>);</seg>
-               <seg><persName>Mikołaj</persName> <roleName type="miejski" subtype="wójt">wójt z M.</roleName> sprzedaje za 52 <unit type="currency" subtype="grzywna">grz.</unit> <persName>Prandocie z Nakła</persName> cz. dziedziny w <placeName ref="#Q69678">Przyłęku</placeName> i <placeName ref="#Q22358">Brzostku</placeName>, która mu przypadła po dziadku <persName>Prandocie z Przyłęku</persName> (<bibl><title>ZK 312 </title> <biblScope>s. 446—7</biblScope></bibl>);</seg>
+               <seg><persName>Mikołaj</persName> <roleName type="miejski" subtype="wójt">wójt z M.</roleName> sprzedaje za 52 <unit type="currency" subtype="grzywna">grz.</unit> <persName>Prandocie z Nakła</persName> cz. dziedziny w <placeName ref="#Q69667">Przyłęku</placeName> i <placeName ref="#Q22358">Brzostku</placeName>, która mu przypadła po dziadku <persName>Prandocie z Przyłęku</persName> (<bibl><title>ZK 312 </title> <biblScope>s. 446—7</biblScope></bibl>);</seg>
                <seg><persName>Prędota z Nakła</persName> ma zapłacić <persName>Mikołajowi</persName> <roleName type="miejski" subtype="wójt">wójtowi z M.</roleName> 40 <unit type="currency" subtype="grzywna">grz.</unit> (<bibl><title>ZK 312 </title> <biblScope>s. 448</biblScope></bibl>);</seg>
                <seg><date when="1433">1433</date> tenże <persName>Prędota</persName> ma zapłacić 10 <unit type="currency" subtype="grzywna">grz.</unit> <persName>Mikołajowi</persName> <roleName type="miejski" subtype="wójt">wójtowi z M.</roleName> (<bibl><title>ZK 312 </title> <biblScope>s. 454</biblScope></bibl>);</seg>
                <seg><date when="1434">1434</date> <persName>Mikołaj wójt z M.</persName> kwituje <persName>Prędotę z Nakła</persName> z zapłaty 40 <unit type="currency" subtype="grzywna">grz.</unit> (<bibl><title>ZK 312 </title> <biblScope>s. 459</biblScope></bibl>);</seg>
                <seg><persName>Stanisław z Mojkowic</persName> kwestionuje szlachectwo <persName>Mikołaja</persName> <roleName type="miejski" subtype="wójt">wójta z M.</roleName>  (<bibl><title>SP 7/2</title>, <biblScope> 682</biblScope></bibl>);</seg>
-               <seg><persName>Mikołaj wójt z M.</persName> pozywa <persName ref="#Q165812">Piotra Wodę</persName> [ze <placeName>Szczekocin</placeName> <heraldry>h. Odrowąż</heraldry>, tenut. <objectName type="obj" subtype="zamek">zamku</objectName> <placeName ref="#Q61275">Olsztyn</placeName>] o zatrzymanie gwałtem bydła za <objectName type="fiz" subtype="granica">granicą</objectName> <placeName>srocką</placeName> [z wsią <placeName ref="#Q77407">Srocko</placeName>] i o zabicie 1 krowy przez kmieci <persName>Piotra</persName> z wsi <placeName ref="#Q46084">Krasawa</placeName> oraz o odmowę dania tego bydła w porękę (<bibl><title>GK 5 </title> <biblScope>s. 71</biblScope></bibl>);</seg>
+               <seg><persName>Mikołaj wójt z M.</persName> pozywa <persName ref="#Q165812">Piotra Wodę</persName> [ze <placeName ref="#Q100505">Szczekocin</placeName> <heraldry>h. Odrowąż</heraldry>, tenut. <objectName type="obj" subtype="zamek">zamku</objectName> <placeName ref="#Q61275">Olsztyn</placeName>] o zatrzymanie gwałtem bydła za <objectName type="fiz" subtype="granica">granicą</objectName> <placeName>srocką</placeName> [z wsią <placeName ref="#Q77407">Srocko</placeName>] i o zabicie 1 krowy przez kmieci <persName>Piotra</persName> z wsi <placeName ref="#Q46084">Krasawa</placeName> oraz o odmowę dania tego bydła w porękę (<bibl><title>GK 5 </title> <biblScope>s. 71</biblScope></bibl>);</seg>
                <seg><date when="1435">1435</date> <persName>Mikołaj wójt z M.</persName> w imieniu <roleName type="kościelny_wyższy" subtype="prepozyt">prepozyta mstow.</roleName> w sprawie z [<persName ref="#Q165812">Piotrem] Wodą</persName> [tenut. <placeName>olsztyńskim</placeName>] o wypuszczenie przez niego wolno 2 złodziei szlach. pochodzenia. W tej sprawie wyznaczony nowy termin (<bibl><title>GK 5 </title> <biblScope>s. 177</biblScope></bibl>);</seg>
-               <seg>szl. <persName>Mik.</persName> Tęgoborski [z <placeName>Tęgoborza</placeName>] i <persName>Szczepan z Mozgawy</persName> ręczą za <persName>Mikołaja wójta z M.</persName>, że stanie przed sądem <persName>Mikołaja z Michałowa</persName> <roleName type="ziemski" subtype="kasztelan">kaszt.</roleName> i <roleName type="ziemski" subtype="starosta">star. krak.</roleName> (<bibl><title>GK 5 </title> <biblScope>s. 280</biblScope></bibl>);</seg>
+               <seg>szl. <persName>Mik.</persName> Tęgoborski [z <placeName ref="#Q111211">Tęgoborza</placeName>] i <persName>Szczepan z Mozgawy</persName> ręczą za <persName>Mikołaja wójta z M.</persName>, że stanie przed sądem <persName>Mikołaja z Michałowa</persName> <roleName type="ziemski" subtype="kasztelan">kaszt.</roleName> i <roleName type="ziemski" subtype="starosta">star. krak.</roleName> (<bibl><title>GK 5 </title> <biblScope>s. 280</biblScope></bibl>);</seg>
                <seg>taż <persName>Katarzyna</persName> kwituje <persName>Mikołaja</persName> <roleName type="miejski" subtype="wójt">wójta z M.</roleName> (<bibl><title>ZK 313 </title> <biblScope>s. 55</biblScope></bibl>);</seg>
-               <seg><date when="1438">1438</date> <persName>Zaklika</persName> dz. <placeName ref="#Q18799">Białej</placeName> [par. <placeName ref="#Q37062">Irządze</placeName>] przedkłada 40 <unit type="currency" subtype="grzywna">grz.</unit> <persName>Mikołajowi</persName> <roleName type="miejski" subtype="wójt">wójtowi z M.</roleName> w celu wykupienia od niego z zastawu na mocy pr. bliższości wsi <placeName>Wierzbie</placeName> (<bibl><title>GK 6 </title> <biblScope>s. 40</biblScope></bibl>);</seg>
+               <seg><date when="1438">1438</date> <persName>Zaklika</persName> dz. <placeName ref="#Q18799">Białej</placeName> [par. <placeName ref="#Q37062">Irządze</placeName>] przedkłada 40 <unit type="currency" subtype="grzywna">grz.</unit> <persName>Mikołajowi</persName> <roleName type="miejski" subtype="wójt">wójtowi z M.</roleName> w celu wykupienia od niego z zastawu na mocy pr. bliższości wsi <placeName ref="#Q109481">Wierzbie</placeName> (<bibl><title>GK 6 </title> <biblScope>s. 40</biblScope></bibl>);</seg>
                <seg><persName>Andrzej br.</persName> <roleName type="miejski" subtype="wójt">wójta z M.</roleName> płaci karę XV <persName>Piotrowi Wodzie ze Szczekocin</persName> i tyleż sądowi za uwięzienie jego kmiecia <persName>Bartłomieja</persName> (<bibl><title>ZK 150 </title> <biblScope>s. 95</biblScope></bibl>);</seg>
-               <seg><persName>Mikołaj z Wiśnicza</persName> <roleName type="ziemski" subtype="kasztelan">kaszt. przem.</roleName> [<date when="1433">1433</date>—<date>48</date>] zeznaje, że jego poręczyciel <persName>Piotr Gaweł z Racławic</persName> [<placeName>pow. prosz</placeName>] winien za jego pośrednictwem wypłacić 50 <unit type="currency" subtype="grzywna">grz.</unit>, a on sam 100 <unit type="currency" subtype="grzywna">grz.</unit> <persName>Mikołajowi</persName> <roleName type="miejski" subtype="wójt">wójtowi z M.</roleName> pod rygorem wzrostu długu do 200 <unit type="currency" subtype="grzywna">grz.</unit>, a następnie wwiązania do wsi <placeName ref="#Q43246">Kobyle</placeName> (<bibl><title>ZK 150 </title> <biblScope>s. 113</biblScope></bibl>).</seg>
+               <seg><persName>Mikołaj z Wiśnicza</persName> <roleName type="ziemski" subtype="kasztelan">kaszt. przem.</roleName> [<date when="1433">1433</date>—<date>48</date>] zeznaje, że jego poręczyciel <persName>Piotr Gaweł z Racławic</persName> [<placeName>pow. prosz</placeName>] winien za jego pośrednictwem wypłacić 50 <unit type="currency" subtype="grzywna">grz.</unit>, a on sam 100 <unit type="currency" subtype="grzywna">grz.</unit> <persName>Mikołajowi</persName> <roleName type="miejski" subtype="wójt">wójtowi z M.</roleName> pod rygorem wzrostu długu do 200 <unit type="currency" subtype="grzywna">grz.</unit>, a następnie wwiązania do wsi <placeName ref="#Q110330">Kobyle</placeName> (<bibl><title>ZK 150 </title> <biblScope>s. 113</biblScope></bibl>).</seg>
                <seg><date when="1440">1440</date> <persName>Andrzej</persName> <roleName type="miejski" subtype="wójt">wójt M.</roleName>, w <date when="1441">1441</date> <roleName type="miejski" subtype="wójt">wójt połowy</roleName> wójtostwa w <placeName>M.</placeName>, br. <persName>Mik.</persName> Łapsza <roleName type="miejski" subtype="wójt">wójta w M.</roleName>, w <date>l. 1442</date>—<date>59</date> niegdyś <roleName type="miejski" subtype="wójt">wójt z M.</roleName> piszący się z <placeName ref="#Q27566">Dąbrowna</placeName> <date when="1459">1459</date> (<bibl><title>ZK 11 </title> <biblScope>s. 454, 460</biblScope></bibl>; <bibl><title>146 </title> <biblScope>s. 634</biblScope></bibl>; <bibl><title>313 </title> <biblScope>s. 259</biblScope></bibl>; <bibl><title>314 </title> <biblScope>s. 2c</biblScope></bibl>; <bibl><title>GK 7 </title> <biblScope>s. 685—6, 763</biblScope></bibl>; <bibl><title>8 </title> <biblScope>s. 320</biblScope></bibl>; <bibl><title>11 </title> <biblScope>s. 312</biblScope></bibl>; <bibl><title>OK 8 </title> <biblScope>s. 288</biblScope></bibl>).</seg>
                <seg><date when="1441">1441</date> <persName>Prandota Nakielski z Nakła</persName> <roleName type="miejski" subtype="wójt">wójt z M.</roleName> (<bibl><title>GK 7 </title> <biblScope>s. 299, 325, 359, 385—6, 474—5</biblScope></bibl>; <bibl><title>SP 2</title>, <biblScope> 2943</biblScope></bibl>).</seg>
                <seg><date when="1441">1441</date> <persName>Mikołaj</persName> <roleName type="kościelny_wyższy" subtype="prepozyt">prepozyt</roleName> <objectName type="obj" subtype="klasztor">kl.</objectName> mstow. pozywa <persName>Mikołaja</persName> niegdyś <roleName type="miejski" subtype="wójt">wójta z M.</roleName> o to, że z polecenia królewskiego odsunął <roleName type="kościelny_wyższy" subtype="prepozyt">prepozyta</roleName> od uczestnictwa przed sądem wyższym pr. magd. i sprzedał podstępnie (na smowye) <persName>Prędocie Nakielskiemu</persName> [z <placeName ref="#Q57533">Nakła</placeName>] wójtostwo w <placeName>M.</placeName>, oraz że <persName>Prędota</persName> trzyma je bez zgody <roleName type="kościelny_wyższy" subtype="prepozyt">prepozyta</roleName> i wskutek tego nieuregulowanego posiadania (nyewrządne) wyrządził szkodę <objectName type="obj" subtype="klasztor">klasztorowi</objectName> na 100 <unit type="currency" subtype="grzywna">grz.</unit> (<bibl><title>GK 7 </title> <biblScope>s. 299, 359</biblScope></bibl>; <bibl><title>SP 2</title>, <biblScope> 2943</biblScope></bibl>);</seg>
@@ -978,7 +1287,7 @@
             <p>
                <seg><date when="1364">1364</date> <persName>Kazimierz W.</persName> przebywając w <placeName>M.</placeName> wystawia dok. dla <objectName type="obj" subtype="klasztor">kl.</objectName> <orgName>Klarysek Ś. Andrzeja</orgName> w <placeName ref="#Q46043">Krakowie</placeName>, zezwalający zakonnicom na lokowanie na pr. średz. miasta o nazwie <objectName type="obj" subtype="klasztor">Klasztor</objectName> (<bibl><title>Mp. 1</title>, <biblScope> 275</biblScope></bibl>);</seg>
                <seg>tamże wystawia dok., w którym wydzierżawia na rok za 900 <unit type="currency" subtype="grzywna">grz.</unit> i postaw koftyru <persName>Krzysztofowi „de Sancto Romulo”</persName> i <persName>Mikołajowi ze Stradomia</persName> cło <placeName>lwowskie</placeName> (<bibl><title>Pol. 4</title>, <biblScope> 31</biblScope></bibl>; <bibl><title>MI 2</title>, <biblScope> 111</biblScope></bibl>; <bibl><title>MS 1</title>, <biblScope> 98—100</biblScope></bibl>);</seg>
-               <seg><date when="1474">1474</date> w czasie wojny z <persName>Maciejem Korwinem</persName> [królem <placeName>Węgier</placeName> i <placeName>Czech</placeName>] i związanej z tym kampanii <geogName>śląskiej</geogName> król <persName ref="#Q156970">Kazimierz Jag.</persName> przebywa w <placeName>M.</placeName> koncentrując w jego okolicy wojsko. Zbierające się pospolite ruszenie pustoszy i niszczy okoliczne wsie (<bibl><title>DH 5 </title> <biblScope>s. 610</biblScope></bibl>; <bibl><title>DHn. 12, 1462—80, </title> <biblScope>s. 334, 337</biblScope></bibl>) <note n="18" type="footnote">W świetle badań K. Nabiałka, Starostwo olsztyńskie → p. 7, s. 345—6, monarcha rozbił swój obóz między Mstowem a Częstochową, a dokładnie na obszarze należącym do tego drugiego miasta, tj. na Złotej Górze i przebywał w tym miejscu 4 dni [8—11 IX].</note>;</seg>
+               <seg><date when="1474">1474</date> w czasie wojny z <persName>Maciejem Korwinem</persName> [królem <placeName>Węgier</placeName> i <placeName ref="#Q107795">Czech</placeName>] i związanej z tym kampanii <geogName>śląskiej</geogName> król <persName ref="#Q156970">Kazimierz Jag.</persName> przebywa w <placeName>M.</placeName> koncentrując w jego okolicy wojsko. Zbierające się pospolite ruszenie pustoszy i niszczy okoliczne wsie (<bibl><title>DH 5 </title> <biblScope>s. 610</biblScope></bibl>; <bibl><title>DHn. 12, 1462—80, </title> <biblScope>s. 334, 337</biblScope></bibl>) <note n="18" type="footnote">W świetle badań K. Nabiałka, Starostwo olsztyńskie → p. 7, s. 345—6, monarcha rozbił swój obóz między Mstowem a Częstochową, a dokładnie na obszarze należącym do tego drugiego miasta, tj. na Złotej Górze i przebywał w tym miejscu 4 dni [8—11 IX].</note>;</seg>
                <seg><date when="1485">1485</date> rada <persName>m. Lelowa</persName> w ramach podwód dostarcza 2 konie dla <persName>Marcina Święcickiego</persName> pokojowca król., udającemu się do <placeName>M.</placeName> ;</seg>
                <seg><date when="1491">1491</date> rada m. <persName>Lelowa</persName> dostarcza 8 koni panu <persName>Krzyżanowskiemu</persName> słudze wojewody, udającemu się do <placeName>M.</placeName> (<bibl><title>ANKr. Rachunki miasta Lelowa 1482—1538 IT 230c, </title> <biblScope>s. 18, 71</biblScope></bibl>).</seg>
             </p>
@@ -1004,7 +1313,7 @@
                <seg><date when="1556">1556</date> sąd miejski <placeName ref="#Q46043">Krakowa</placeName> skazuje na powieszenie <persName>Jana Grabarczyka z Rędzin</persName> k. <placeName ref="#Q26724">Częstochowy</placeName> za liczne kradzieże, w tym za kradzież w <placeName>Przyrowie</placeName> sukni makowej pątnikowi i jej sprzedanie za 3 <unit type="currency" subtype="wiardunek">wiard.</unit> w <placeName>M.</placeName> (<bibl><title>Księga kryminalna → p. 7, </title> <biblScope>s. 64—5</biblScope></bibl>);</seg>
                <seg><date when="1558">1558</date> <persName>Matys z Lwówka</persName> s. <persName>Stanisława</persName> krawca zeznał przed sądem miejskim w <placeName ref="#Q46043">Krakowie</placeName>, że wraz z 3 innymi złodziejami ukradł 4 postawy sukna w <placeName>M.</placeName>, w tym 2 dzikiego i 2 czerwonego i sprzedali je za 7 <unit type="currency" subtype="grzywna">grz.</unit> <placeName ref="#Q95494">Żydowi</placeName> w <placeName>M.</placeName> oraz że ukradł wraz z towarzyszami 4 konie za <placeName>M.</placeName> i sprzedali je we <placeName ref="#Q89424">Wrocławiu</placeName>, w tym <persName>Matys</persName> sprzedał swojego za 6½ <unit type="currency" subtype="grzywna">grz.</unit> Skazany powiesił się w izbie tortur (<bibl><title>Księga kryminalna → p. 7, </title> <biblScope>s. 72—75</biblScope></bibl>);</seg>
                <seg><date when="1566">1566</date> pożar miasta i kościoła <note n="20" type="footnote">To zapewne ze względu na zniszczenia spowodowane pożarem i konieczność odbudowy domów w mieście kl. kan. reg. nadał w 1568 r. mieszczanom mstow. las zw. Garnek (AG perg. 3927).</note>  (<bibl><title>Kopiarz mstowski</title>, <biblScope> zapiska na karcie tytułowej</biblScope></bibl>; <bibl><title>KatZab. t. 6, z. 4, </title> <biblScope>s. 8, 10</biblScope></bibl>);</seg>
-               <seg><date when="1591">1591</date> <persName>Andrzej Sostaczek</persName> kmieć z wsi szlach. <placeName ref="#Q33404">Gorzków</placeName> [zapewne <placeName>pow. lel.</placeName>, par. <placeName ref="#Q78492">Staromieście</placeName>] zbiegł z rodziną do zagrody w mieście <placeName>M.</placeName>, należącej do <persName>Józefa Małuskiego</persName> (<bibl><title>A. Kiełbicka</title>, <biblScope> Zbiegostwo chłopów w województwie krakowskim na przełomie XVI i XVII wieku</biblScope>, <biblScope> Wr. 1989</biblScope>, <biblScope> nr 133</biblScope></bibl>);</seg>
+               <seg><date when="1591">1591</date> <persName>Andrzej Sostaczek</persName> kmieć z wsi szlach. <placeName ref="#Q33413">Gorzków</placeName> [zapewne <placeName>pow. lel.</placeName>, par. <placeName ref="#Q78492">Staromieście</placeName>] zbiegł z rodziną do zagrody w mieście <placeName>M.</placeName>, należącej do <persName>Józefa Małuskiego</persName> (<bibl><title>A. Kiełbicka</title>, <biblScope> Zbiegostwo chłopów w województwie krakowskim na przełomie XVI i XVII wieku</biblScope>, <biblScope> Wr. 1989</biblScope>, <biblScope> nr 133</biblScope></bibl>);</seg>
                <seg><date when="1594">1594</date> pożar miasta <placeName>M.</placeName> (<bibl><title>F. Kiryk, Rozwój → p. 7, </title> <biblScope>s. 175, 407</biblScope></bibl>);</seg>
                <seg><date when="1597">1597</date> kmiecie z wsi <placeName>szlach</placeName>. <placeName>Kraszewice</placeName> <persName>Adam Sitarz</persName> i <persName>Jakub Kowalik</persName> zbiegli z rodzinami do miasta <placeName>M.</placeName> <objectName type="obj" subtype="klasztor">kl.</objectName> <placeName>mstow</placeName>. (<bibl><title>A. Kiełbicka, Zbiegostwo chłopów…, </title> <biblScope>s. 552—3</biblScope></bibl>).</seg>
             </p>
@@ -1027,7 +1336,7 @@
          </div>
 
          <div type="point" n="Uw">
-            <p>Uw. W latach <date when="1441">1441</date>—<date>60</date> <persName>Mik. Łapsz</persName> pisał się jako były <roleName type="miejski" subtype="wójt">wójt</roleName> <placeName>M.</placeName>, w <date when="1443">1443</date>—<date>60</date> był posiadaczem → <persName>Małusz Błotnych</persName>, w <date when="1445">1445</date>—<date>59</date> → <persName>Małusz Pośrednich</persName>, w. <date when="1459">1459</date>—<date>60</date> → <persName>Małusz Starych</persName> (GK 8 s. 821—2, 1026—7, 1041, 1126; 10 s. 467; 11 s. 33; 12 s. 368, 561—3; 13 s. 74—5, 373; 14 s. 50—1, 53, 120—1, 124, 179, 328, 363, 402; 15 s. 249—50; 16 s. 699; ZK 13 s. 359, 430; 14 s. 118; 146 s. 567, 622, 624—5, 634, 638—9; 147 s. 142—3; 257 s. 78; 260 s. 120—1; 313 s. 195, 212—3, 237, 251, 257, 259, 264—5, 276—7, 283, 292, 297, 300—1, 311, 315, 317, 341, 346—7, 389; 314 s. 2c, 18, 25, 47, 53, 64, 66, 82—3, 109—10, 115—6, 134—5, 139). W <date when="1444">1444</date> <persName>Jan Rej z Szumska</persName> <roleName type="ziemski" subtype="łowczy">łowczy krak.</roleName> ręcząc za <persName>Piotra Cikowskiego</persName> <roleName type="ziemski" subtype="podsędek">podsędka</roleName> ziemi <placeName>krak</placeName>. zobowiązał się zapłacić 103 <unit type="currency" subtype="grzywna">grz.</unit> długu <persName>Mikołajowi</persName> niegdyś <roleName type="miejski" subtype="wójt">wójtowi z M.</roleName>, a z kolei <persName>Piotr Cikowski</persName> zapewnił, że uwolni <persName>Jana Reja</persName> z poręki (GK 8 s. 821—2).Tego samego roku sprawa między <persName>Janem Rejem z Szumska</persName> a <persName>Mikołajem</persName> [niegdyś] <roleName type="miejski" subtype="wójt">wójtem z M.</roleName> została odesłana na termin do <placeName ref="#Q47528">Książa</placeName> (GK 8 s. 1126) <note n="21" type="footnote">W haśle Książ Wielki (SHGK cz. III, s. 316) Mikołaj wójt błędnie określony jako: Mikołaj Adam z Mstowa.</note>. W latach <date when="1464">1464</date>—<date>9</date> występuje <persName>Jadwiga z Rząsaw</persName> wd. po <persName>Mikołaju z Małusz</persName> <roleName type="miejski" subtype="wójt">wójcie</roleName> <placeName>M.</placeName>, → <geogName>Małusze Błotne</geogName> p. 3, w <date>l. 1460</date>—93 s. <persName>Mikołaja Stanisław z Małusz</persName>, a w <date>l. 1460</date>—92 drugi s. <persName>Mikołaja Jakub Wójcik z Małusz</persName>, → <geogName>Małusze Błotne</geogName> p. 3.</p></div>
+            <p>Uw. W latach <date when="1441">1441</date>—<date>60</date> <persName>Mik. Łapsz</persName> pisał się jako były <roleName type="miejski" subtype="wójt">wójt</roleName> <placeName>M.</placeName>, w <date when="1443">1443</date>—<date>60</date> był posiadaczem → <persName>Małusz Błotnych</persName>, w <date when="1445">1445</date>—<date>59</date> → <persName>Małusz Pośrednich</persName>, w. <date when="1459">1459</date>—<date>60</date> → <persName>Małusz Starych</persName> (GK 8 s. 821—2, 1026—7, 1041, 1126; 10 s. 467; 11 s. 33; 12 s. 368, 561—3; 13 s. 74—5, 373; 14 s. 50—1, 53, 120—1, 124, 179, 328, 363, 402; 15 s. 249—50; 16 s. 699; ZK 13 s. 359, 430; 14 s. 118; 146 s. 567, 622, 624—5, 634, 638—9; 147 s. 142—3; 257 s. 78; 260 s. 120—1; 313 s. 195, 212—3, 237, 251, 257, 259, 264—5, 276—7, 283, 292, 297, 300—1, 311, 315, 317, 341, 346—7, 389; 314 s. 2c, 18, 25, 47, 53, 64, 66, 82—3, 109—10, 115—6, 134—5, 139). W <date when="1444">1444</date> <persName>Jan Rej z Szumska</persName> <roleName type="ziemski" subtype="łowczy">łowczy krak.</roleName> ręcząc za <persName>Piotra Cikowskiego</persName> <roleName type="ziemski" subtype="podsędek">podsędka</roleName> ziemi <placeName>krak</placeName>. zobowiązał się zapłacić 103 <unit type="currency" subtype="grzywna">grz.</unit> długu <persName>Mikołajowi</persName> niegdyś <roleName type="miejski" subtype="wójt">wójtowi z M.</roleName>, a z kolei <persName>Piotr Cikowski</persName> zapewnił, że uwolni <persName>Jana Reja</persName> z poręki (GK 8 s. 821—2).Tego samego roku sprawa między <persName>Janem Rejem z Szumska</persName> a <persName>Mikołajem</persName> [niegdyś] <roleName type="miejski" subtype="wójt">wójtem z M.</roleName> została odesłana na termin do <placeName ref="#Q47531">Książa</placeName> (GK 8 s. 1126) <note n="21" type="footnote">W haśle Książ Wielki (SHGK cz. III, s. 316) Mikołaj wójt błędnie określony jako: Mikołaj Adam z Mstowa.</note>. W latach <date when="1464">1464</date>—<date>9</date> występuje <persName>Jadwiga z Rząsaw</persName> wd. po <persName>Mikołaju z Małusz</persName> <roleName type="miejski" subtype="wójt">wójcie</roleName> <placeName>M.</placeName>, → <geogName>Małusze Błotne</geogName> p. 3, w <date>l. 1460</date>—93 s. <persName>Mikołaja Stanisław z Małusz</persName>, a w <date>l. 1460</date>—92 drugi s. <persName>Mikołaja Jakub Wójcik z Małusz</persName>, → <geogName>Małusze Błotne</geogName> p. 3.</p></div>
          <div>
             <p><bibl><author sameAs="Jacek Laberschek">JL</author></bibl></p>
          </div>
@@ -1035,7 +1344,7 @@
          <div>
             <p>
                <seg type="footnote" n="1">1. W Mp. 1 s. 58 <placeName>Mistou</placeName>.</seg>
-               <seg type="footnote" n="2">2. Ponadto w dok. z <date>1624 r.</date> <persName>Andrzeja Strzembosza</persName> <roleName type="kościelny_wyższy" subtype="prepozyt">prep. mstow.</roleName>, wystawionym po pożarze miasta <placeName>M.</placeName>, a ustalającym powinności mieszczan, wymienione są następujące obiekty fizjograficzne: grunt zw. potocznie <geogName>Taszarki</geogName> [dziś łąki <geogName>Tasarki</geogName> w <placeName>M.</placeName> i w <placeName>Wancerzowie</placeName> — UN 202 s. 23, 25], <objectName type="fiz" subtype="góra">góra</objectName> zw. <geogName>Dobra</geogName>, miejsca zw. <geogName>Skarżawa</geogName>, <geogName>Garnek</geogName> i <geogName>Chropoń</geogName> [dziś cz. <placeName>M.</placeName>, położona na wschód od centrum tej wsi. nosi nazwę <placeName>Chrapoń</placeName> — UN 202 s. 23] i <objectName type="fiz" subtype="rzeka">rz.</objectName> <geogName>Warta</geogName> (Kopiarz <geogName>mstowski</geogName> s. 100—4).</seg>
+               <seg type="footnote" n="2">2. Ponadto w dok. z <date>1624 r.</date> <persName>Andrzeja Strzembosza</persName> <roleName type="kościelny_wyższy" subtype="prepozyt">prep. mstow.</roleName>, wystawionym po pożarze miasta <placeName>M.</placeName>, a ustalającym powinności mieszczan, wymienione są następujące obiekty fizjograficzne: grunt zw. potocznie <geogName>Taszarki</geogName> [dziś <objectName type="fiz" subtype="łąka">łąki</objectName> <geogName>Tasarki</geogName> w <placeName>M.</placeName> i w <placeName>Wancerzowie</placeName> — UN 202 s. 23, 25], <objectName type="fiz" subtype="góra">góra</objectName> zw. <geogName>Dobra</geogName>, miejsca zw. <geogName>Skarżawa</geogName>, <geogName>Garnek</geogName> i <geogName>Chropoń</geogName> [dziś cz. <placeName>M.</placeName>, położona na wschód od centrum tej wsi. nosi nazwę <placeName>Chrapoń</placeName> — UN 202 s. 23] i <objectName type="fiz" subtype="rzeka">rz.</objectName> <geogName>Warta</geogName> (Kopiarz <geogName>mstowski</geogName> s. 100—4).</seg>
                <seg type="footnote" n="3">3. Incydent miał miejsce <date>26</date> II, czyli w okresie Wielkiego Postu, można się zatem domyślać, iż wynajęty przez <persName>Andrzeja Tęczyńskiego</persName> i <persName>Mik. Balickiego</persName> woźnica <persName>Jakub Grzywa z Mstowa</persName> wiózł śledzie — ówczesny wielkopostny przysmak — do rezydencji owych dostojników, a więc do <objectName type="obj" subtype="zamek">zamku</objectName> Ojców i <objectName type="obj" subtype="zamek">zamku</objectName> Tęczyn.</seg>
                <seg type="footnote" n="4">4. Wzgórze w <objectName type="fiz" subtype="zakole">zakolu</objectName> <objectName type="fiz" subtype="rzeka">rz.</objectName> <geogName>Warty</geogName>, 10 km na południowy zachód od <placeName>M.</placeName>, 1,5 km na północny wschód od centrum <placeName ref="#Q26724">Częstochowy</placeName> (Mapa Obrębów).</seg>
                <seg type="footnote" n="5">5. Wzmianki o tym tkaczu kładą kres wątpliwościom <persName>J. Wyrozumskiego</persName>, Tkactwo <placeName>małopolskie</placeName> w późnym średniowieczu, Kr. <date when="1972">1972</date>, s. 57, jakoby w <placeName>M.</placeName> nie było w średniowieczu sukienników.</seg>
@@ -1055,6 +1364,7 @@
                <seg type="footnote" n="19">19. Wg UŁS s. 152, nr 61, <persName>Mikołaj</persName> zmarł przed <date>10 XII 1498</date>. <date when="1500">1500</date> wd. po nim <persName>Małgorzata</persName> zastawiła za 30 <unit type="currency" subtype="grzywna">grz.</unit> <persName>J. Kaliszkowskiemu z Kaliszkowic</persName> 2 ł. w <placeName>Świątkowicach</placeName> (<orgName>SHGW</orgName> s. 160—1, 167). Szczegółowe dane o rodzinie <persName>Wieruszów-Waliknowskich</persName>, ale bez informacji o zabójstwie <persName>Mikołaja</persName>, zamieszcza <persName>T. Stolarczyk</persName>, Szlachta <placeName>wieluńska</placeName> od <date>XIV</date> do połowy <date>XVI wieku</date>, <placeName>Wieluń</placeName> <date when="2005">2005</date>, s. 50—4.</seg>
                <seg type="footnote" n="20">20. To zapewne ze względu na zniszczenia spowodowane pożarem i konieczność odbudowy domów w mieście <objectName type="obj" subtype="klasztor">kl.</objectName> kan. reg. nadał w <date>1568 r.</date> mieszczanom mstow. <objectName type="fiz" subtype="las">las</objectName> zw. <geogName>Garnek</geogName> (AG perg. 3927).</seg>
                <seg type="footnote" n="21">21. W haśle <placeName ref="#Q47531">Książ Wielki</placeName> (SHGK cz. III, s. 316) <persName>Mikołaj</persName> <roleName type="miejski" subtype="wójt">wójt</roleName> błędnie określony jako: <persName>Mikołaj Adam z Mstowa</persName>.</seg>
+
             </p>
          </div>
       </body></text></TEI>
