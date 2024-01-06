@@ -99,7 +99,7 @@ pattern = (
             + rule_patterns_coin()
         )
 
-print(len(pattern))
+#print(len(pattern))
 # wzorce encji
 wzorce_encji.add_patterns(pattern)
 
@@ -140,6 +140,7 @@ df_places = pd.read_csv(places_path, sep=',', header=0, low_memory=False,
                         quotechar='"', encoding='utf-8')
 
 item_foot = None
+main_place_latitude = main_place_longitude = None
 
 people = {}
 places = {}
@@ -160,7 +161,7 @@ def add_footnotes(text_to_complete:str, max_footnotes:int) -> str:
     return text_to_complete
 
 
-def ner_to_xml(text_to_process:str, r_date:str="") -> str:
+def ner_to_xml(text_to_process:str, r_date:str="", main_place:str="") -> str:
     """ wyszukiwanie encji - nazw własnych """
     # w trybie bez NER zwraca po prostu wartość wejściową
     if not MAKE_NER:
@@ -249,12 +250,32 @@ def ner_to_xml(text_to_process:str, r_date:str="") -> str:
                                     f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
             elif ent.label_ == 'PLACENAME':
                 text_to_search = ent.lemma_
-                qid, description, latitude, longitude = fuzzylinker_places(search_entity=text_to_search, df=df_places)
+                alt_text = ent.text
+
+                # jeżeli nazwa to skrót od miejscowości hasła to szukanie wg nazwy miejscowości hasła
+                # czyli zamiast M. - Mstów
+                if (len(text_to_search) == 2 and
+                    text_to_search.endswith('.') and
+                    text_to_search[0].lower() == main_place[0].lower()):
+                    text_to_search = main_place
+                    text_to_search = text_to_search.title()
+
+                # jeżeli nazwa zaczyna się z małej litery (np. z powodu lematyzacji) to poprawka
+                if text_to_search[0].islower():
+                    text_to_search = text_to_search.title()
+
+                qid, description, latitude, longitude, qid_label = fuzzylinker_places(search_entity=text_to_search,
+                                                                           alt_search_entity=alt_text,
+                                                                           m_place_latitude=main_place_latitude,
+                                                                           m_place_longitude=main_place_longitude,
+                                                                           df=df_places)
                 if qid:
-                    print(ent.text, '->', text_to_search, '->', qid)
+                    #print(ent.text, '->', text_to_search, '->', qid)
                     tagged_text += (text_to_process[last_index:ent.start_char] +
                                     f'<{label2tag[ent.label_]} ref="#{qid}">{ent.text}</{label2tag[ent.label_]}>')
-                    places[text_to_search] = (qid, description, latitude, longitude)
+                    # uzupełnienie do spisu miejscowości
+                    places[qid_label] = (qid, description, latitude, longitude)
+                    print(f"{text_to_search} ({alt_text}) = {qid_label} ({qid}) - {description}")
                 else:
                     tagged_text += (text_to_process[last_index:ent.start_char] +
                                 f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
@@ -347,6 +368,11 @@ if __name__ == '__main__':
             if not item_auth:
                 item_auth = "None"
 
+            # identyfikacja głównej miejscowości hasła, ustalenie jej współrzędne
+            text_to_search = item_name.title()
+            _, _, main_place_latitude, main_place_longitude, _ = fuzzylinker_places(text_to_search, '', None, None, df_places)
+            #print(f"Współrzędne miejscowości {text_to_search}: {main_place_latitude}, {main_place_longitude}")
+
             # head
             tei_text = f"""<text>
                 <body>
@@ -369,7 +395,7 @@ if __name__ == '__main__':
                         else:
                             tmp = [item["text"]]
                         for tmp_item in tmp:
-                            content = ner_to_xml(tmp_item)
+                            content = ner_to_xml(tmp_item, main_place=item_name)
                             content = add_footnotes(content, num_of_footnotes)
                             tei_text += f'<p>{content}</p>'
                             previous_item = 'text'
@@ -427,7 +453,7 @@ if __name__ == '__main__':
                                 else:
                                     tei_text += f'<date when="{item["regest"]["date"]}">{item["regest"]["date"]}</date>' + ' '
                         if 'content' in item['regest']:
-                            content = ner_to_xml(item["regest"]["content"], r_date=regest_date)
+                            content = ner_to_xml(item["regest"]["content"], r_date=regest_date, main_place=item_name)
                             content = add_footnotes(content, num_of_footnotes)
                             tei_text += f'{content}' + ' '
                         if 'source' in item['regest']:
@@ -478,14 +504,14 @@ if __name__ == '__main__':
                     elif "elements" in item:
                         tmp_list = item["elements"]
                         for el in tmp_list:
-                            el = ner_to_xml(el)
+                            el = ner_to_xml(el, main_place=item_name)
                             el = add_footnotes(el, num_of_footnotes)
                             tei_text += f'<seg>{el}</seg>'
                         tei_text += '</p>\n'
                     # lista elementów przetwarzana na sekcje <p>
                     elif "paragraphs" in item:
                         for par in item["paragraphs"]:
-                            par = ner_to_xml(par)
+                            par = ner_to_xml(par, main_place=item_name)
                             par = add_footnotes(par, num_of_footnotes)
                             tei_text += f'<p>{par}</p>\n'
                     # akapit z ppozycjami bibliograficznymi oddzielonymi znakiem
@@ -515,7 +541,7 @@ if __name__ == '__main__':
             if item_foot:
                 tei_text += '\n<div>\n<p>\n'
                 for key, value in item_foot.items():
-                    value_ner = ner_to_xml(value)
+                    value_ner = ner_to_xml(value, main_place=item_name)
                     tei_text += f'<seg type="footnote" n="{key}">{key}. {value_ner}</seg>\n'
                 tei_text += '\n</p>\n</div>\n'
 
