@@ -29,6 +29,13 @@ def patterns_ogolne(obiekty:list, fizjografia:list, imiona:list, miejscowosci:li
             "pattern": [{"LEMMA": {"IN": imiona}}],
             "id": "person"
            },
+           # skróty imion
+           {"label": "PERSON",
+            "pattern": [{"TEXT": {"IN": ["Kat", "Wojc", "Stan", "Mik", "Hier", "Małg", "Mał", "Waw", "Więc", "Zbig"]}},
+                        {"IS_PUNCT": True},
+                        {"POS": "PROPN"}],
+            "id": "person_4"
+           },
            # staropolskie miejscowosci
            {"label":"PLACENAME",
             "pattern": [{"LEMMA": {"IN": miejscowosci}}],
@@ -485,8 +492,16 @@ def patterns_ogolne(obiekty:list, fizjografia:list, imiona:list, miejscowosci:li
             "id": "wiceregent"
            },
            {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "wojewoda"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "wojewoda"
+           },
+           {"label":"OCCUPATION_LAND",
             "pattern":  [{"LEMMA": "wicewojewoda"}, {"POS":"ADJ", "OP": "*"}],
             "id": "wicewojewoda"
+           },
+           {"label":"OCCUPATION_LAND",
+            "pattern":  [{"LEMMA": "podwojewodzi"}, {"POS":"ADJ", "OP": "*"}],
+            "id": "podwojewodzi"
            },
            {"label": "OCCUPATION_LAND",
             "pattern": [{"LEMMA": "wicewojewoda"}, {"LOWER": {"IN": shortcuts}}, {"IS_PUNCT":True}],

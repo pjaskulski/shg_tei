@@ -60,6 +60,15 @@ with open(path_miejscowosci, 'r', encoding='utf-8') as f:
     lines = f.readlines()
     miejscowosci = [x.strip() for x in lines]
 
+# wczytanie form podstawowych dla miejscowości
+places_norm = {}
+path_mianowniki = Path("..") / "slowniki" / "places_norm.csv"
+with open(path_mianowniki, 'r', encoding='utf-8') as f:
+    lines = f.readlines()
+    for line in lines:
+        tmp = line.split(',')
+        places_norm[tmp[0].strip()] = tmp[1].strip()
+
 # translacja tagów z modelu na TEI
 label2tag = {
             "GEOGNAME":"geogName",
@@ -222,7 +231,7 @@ def ner_to_xml(text_to_process:str, r_date:str="", main_place:str="") -> str:
                 else:
                     tagged_text += (text_to_process[last_index:ent.start_char] +
                                     f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
-            elif ent.label_ == 'PERSNAME':
+            elif ent.label_ == 'PERSNAME' or ent.label_ == 'PERSON':
                 qid = ''
                 # tylko dla osób z nazwiskiem, wieloma imionami lub miejscowością z której się piszą
                 if ' ' in ent.text:
@@ -237,19 +246,23 @@ def ner_to_xml(text_to_process:str, r_date:str="", main_place:str="") -> str:
                             text_to_search = text_to_search.replace(short, long)
 
                     # qid, description = wikilinker_people(search_entity=text_to_search, year=r_date)
-                    qid, description = fuzzylinker_people(search_entity=text_to_search, df=df_people, year=r_date)
+                    qid, description, alias = fuzzylinker_people(search_entity=text_to_search, df=df_people, year=r_date)
 
                     #print(ent.text, '->', text_to_search, '->', qid)
 
                 if qid:
                     tagged_text += (text_to_process[last_index:ent.start_char] +
                                     f'<{label2tag[ent.label_]} ref="#{qid}">{ent.text}</{label2tag[ent.label_]}>')
-                    people[text_to_search] = (qid, description)
+                    people[text_to_search] = (qid, description, alias)
                 else:
                     tagged_text += (text_to_process[last_index:ent.start_char] +
                                     f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
             elif ent.label_ == 'PLACENAME':
                 text_to_search = ent.lemma_
+                # sprawdzenie czy występuje w słowniku mianowników dla trudniejszych
+                # nazw miejscowości
+                if ent.text in places_norm:
+                    text_to_search = places_norm[ent.text]
                 alt_text = ent.text
 
                 # jeżeli nazwa to skrót od miejscowości hasła to szukanie wg nazwy miejscowości hasła
@@ -275,7 +288,7 @@ def ner_to_xml(text_to_process:str, r_date:str="", main_place:str="") -> str:
                                     f'<{label2tag[ent.label_]} ref="#{qid}">{ent.text}</{label2tag[ent.label_]}>')
                     # uzupełnienie do spisu miejscowości
                     places[qid_label] = (qid, description, latitude, longitude)
-                    print(f"{text_to_search} ({alt_text}) = {qid_label} ({qid}) - {description}")
+                    #print(f"{text_to_search} ({alt_text}) = {qid_label} ({qid}) - {description}")
                 else:
                     tagged_text += (text_to_process[last_index:ent.start_char] +
                                 f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
@@ -389,7 +402,7 @@ if __name__ == '__main__':
                     # akapit tekstowy
                     if 'text' in item:
                         if previous_item == 'regest':
-                            tei_text += '</p>'
+                            tei_text += '</p>\n'
                         if '\n' in item["text"]:
                             tmp = item["text"].split('\n')
                         else:
@@ -397,19 +410,21 @@ if __name__ == '__main__':
                         for tmp_item in tmp:
                             content = ner_to_xml(tmp_item, main_place=item_name)
                             content = add_footnotes(content, num_of_footnotes)
-                            tei_text += f'<p>{content}</p>'
+                            tei_text += f'<p>{content}</p>\n'
                             previous_item = 'text'
                     # lista regestów
                     elif 'regest' in item:
                         regest_date = ""
                         if previous_item != 'regest':
                             tei_text += '\n<p>'
+                            previous_date = ""
                         tei_text += '\n<seg>'
-                        if 'date' in item['regest']:
+                        if 'date' in item['regest'] and item["regest"]["date"].strip() != "":
                             regest_date = item["regest"]["date"]
                             # jeżeli nietypowy zapis daty - bez atrybutów w tagu <date>
                             if regest_date and ('[' in regest_date or 'po' in regest_date):
                                 tei_text += f'<date>{regest_date}</date>' + ' '
+                                previous_date = f'[<date>{regest_date}</date>]' + ' '
                             # bardziej typowy zapis daty z atrybutami w tagu <date>
                             elif regest_date and regest_date.strip() != '':
                                 if ',' in regest_date:
@@ -435,23 +450,33 @@ if __name__ == '__main__':
                                         else:
                                             tmp_tab.append(f'<date when="{tmp_date_item.strip()}">{tmp_date_item}</date>')
                                     tei_text += ', '.join(tmp_tab)
+                                    previous_date = '['+', '.join(tmp_tab)+']'
                                 elif '-' in regest_date:
                                     tmp = regest_date.split('-')
                                     if len(tmp[1]) < 4:
                                         tmp[1] = tmp[0][:(4-len(tmp[1]))] + tmp[1]
                                     tei_text += f'<date from="{tmp[0]}" to="{tmp[1]}">{regest_date}</date> '
+                                    previous_date = f'[<date from="{tmp[0]}" to="{tmp[1]}">{regest_date}</date>] '
                                 elif '—' in regest_date:
                                     tmp = regest_date.split('—')
                                     if len(tmp[1]) < 4:
                                         tmp[1] = tmp[0][:(4-len(tmp[1]))] + tmp[1]
                                     tei_text += f'<date from="{tmp[0]}" to="{tmp[1]}"> {regest_date}</date> '
+                                    previous_date = f'[<date from="{tmp[0]}" to="{tmp[1]}"> {regest_date}</date>] '
                                 elif r'/' in regest_date:
                                     tmp = regest_date.split(r'/')
                                     if len(tmp[1]) < 4:
                                         tmp[1] = tmp[0][:(4-len(tmp[1]))] + tmp[1]
                                     tmp_tab.append(f'<date from="{tmp[0]}" to="{tmp[1]}"> {regest_date}</date> ')
+                                    previous_date = f'<date from="{tmp[0]}" to="{tmp[1]}"> {regest_date}</date> '
                                 else:
                                     tei_text += f'<date when="{item["regest"]["date"]}">{item["regest"]["date"]}</date>' + ' '
+                                    previous_date = f'[<date when="{item["regest"]["date"]}">{item["regest"]["date"]}</date>]' + ' '
+                        # jeżeli nie ma dat a poprzednio był regest z datą to obowiązuje ta sama data
+                        else:
+                            if previous_date:
+                                tei_text += previous_date
+
                         if 'content' in item['regest']:
                             content = ner_to_xml(item["regest"]["content"], r_date=regest_date, main_place=item_name)
                             content = add_footnotes(content, num_of_footnotes)
@@ -547,16 +572,19 @@ if __name__ == '__main__':
 
             # lista rozpoznanych w wiki osób
             profile_desc = ""
+            people_printed = []
             if len(people) > 0:
                 profile_desc += "<profileDesc>\n<particDesc>\n<listPerson>\n"
                 for key, value in people.items():
-                    value_qid, value_desc = value
-                    profile_desc += f'''<person xml:id="{value_qid}">
-                    <persName>{key}</persName>
-                    <idno>https://wikihum.lab.dariah.pl/wiki/Item:{value_qid}</idno>
-                    <note>{value_desc}</note>
-                    </person>
-                    '''
+                    value_qid, value_desc, value_alias = value
+                    if value_qid not in people_printed:
+                        profile_desc += f'''<person xml:id="{value_qid}">
+                        <persName>{value_alias}</persName>
+                        <idno>https://wikihum.lab.dariah.pl/wiki/Item:{value_qid}</idno>
+                        <note>{value_desc}</note>
+                        </person>
+                        '''
+                        people_printed.append(value_qid)
                 profile_desc += "</listPerson>\n</particDesc>\n"
 
             # lista rozpoznanych w wiki miejscowości

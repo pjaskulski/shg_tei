@@ -14,12 +14,13 @@ wbi_config['SPARQL_ENDPOINT_URL'] = 'https://wikihum.lab.dariah.pl/bigdata/sparq
 wbi_config['WIKIBASE_URL'] = 'https://wikihum.lab.dariah.pl'
 
 
-def fuzzylinker_people(search_entity:str, df, year:str="") -> str:
+def fuzzylinker_people(search_entity:str, df, year:str="") -> tuple:
     """ funkcja wyszukuje najbardziej prawdopodobną kndydaturę osoby z bazy
         na podstawe imienia i nazwiska oraz daty śmierci, z użyciem biblioteki rapidfuzz
     """
     best_qid = ''
     best_description = ''
+    best_alias = ''
 
     if year and year.isdigit():
         year = int(year)
@@ -43,14 +44,16 @@ def fuzzylinker_people(search_entity:str, df, year:str="") -> str:
             if (int(death_date) >= int(year)) and (int(death_date) - int(year) < 45):
                 best_qid = qid
                 best_description = description
+                best_alias = alias
                 break
         elif death_date and not year:
             if int(death_date)>= 1000 and int(death_date) <= 1625:
                 best_qid = qid
                 best_description = description
+                best_alias = alias
                 break
 
-    return best_qid, best_description
+    return best_qid, best_description, best_alias
 
 
 def wikilinker_people(search_entity:str, year:str="", number_of_candidates=10, instance='Q5') -> str:
