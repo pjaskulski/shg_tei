@@ -124,6 +124,8 @@ def xsplit(s:str):
 
 def prepare_regest(value: str) -> tuple():
     """ przetwarzanie regestu """
+    if "Piesko" in value:
+        print()
     pos = value.rfind("(")
     # jeżeli regest z bibliografią
     if pos != -1:
@@ -180,7 +182,7 @@ if __name__ == '__main__':
     data_folder_list = data_folder.glob('*.json')
     for data_file in data_folder_list:
         filename = os.path.basename(data_file)
-        if filename != '30790.json':
+        if filename != '30659.json':
             continue
         path = Path("..") / "json_pre" / filename
         output_path = Path("..") / "json" / filename

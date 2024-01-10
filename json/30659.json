@@ -9,7 +9,7 @@
             "point_num": "0",
             "point_content": [
                 {
-                    "text": "(1193 Mstou — SUB 1, 61 [[1]]; 1278 villa Msthow — Mp. 2, 485 kop.; 1372 oppidum Mstow — Archiwum Państwowe we Wrocławiu, Kopiarz klasztoru Augustianów, sygn. Rep. 135 nr 22; 1405 oppidum Mstouiense — ZDM 6, 1674; 1412 civitas Mstouiensis — KSN 3091; 1426 opidum Msthow — GK 2 s. 672; 1428 Msstow — ZK 312 s. 344; opidum Mstow — ZK 312 s. 388; 1440 civitas Mstow — GK 7 s. 153; 1473 Musthow — Księga promocji s. 64; 1477 Misthow — Księga promocji s. 68) osada, od 1278 miasto, wieś od 1869 r., dziś wieś gminna (Wykaz urzędowych nazw miejscowości w Polsce, t. 2, W. 1981, s. 491; Spis miejscowości w Polsce w układzie alfabetycznym, Katowice 2006, s. 362).\nTreść hasła: 1. Przynależność administracyjna i kościelna. 2. -a. Położenie i granice, -b. Obiekty topograficzne, -c. Obiekty gospodarcze, -d. Drogi, mosty, cło, -e. Zabudowa. 3. -a. Sprawy własnościowe, -b. Powinności, -c. Handel, zasięg terytorialny rynku lokalnego mstow., -d. Rzemiosło miejskie, rzemieślnicy i zawody artystyczne, -e. Mieszczanie, -f. Majątek mieszczan, -g. Majątek miasta, -h. Rajcy. 4. -a. Lokacja, -b. Wójtowie, wójtostwo, podwójciowie, -c. Ławnicy, przysięgli, -d. Sąd gajony-ławniczy. 5. Kościół, kaplica w mieście. 6. -aa. Duchowni pochodzący z M. -ab. Osoby z M. egzaminowane do święceń kapłańskich, -b. Studenci Uniw. Krak. pochodzący z M., -c. Osoby z M. przyjęte do pr. miej. w Krakowie i zamieszkujące w tym mieście, -d. Osoby z M. zamieszkujące w innych miastach, -e. Pobyty panujących, -f. Posiedzenia sądowe w M., -g. Ważne wydarzenia i incydenty, 7. -a. Źródła, dodatkowe skróty, -b. Literatura, 8. Kultura materialna. Uw."
+                    "text": "(1193 Mstou — SUB 1, 61[[1]]; 1278 villa Msthow — Mp. 2, 485 kop.; 1372 oppidum Mstow — Archiwum Państwowe we Wrocławiu, Kopiarz klasztoru Augustianów, sygn. Rep. 135 nr 22; 1405 oppidum Mstouiense — ZDM 6, 1674; 1412 civitas Mstouiensis — KSN 3091; 1426 opidum Msthow — GK 2 s. 672; 1428 Msstow — ZK 312 s. 344; opidum Mstow — ZK 312 s. 388; 1440 civitas Mstow — GK 7 s. 153; 1473 Musthow — Księga promocji s. 64; 1477 Misthow — Księga promocji s. 68) osada, od 1278 miasto, wieś od 1869 r., dziś wieś gminna (Wykaz urzędowych nazw miejscowości w Polsce, t. 2, W. 1981, s. 491; Spis miejscowości w Polsce w układzie alfabetycznym, Katowice 2006, s. 362).\nTreść hasła: 1. Przynależność administracyjna i kościelna. 2. -a. Położenie i granice, -b. Obiekty topograficzne, -c. Obiekty gospodarcze, -d. Drogi, mosty, cło, -e. Zabudowa. 3. -a. Sprawy własnościowe, -b. Powinności, -c. Handel, zasięg terytorialny rynku lokalnego mstow., -d. Rzemiosło miejskie, rzemieślnicy i zawody artystyczne, -e. Mieszczanie, -f. Majątek mieszczan, -g. Majątek miasta, -h. Rajcy. 4. -a. Lokacja, -b. Wójtowie, wójtostwo, podwójciowie, -c. Ławnicy, przysięgli, -d. Sąd gajony-ławniczy. 5. Kościół, kaplica w mieście. 6. -aa. Duchowni pochodzący z M. -ab. Osoby z M. egzaminowane do święceń kapłańskich, -b. Studenci Uniw. Krak. pochodzący z M., -c. Osoby z M. przyjęte do pr. miej. w Krakowie i zamieszkujące w tym mieście, -d. Osoby z M. zamieszkujące w innych miastach, -e. Pobyty panujących, -f. Posiedzenia sądowe w M., -g. Ważne wydarzenia i incydenty, 7. -a. Źródła, dodatkowe skróty, -b. Literatura, 8. Kultura materialna. Uw."
                 }
             ]
         },
@@ -31,7 +31,7 @@
                                 "source_el": "RP k. 59"
                             },
                             {
-                                "source_en": ");"
+                                "source_en": ")"
                             }
                         ]
                     }
@@ -48,7 +48,7 @@
                                 "source_el": "GK 8 s. 1041"
                             },
                             {
-                                "source_en": ");"
+                                "source_en": ")"
                             }
                         ]
                     }
@@ -82,7 +82,7 @@
                                 "source_el": "RP k. 59, s. 415—6"
                             },
                             {
-                                "source_el": " ŹD s. 77"
+                                "source_el": "ŹD s. 77"
                             },
                             {
                                 "source_en": ")"
@@ -102,7 +102,7 @@
                                 "source_el": "SP 2, 2949"
                             },
                             {
-                                "source_el": " GK 14 s. 63"
+                                "source_el": "GK 14 s. 63"
                             },
                             {
                                 "source_en": ")"
@@ -113,7 +113,7 @@
                 {
                     "regest": {
                         "date": "1487",
-                        "content": "diec. krak. ",
+                        "content": "diec. krak.",
                         "source": [
                             {
                                 "source_bg": "("
@@ -142,6 +142,13 @@
                                 "source_en": ")"
                             }
                         ]
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "",
+                        "content": "przed 1456 par. → Mstów klasztor p. 1—2",
+                        "source": null
                     }
                 },
                 {
@@ -223,7 +230,7 @@
                 {
                     "regest": {
                         "date": "1470",
-                        "content": "Małusze Stare k. M. ",
+                        "content": "Małusze Stare k. M.",
                         "source": [
                             {
                                 "source_bg": "("
@@ -257,7 +264,7 @@
                 {
                     "regest": {
                         "date": "1479",
-                        "content": "wieś Siedlec leżąca k. M. ",
+                        "content": "wieś Siedlec leżąca k. M.",
                         "source": [
                             {
                                 "source_bg": "("
@@ -266,7 +273,7 @@
                                 "source_el": "AG perg. 5213"
                             },
                             {
-                                "source_el": " Nabiałek, Starostwo olsztyńskie → p. 7, s. 436"
+                                "source_el": "Nabiałek, Starostwo olsztyńskie → p. 7, s. 436"
                             },
                             {
                                 "source_en": ")"
@@ -301,6 +308,27 @@
                 },
                 {
                     "regest": {
+                        "date": "1257, 1570",
+                        "content": "rz. Warta → p. 2d",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "1456, 1470—80",
+                        "content": "taż rzeka → p. 2a",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "1579",
+                        "content": "taż rzeka → niżej",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
                         "date": "1406, 1513",
                         "content": "niwa i góra zw. Skarzawa w Starych Małusach [dziś pole Skarzawa w Małusach Małych i M. — UN 202 s. 23; Mapa Obrębów]",
                         "source": [
@@ -311,7 +339,7 @@
                                 "source_el": "ZK 311 s. 54"
                             },
                             {
-                                "source_el": " Kopiarz mstowski s. 97—9"
+                                "source_el": "Kopiarz mstowski s. 97—9"
                             },
                             {
                                 "source_en": ")"
@@ -365,13 +393,13 @@
                                 "source_el": "DLb. 3 s. 149—50"
                             },
                             {
-                                "source_el": " 160—1"
+                                "source_el": "160—1"
                             },
                             {
-                                "source_el": " LDK s. 66"
+                                "source_el": "LDK s. 66"
                             },
                             {
-                                "source_el": " WR k. 114v"
+                                "source_el": "WR k. 114v"
                             },
                             {
                                 "source_en": ")"
@@ -425,7 +453,7 @@
                                 "source_el": "AG perg. 3981"
                             },
                             {
-                                "source_en": ") [[2]]."
+                                "source_en": ")[[2]]."
                             }
                         ]
                     }
@@ -509,6 +537,13 @@
                 {
                     "regest": {
                         "date": "",
+                        "content": "na mocy wyroku Piotra z Pieskowej Skały wwdy sand., star. krak. i sier. Piotr prep. kl. w M. ma dać w posiadanie Machnie z Mrzygłodu młyn Piwoniowski przed miastem M.",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "",
                         "content": "Niklos z Pilczy pełnomocnik Machny z Mrzygłodu postawił przed sądem szl. Klemensa z Mokrzeszy sędziego [olsztyńskiego], Mściwoja z Rędzin, Stanisława z Rząsaw, Siecieja z Kruszyny [ziemia wiel.] asesorów, którzy oświadczyli, że przywilej dla Machny na ten młyn spłonął 30 lat wcześniej, co Niklos przed Janem ze Szczekocin kaszt. lub. i star. olsztyńskim oraz jego burgrabią [z Olsztyna] udowadnia",
                         "source": [
                             {
@@ -583,7 +618,7 @@
                 {
                     "regest": {
                         "date": "1563",
-                        "content": "[2] młyny zakupne w M.",
+                        "content": " [2] młyny zakupne w M.",
                         "source": [
                             {
                                 "source_bg": "("
@@ -699,7 +734,7 @@
                 {
                     "regest": {
                         "date": "1476",
-                        "content": "przez M. niejednokrotnie pędzone jest bydło ",
+                        "content": "przez M. niejednokrotnie pędzone jest bydło",
                         "source": [
                             {
                                 "source_bg": "("
@@ -821,7 +856,7 @@
                 {
                     "regest": {
                         "date": "1538/9",
-                        "content": "w komorze celnej mstow. pobrano 30 zł z tytułu cła",
+                        "content": " w komorze celnej mstow. pobrano 30 zł z tytułu cła",
                         "source": [
                             {
                                 "source_bg": "("
@@ -1002,7 +1037,7 @@
                 {
                     "regest": {
                         "date": "1503",
-                        "content": "dom Pawła Tatarki ",
+                        "content": "dom Pawła Tatarki",
                         "source": [
                             {
                                 "source_bg": "("
@@ -1053,7 +1088,7 @@
                 {
                     "regest": {
                         "date": "1557",
-                        "content": "drewniany dom w rynku ",
+                        "content": "drewniany dom w rynku",
                         "source": [
                             {
                                 "source_bg": "("
@@ -1095,7 +1130,7 @@
                 {
                     "regest": {
                         "date": "",
-                        "content": "Własn. kl. kan. reg. w M. 1193 pap. Celestyn III bierze w opiekę kl. [kan. reg.] na Piasku we Wrocławiu i zatwierdza jego posiadłości, m.in. M. z przynależnościami i dziesięcinami, karczmę w Lelowie i karczmę w Kromołowie ",
+                        "content": "Własn. kl. kan. reg. w M. 1193 pap. Celestyn III bierze w opiekę kl. [kan. reg.] na Piasku we Wrocławiu i zatwierdza jego posiadłości, m.in. M. z przynależnościami i dziesięcinami, karczmę w Lelowie i karczmę w Kromołowie",
                         "source": [
                             {
                                 "source_bg": "("
@@ -1227,7 +1262,7 @@
                 {
                     "regest": {
                         "date": "1501",
-                        "content": "wymienione miasta, w tym M., skazane na karę król. XIV za niedopuszczenie poborcy Mik. Kępanowskiego do pobrania czopowego ",
+                        "content": "wymienione miasta, w tym M., skazane na karę król. XIV za niedopuszczenie poborcy Mik. Kępanowskiego do pobrania czopowego",
                         "source": [
                             {
                                 "source_bg": "("
@@ -1261,7 +1296,7 @@
                 {
                     "regest": {
                         "date": "1521",
-                        "content": "miasto M. dostarcza na wyprawę wojenną 1 wóz z żywnością, tj. z: 3 szynkami, 1 faską masła, 5 serami, 180 bochnami chleba, 3 ćwierciami grochu, 3 korcami mąki, 1 korcem kaszy i 1 ćwiercią soli, a także 4 konie, woźnicę Walentego Michaliczka z mieczem, 2 pieszych Wojc. Zapaśnika z mieczem, krzoską [ręczną bronią palną] i bombardą, oraz Walentego Suchosza z mieczem i 2 oszczepami [pikami], poza tym łopatę, motykę, topór i łańcuch ",
+                        "content": "miasto M. dostarcza na wyprawę wojenną 1 wóz z żywnością, tj. z: 3 szynkami, 1 faską masła, 5 serami, 180 bochnami chleba, 3 ćwierciami grochu, 3 korcami mąki, 1 korcem kaszy i 1 ćwiercią soli, a także 4 konie, woźnicę Walentego Michaliczka z mieczem, 2 pieszych Wojc. Zapaśnika z mieczem, krzoską [ręczną bronią palną] i bombardą, oraz Walentego Suchosza z mieczem i 2 oszczepami [pikami], poza tym łopatę, motykę, topór i łańcuch",
                         "source": [
                             {
                                 "source_bg": "("
@@ -1315,7 +1350,7 @@
                 {
                     "regest": {
                         "date": "1565",
-                        "content": "miasto M. płaci szos 38 fl. 12 gr, z 3 l. ról miejskich 2 fl., z 2 młynów zakupnych posiadających po 3 koła 4 fl. 24 gr, od rzemieślników 6 fl. 20 gr, od towarzyszy rzemieślniczych 8 gr, od hultaja 12 gr, od komorników 1 fl. 26 gr, od przekupni 28 gr, czopowe za 1 kwartał 42 fl. 18 gr, za 2 kwartał 45 fl., za 3 i 4 kwartał 60 fl. 18 gr, za wino 2 fl. 24 gr, za gorzałkę 3 fl. 6 gr, za wyszynk gorzałki 24 gr ",
+                        "content": "miasto M. płaci szos 38 fl. 12 gr, z 3 l. ról miejskich 2 fl., z 2 młynów zakupnych posiadających po 3 koła 4 fl. 24 gr, od rzemieślników 6 fl. 20 gr, od towarzyszy rzemieślniczych 8 gr, od hultaja 12 gr, od komorników 1 fl. 26 gr, od przekupni 28 gr, czopowe za 1 kwartał 42 fl. 18 gr, za 2 kwartał 45 fl., za 3 i 4 kwartał 60 fl. 18 gr, za wino 2 fl. 24 gr, za gorzałkę 3 fl. 6 gr, za wyszynk gorzałki 24 gr",
                         "source": [
                             {
                                 "source_bg": "("
@@ -1417,10 +1452,10 @@
                                 "source_el": "GK 11 s. 989—90"
                             },
                             {
-                                "source_el": " Decreta 1, nr 458, 511—2, 575, 591—2"
+                                "source_el": "Decreta 1, nr 458, 511—2, 575, 591—2"
                             },
                             {
-                                "source_el": " Teut. 3 = SWPM I—9 s. 264"
+                                "source_el": "Teut. 3 = SWPM I—9 s. 264"
                             },
                             {
                                 "source_en": ")"
@@ -1440,7 +1475,7 @@
                                 "source_el": "GK 11 s. 989—90"
                             },
                             {
-                                "source_en": ") [[3]]"
+                                "source_en": ")[[3]]"
                             }
                         ]
                     }
@@ -1448,7 +1483,7 @@
                 {
                     "regest": {
                         "date": "1474",
-                        "content": "Kazimierz Jag., przebywając w polu zw. Złota Góra [[4]], nadaje miastu M. jarmark w dniu ś. Szymona i Judy [28 X]",
+                        "content": "Kazimierz Jag., przebywając w polu zw. Złota Góra[[4]], nadaje miastu M. jarmark w dniu ś. Szymona i Judy [28 X]",
                         "source": [
                             {
                                 "source_bg": "("
@@ -1508,7 +1543,7 @@
                 {
                     "regest": {
                         "date": "1532",
-                        "content": "Stan. Nyrka [Nerka], Paweł krawiec i Wojc. Gołotka mieszcz. z M. zajmują się handlem śledziami ",
+                        "content": "Stan. Nyrka [Nerka], Paweł krawiec i Wojc. Gołotka mieszcz. z M. zajmują się handlem śledziami",
                         "source": [
                             {
                                 "source_bg": "("
@@ -1588,6 +1623,13 @@
                                 "source_en": ")"
                             }
                         ]
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "",
+                        "content": "→ Mstów klasztor p. 3a",
+                        "source": null
                     }
                 },
                 {
@@ -1732,7 +1774,7 @@
                                 "source_el": "ZK 313 s. 284, 344"
                             },
                             {
-                                "source_en": ") [[5]]"
+                                "source_en": ")[[5]]"
                             }
                         ]
                     }
@@ -1800,7 +1842,7 @@
                                 "source_el": "SG 6, s. 779"
                             },
                             {
-                                "source_en": ") [[6]]"
+                                "source_en": ")[[6]]"
                             }
                         ]
                     }
@@ -2013,7 +2055,7 @@
                                 "source_el": "AG perg. 3847"
                             },
                             {
-                                "source_el": " Kiryk, Rozwój → p. 7, s. 174, 407"
+                                "source_el": "Kiryk, Rozwój → p. 7, s. 174, 407"
                             },
                             {
                                 "source_en": ")"
@@ -2036,6 +2078,13 @@
                                 "source_en": ")"
                             }
                         ]
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "1563, 1578",
+                        "content": "→ p. 3b",
+                        "source": null
                     }
                 },
                 {
@@ -2092,7 +2141,7 @@
                 {
                     "regest": {
                         "date": "",
-                        "content": "→ p. 3b",
+                        "content": "→ p. 3b.",
                         "source": null
                     }
                 }
@@ -2153,6 +2202,13 @@
                                 "source_en": ")"
                             }
                         ]
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "1415",
+                        "content": "Maciej z M. s. Czarnego → p. 4e",
+                        "source": null
                     }
                 },
                 {
@@ -2326,10 +2382,10 @@
                                 "source_el": "Koczerska, Zbigniew Oleśnicki → Mstów klasztor p. 7, s. 105, aneks 1 nr 235"
                             },
                             {
-                                "source_el": " AG perg. 5852"
+                                "source_el": "AG perg. 5852"
                             },
                             {
-                                "source_el": " Łatak, Prepozytura → Mstów klasztor p. 7, s. 152"
+                                "source_el": "Łatak, Prepozytura → Mstów klasztor p. 7, s. 152"
                             },
                             {
                                 "source_en": ")"
@@ -2499,7 +2555,7 @@
                 {
                     "regest": {
                         "date": "1479",
-                        "content": "Dorota Niedulkowa z M., ",
+                        "content": "Dorota Niedulkowa z M.,",
                         "source": [
                             {
                                 "source_bg": "("
@@ -2603,8 +2659,8 @@
                 },
                 {
                     "regest": {
-                        "date":"1512—6",
-                        "content":"Piotr Stajenny mieszcz. z M., dz. Małusz Błotnych, Pośrednich i Starych 1515, → Małusze Stare p. 3a",
+                        "date": "1512—6",
+                        "content": "Piotr Stajenny mieszcz. z M., dz. Małusz Błotnych, Pośrednich i Starych 1515, → Małusze Stare p. 3a",
                         "source": [
                             {
                                 "source_bg": "("
@@ -2626,8 +2682,8 @@
                 },
                 {
                     "regest": {
-                        "date":"1513—8",
-                        "content":"Jakub Stajenny mieszcz. z M., podwójci 1513, posiadacz cz. Małus Błotnych Pośrednich i Starych 1518",
+                        "date": "1513—8",
+                        "content": "Jakub Stajenny mieszcz. z M., podwójci 1513, posiadacz cz. Małus Błotnych Pośrednich i Starych 1518",
                         "source": [
                             {
                                 "source_bg": "("
@@ -2647,7 +2703,7 @@
                 {
                     "regest": {
                         "date": "1513—32",
-                        "content": " uczc. Marcin Gromek mieszcz. z M., burmistrz 1513",
+                        "content": "uczc. Marcin Gromek mieszcz. z M., burmistrz 1513",
                         "source": [
                             {
                                 "source_bg": "("
@@ -2669,8 +2725,8 @@
                 },
                 {
                     "regest": {
-                        "date":"1513",
-                        "content":"mieszczanie z M.: Marcin Ząbek, Bartłomiej Ćwiertnia, Franciszek zw. Frankiem, Jakub Stajenny podwójci, Jan Sznurka, Jakub krawiec, Maciej Domagała, Maciej Patrzyk, Jan Kloszek, Grzegorz Koger, Grzegorz Pieczka, Maciej Manioszka, Michał Kotek, Jan Łysy, Marek Sołtys, Marcin Kwaśny, Michał szewc, Stan. Stasiczka, Stan. kuśnierz",
+                        "date": "1513",
+                        "content": "mieszczanie z M.: Marcin Ząbek, Bartłomiej Ćwiertnia, Franciszek zw. Frankiem, Jakub Stajenny podwójci, Jan Sznurka, Jakub krawiec, Maciej Domagała, Maciej Patrzyk, Jan Kloszek, Grzegorz Koger, Grzegorz Pieczka, Maciej Manioszka, Michał Kotek, Jan Łysy, Marek Sołtys, Marcin Kwaśny, Michał szewc, Stan. Stasiczka, Stan. kuśnierz",
                         "source": [
                             {
                                 "source_bg": "("
@@ -2704,7 +2760,7 @@
                 {
                     "regest": {
                         "date": "1527",
-                        "content":"mieszczanie z M.: Stan. Sachno, Jan Jozda, Elżbieta Ustarzyna",
+                        "content": "mieszczanie z M.: Stan. Sachno, Jan Jozda, Elżbieta Ustarzyna",
                         "source": [
                             {
                                 "source_bg": "("
@@ -2738,7 +2794,7 @@
                 {
                     "regest": {
                         "date": "1536",
-                        "content":"Jan prep. mstow. wyznaczony przez oficjała krak. do przesłuchania świadków w sprawie Kat. Przekopskiej z M. oskarżonej przez jej męża Macieja o cudzołóstwo",
+                        "content": "Jan prep. mstow. wyznaczony przez oficjała krak. do przesłuchania świadków w sprawie Kat. Przekopskiej z M. oskarżonej przez jej męża Macieja o cudzołóstwo",
                         "source": [
                             {
                                 "source_bg": "("
@@ -2809,6 +2865,13 @@
                                 "source_en": ")"
                             }
                         ]
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "1406",
+                        "content": "Janusz Łacicz mieszcz. z M. oddala sądownie roszczenia Więcka z Gorczyna [ziemia sier.] o wycięcie 40 dębów",
+                        "source": null
                     }
                 },
                 {
@@ -2916,7 +2979,7 @@
                 {
                     "regest": {
                         "date": "1461",
-                        "content": " Mik. Franczkowicz poświadcza o sprzedaży przez jego matkę niwy Mik. Kuchcikowi",
+                        "content": "Mik. Franczkowicz poświadcza o sprzedaży przez jego matkę niwy Mik. Kuchcikowi",
                         "source": [
                             {
                                 "source_bg": "("
@@ -3027,10 +3090,10 @@
                                 "source_el": "ZK 317 s. 44—5"
                             },
                             {
-                                "source_el": " AG perg. 5878"
+                                "source_el": "AG perg. 5878"
                             },
                             {
-                                "source_el": " Regesty → Mstów klasztor p. 7, nr 45"
+                                "source_el": "Regesty → Mstów klasztor p. 7, nr 45"
                             },
                             {
                                 "source_en": ")"
@@ -3511,7 +3574,7 @@
                 {
                     "regest": {
                         "date": "1412—8",
-                        "content": "Dobiesław, Dobek wójt M. [h. Lis?], dz. Żurawia 1406—18 i Małusz Pośrednich 1416—18, zastawnik w Małuszach Starych 1413—5 i w Małuszach Błotnych 1418, pełnomocnik rady miejskiej M. 1412, br. Zawiszy z Żurawia oraz Przedbora z Wielkopolski [sic], dworzanina króla Władysława Jag. 1417, mąż Anny z Lubojny [ziemia wiel.] 1416—8 [w l. 1418—9 wdowa] [[7]], ojciec Świętochny z Żurawia 1419 [[8]] ",
+                        "content": "Dobiesław, Dobek wójt M. [h. Lis?], dz. Żurawia 1406—18 i Małusz Pośrednich 1416—18, zastawnik w Małuszach Starych 1413—5 i w Małuszach Błotnych 1418, pełnomocnik rady miejskiej M. 1412, br. Zawiszy z Żurawia oraz Przedbora z Wielkopolski [sic], dworzanina króla Władysława Jag. 1417, mąż Anny z Lubojny [ziemia wiel.] 1416—8 [w l. 1418—9 wdowa][[7]], ojciec Świętochny z Żurawia 1419[[8]]",
                         "source": [
                             {
                                 "source_bg": "("
@@ -3535,7 +3598,7 @@
                                 "source_el": "SP 7/2, 287—8"
                             },
                             {
-                                "source_en": ") [[9]]."
+                                "source_en": ")[[9]]."
                             }
                         ]
                     }
@@ -3596,6 +3659,20 @@
                                 "source_en": ")"
                             }
                         ]
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "1415",
+                        "content": "→ Mstów klasztor p. 3a",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "",
+                        "content": "Dobiesław wójt z M. zobowiązuje się zwrócić 40 grz. półgr długu Jaszkowi ze Skowronowa pod rygorem wwiązania Jaszka do 5 kmieci w dziedzinie Żuraw",
+                        "source": null
                     }
                 },
                 {
@@ -3814,7 +3891,7 @@
                                 "source_el": "ZK 312 s. 103"
                             },
                             {
-                                "source_en": ") [[10]]"
+                                "source_en": ")[[10]]"
                             }
                         ]
                     }
@@ -3851,6 +3928,20 @@
                                 "source_en": ")"
                             }
                         ]
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "",
+                        "content": "Świętosław Litwos wielkorządca krak. uzyskuje sądownie 200 grz. na Dobku wójcie z M.",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "",
+                        "content": "tenże odzyskuje 100 grz. długu na Dobku wójcie z M.",
+                        "source": null
                     }
                 },
                 {
@@ -4042,8 +4133,8 @@
                 },
                 {
                     "regest": {
-                        "date":"[po 1418—1425]",
-                        "content": "Zbigniew z → Brzezia, → Lanckorony i Wodzisławia h. Zadora wójt M., marszałek kor. 1399—1425, star. lel. 1407—25",
+                        "date": "[po 1418—1425]",
+                        "content": " Zbigniew z → Brzezia, → Lanckorony i Wodzisławia h. Zadora wójt M., marszałek kor. 1399—1425, star. lel. 1407—25",
                         "source": [
                             {
                                 "source_bg": "("
@@ -4079,8 +4170,8 @@
                 },
                 {
                     "regest": {
-                        "date": "1424 ",
-                        "content": "[Anna] wójcina (advocatissa) z M.",
+                        "date": "1424",
+                        "content": " [Anna] wójcina (advocatissa) z M.",
                         "source": [
                             {
                                 "source_bg": "("
@@ -4131,7 +4222,7 @@
                 {
                     "regest": {
                         "date": "1426—8",
-                        "content":"Janusz wójt M., dz. Szreniawy do 1418 r.",
+                        "content": "Janusz wójt M., dz. Szreniawy do 1418 r.",
                         "source": [
                             {
                                 "source_bg": "("
@@ -4140,10 +4231,10 @@
                                 "source_el": "GK 2 s. 603—4"
                             },
                             {
-                                "source_el": " ZK 312 s. 344, 351, 361"
+                                "source_el": "ZK 312 s. 344, 351, 361"
                             },
                             {
-                                "source_en": ") [[11]]."
+                                "source_en": ")[[11]]."
                             }
                         ]
                     }
@@ -4257,8 +4348,9 @@
                         ]
                     }
                 },
-                {   "regest": {
-                        "date":"1428",
+                {
+                    "regest": {
+                        "date": "1428",
                         "content": "Stanisław z Mojkowic zobowiązuje się pod karami zapłacić 52 grz. półgr Mikołajowi wójtowi z M.",
                         "source": [
                             {
@@ -4329,8 +4421,8 @@
                 },
                 {
                     "regest": {
-                        "date": "1431",
-                        "content": "[Mikołaj] wójt z M. pozywa Gawła z Rudnik (de Rudnik) [par. M.], Świętosława z Bliżyc, Marcina z Mirowa [par. M.], Grzegorza z Kunina, Błażeja z Lusławic, Jana z Zawady [par. M.], Bruna, Mikołaja z Lgoty [par. M.]",
+                        "date": "1431 [",
+                        "content": "Mikołaj] wójt z M. pozywa Gawła z Rudnik (de Rudnik) [par. M.], Świętosława z Bliżyc, Marcina z Mirowa [par. M.], Grzegorza z Kunina, Błażeja z Lusławic, Jana z Zawady [par. M.], Bruna, Mikołaja z Lgoty [par. M.]",
                         "source": [
                             {
                                 "source_bg": "("
@@ -4517,7 +4609,7 @@
                 {
                     "regest": {
                         "date": "",
-                        "content": "Stanisław z Mojkowic kwestionuje szlachectwo Mikołaja wójta z M. ",
+                        "content": "Stanisław z Mojkowic kwestionuje szlachectwo Mikołaja wójta z M.",
                         "source": [
                             {
                                 "source_bg": "("
@@ -4584,6 +4676,20 @@
                 },
                 {
                     "regest": {
+                        "date": "1436, 1437",
+                        "content": "→ Mstów klasztor p. 3a",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "1437",
+                        "content": "Mikołaj wójt z M. zobowiązuje się zapłacić 20 grz. Katarzynie z Krużlowej pod rygorem wwiązania jej do 2 ł. roli czyli źrebi w Wierzbiu",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
                         "date": "",
                         "content": "taż Katarzyna kwituje Mikołaja wójta z M.",
                         "source": [
@@ -4637,7 +4743,7 @@
                     "regest": {
                         "date": "",
                         "content": "Mikołaj z Wiśnicza kaszt. przem. [1433—48] zeznaje, że jego poręczyciel Piotr Gaweł z Racławic [pow. prosz] winien za jego pośrednictwem wypłacić 50 grz., a on sam 100 grz. Mikołajowi wójtowi z M. pod rygorem wzrostu długu do 200 grz., a następnie wwiązania do wsi Kobyle",
-                        "source":[
+                        "source": [
                             {
                                 "source_bg": "("
                             },
@@ -4654,7 +4760,7 @@
                     "regest": {
                         "date": "1440",
                         "content": "Andrzej wójt M., w 1441 wójt połowy wójtostwa w M., br. Mik. Łapsza wójta w M., w l. 1442—59 niegdyś wójt z M. piszący się z Dąbrowna 1459",
-                        "source":[
+                        "source": [
                             {
                                 "source_bg": "("
                             },
@@ -4692,7 +4798,7 @@
                     "regest": {
                         "date": "1441",
                         "content": "Prandota Nakielski z Nakła wójt z M.",
-                        "source":[
+                        "source": [
                             {
                                 "source_bg": "("
                             },
@@ -4710,7 +4816,7 @@
                 },
                 {
                     "regest": {
-                        "date":"1441",
+                        "date": "1441",
                         "content": "Mikołaj prepozyt kl. mstow. pozywa Mikołaja niegdyś wójta z M. o to, że z polecenia królewskiego odsunął prepozyta od uczestnictwa przed sądem wyższym pr. magd. i sprzedał podstępnie (na smowye) Prędocie Nakielskiemu [z Nakła] wójtostwo w M., oraz że Prędota trzyma je bez zgody prepozyta i wskutek tego nieuregulowanego posiadania (nyewrządne) wyrządził szkodę klasztorowi na 100 grz.",
                         "source": [
                             {
@@ -4781,8 +4887,8 @@
                 },
                 {
                     "regest": {
-                        "date": "1441",
-                        "content": "24 III Mik. [Łapsz] landwójt z M.",
+                        "date": "1441 24 III",
+                        "content": "Mik. [Łapsz] landwójt z M.",
                         "source": [
                             {
                                 "source_bg": "("
@@ -4798,15 +4904,15 @@
                 },
                 {
                     "regest": {
-                        "date":"1461",
-                        "content": " odstąpienie wójtostwa w M. kl. mstow. → Mstów klasztor p. 3a",
+                        "date": "1461",
+                        "content": "odstąpienie wójtostwa w M. kl. mstow. → Mstów klasztor p. 3a",
                         "source": null
                     }
                 },
                 {
                     "regest": {
                         "date": "1462",
-                        "content": "NN podwójci ",
+                        "content": "NN podwójci",
                         "source": [
                             {
                                 "source_bg": "("
@@ -4849,7 +4955,7 @@
                                 "source_el": "OK 11 k. 361v"
                             },
                             {
-                                "source_en": ")"
+                                "source_en": ")."
                             }
                         ]
                     }
@@ -4857,7 +4963,7 @@
                 {
                     "regest": {
                         "date": "1513",
-                        "content":"Jakub Stajenny podwójci (viceadvocatus)",
+                        "content": "Jakub Stajenny podwójci (viceadvocatus)",
                         "source": [
                             {
                                 "source_bg": "("
@@ -4966,6 +5072,20 @@
                 },
                 {
                     "regest": {
+                        "date": "1435",
+                        "content": "wym. bezimiennie ławnicy → p. 4d",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "",
+                        "content": "ławnicy → p. 6e",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
                         "date": "1462",
                         "content": "sprawa między Janem Gładyszem z Lelowa a wójtem [sądowym] i ławnikami z M.",
                         "source": [
@@ -4996,6 +5116,13 @@
                                 "source_en": ")"
                             }
                         ]
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "1475",
+                        "content": "→ Rajcy p. 3h.",
+                        "source": null
                     }
                 }
             ]
@@ -5092,7 +5219,7 @@
                 {
                     "regest": {
                         "date": "1412",
-                        "content": "Piotr Guskra [[12]] rajca miasta M. przedkłada przed sądem wyższym pr. niem. na zamku krak. pismo sądu gajonego tego miasta, mocą którego ustanawia swoim pełnomocnikiem szl. Dobka wójta z M. we wszystkich sprawach rady, ławy i całej społeczności miasta M.",
+                        "content": "Piotr Guskra[[12]] rajca miasta M. przedkłada przed sądem wyższym pr. niem. na zamku krak. pismo sądu gajonego tego miasta, mocą którego ustanawia swoim pełnomocnikiem szl. Dobka wójta z M. we wszystkich sprawach rady, ławy i całej społeczności miasta M.",
                         "source": [
                             {
                                 "source_bg": "("
@@ -5152,9 +5279,37 @@
                                 "source_el": "GK 2 s. 672"
                             },
                             {
-                                "source_en": ") [[13]]"
+                                "source_en": ")[[13]]"
                             }
                         ]
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "1435",
+                        "content": "rajcy → p. 4d",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "",
+                        "content": "rajcy → p. 6e",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "1441",
+                        "content": "rajcy → p. 4d",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "1464",
+                        "content": "Piotr ze Smogorzowa [pow. wiśl.] ma sprawę z rajcami i całą społecznością miasta M.",
+                        "source": null
                     }
                 },
                 {
@@ -5172,6 +5327,13 @@
                                 "source_en": ")"
                             }
                         ]
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "1475",
+                        "content": "wójt [sądowy] rajcy i przysiężni z M. na wniosek Piotra Puczka z Olkusza przedkładają przed sądem grodz. krak. przyw. uprawniający ich do stawania przed sądem miejskim",
+                        "source": null
                     }
                 },
                 {
@@ -5252,6 +5414,13 @@
                 },
                 {
                     "regest": {
+                        "date": "",
+                        "content": "Przed 1456 par. klaszt. → Mstów klasztor p. 5b",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
                         "date": "1456",
                         "content": "kl. mstow. zobowiązany do wystawienia w mieście M. lub na jego przedmieściach kościoła podległego jurysdykcji bpów krak.",
                         "source": [
@@ -5321,7 +5490,7 @@
                 {
                     "regest": {
                         "date": "1598",
-                        "content": "w M. kaplica Ś. Stanisława [[14]], należąca do szpitala, zniszczona przez powodzie rz. Warty, odbudowywana od nowa przez prepozyta kl. mstow., który wyłożył już fundamenty na mury kaplicy i osłonięcie cmentarza od rzeki. Nabożeństwa w kaplicy odprawiają kanonicy regularni z miejscowego kl. Szpital [przytułek dla ubogich] w M., położony przy jednej z ulic, uposażony jest 3 domami w mieście, z których ma czynsz roczny. Dysponuje też czynszem wykupnym w wysokości 100 fl., zapisanym na pewnych rolach miasta M., z czego pobiera 8 fl. rocznie. Szpital jest administrowany przez rajców miejskich",
+                        "content": "w M. kaplica Ś. Stanisława[[14]], należąca do szpitala, zniszczona przez powodzie rz. Warty, odbudowywana od nowa przez prepozyta kl. mstow., który wyłożył już fundamenty na mury kaplicy i osłonięcie cmentarza od rzeki. Nabożeństwa w kaplicy odprawiają kanonicy regularni z miejscowego kl. Szpital [przytułek dla ubogich] w M., położony przy jednej z ulic, uposażony jest 3 domami w mieście, z których ma czynsz roczny. Dysponuje też czynszem wykupnym w wysokości 100 fl., zapisanym na pewnych rolach miasta M., z czego pobiera 8 fl. rocznie. Szpital jest administrowany przez rajców miejskich",
                         "source": [
                             {
                                 "source_bg": "("
@@ -5395,7 +5564,7 @@
                                 "source_el": "Bullarium 3, nr 691"
                             },
                             {
-                                "source_en": ")"
+                                "source_en": ")."
                             }
                         ]
                     }
@@ -5466,10 +5635,10 @@
                                 "source_el": "Metryka UK 1 s. 222, t. 2 s. 319, 647"
                             },
                             {
-                                "source_el": " Księga promocji s. 41, 165"
+                                "source_el": "Księga promocji s. 41, 165"
                             },
                             {
-                                "source_el": " Acta Rectoralia Almae Universitatis Studii Cracoviensis I a. 1469—1537, wyd. W. Wisłocki, Kr. 1893—7, nr 143"
+                                "source_el": "Acta Rectoralia Almae Universitatis Studii Cracoviensis I a. 1469—1537, wyd. W. Wisłocki, Kr. 1893—7, nr 143"
                             },
                             {
                                 "source_en": ")"
@@ -5585,7 +5754,7 @@
                 {
                     "regest": {
                         "date": "1483",
-                        "content": "Stanisław z M. altarysta w Lelowie ",
+                        "content": "Stanisław z M. altarysta w Lelowie",
                         "source": [
                             {
                                 "source_bg": "("
@@ -5614,14 +5783,14 @@
                                 "source_el": "K. Skupieński, Notariat publiczny w średniowiecznej Polsce, Lublin 1997, s. 199, 276"
                             },
                             {
-                                "source_en": ")"
+                                "source_en": ")."
                             }
                         ]
                     }
                 },
                 {
                     "regest": {
-                        "date":"1506—50",
+                        "date": "1506—50",
                         "content": "Jan z M. s. Marcina, student Uniw. Krak. 1506, promowany na bakałarza 1511, promowany na mgr 1520, kan. w kol. Ś. Anny 1511—40, profesor Collegium Minus 1532—6, dziekan wydziału sztuk 1538—40, pleb. w Staszowie [pow. sand.] 1529—32, kantor kol. Ś. Floriana na Kleparzu 1541—50, pleb. w Olkuszu 1541—50, br. Wojciecha z M. bakałarza",
                         "source": [
                             {
@@ -5751,7 +5920,7 @@
                 {
                     "regest": {
                         "date": "1562—74",
-                        "content": "Rafał Mstowski kan. krak. ",
+                        "content": "Rafał Mstowski kan. krak.",
                         "source": [
                             {
                                 "source_bg": "("
@@ -5804,6 +5973,27 @@
                 },
                 {
                     "regest": {
+                        "date": "1598",
+                        "content": "Adam z M. kantor w szkole we Włodowicach",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "",
+                        "content": "diakon Sebastian z M. rektor szkoły w Zielonkach",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "",
+                        "content": "Jan z M. rektor szkoły w Rzepiennikach",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
                         "date": "",
                         "content": "Adam z M. rektor szkoły w Skarżycach",
                         "source": [
@@ -5830,7 +6020,7 @@
                 {
                     "regest": {
                         "date": "1573",
-                        "content": "Kasper s. Józefa Małuskiego, 1579 Andrzej s. Stanisława, 1580 Wawrzyniec s. Wojciecha [[15]], Wojciech s. Stanisława, 1581 Grzegorz s. Macieja, 1585 Adam s. Szymona, 1589 Jakub s. Marcina, 1590 Jan s. Pawła Cieszkowskiego, 1591 Mikołaj s. Tomasza Płosy [[16]], Szymon s. Macieja [[17]], 1598 Sebastian s. Pawła Zernkowicza",
+                        "content": "Kasper s. Józefa Małuskiego, 1579 Andrzej s. Stanisława, 1580 Wawrzyniec s. Wojciecha[[15]], Wojciech s. Stanisława, 1581 Grzegorz s. Macieja, 1585 Adam s. Szymona, 1589 Jakub s. Marcina, 1590 Jan s. Pawła Cieszkowskiego, 1591 Mikołaj s. Tomasza Płosy[[16]], Szymon s. Macieja[[17]], 1598 Sebastian s. Pawła Zernkowicza",
                         "source": [
                             {
                                 "source_bg": "("
@@ -5923,7 +6113,7 @@
                 {
                     "regest": {
                         "date": "1492",
-                        "content":"Anna Midorowa z M. siostra rodz. Barbary niegdyś Zegarkowej",
+                        "content": "Anna Midorowa z M. siostra rodz. Barbary niegdyś Zegarkowej",
                         "source": [
                             {
                                 "source_bg": "("
@@ -6002,7 +6192,7 @@
                 {
                     "regest": {
                         "date": "",
-                        "content": "Jan Krajczy z M. kupuje dom z rolą w mieście Woźniki [Śląsk] ",
+                        "content": "Jan Krajczy z M. kupuje dom z rolą w mieście Woźniki [Śląsk]",
                         "source": [
                             {
                                 "source_bg": "("
@@ -6043,6 +6233,20 @@
                 },
                 {
                     "regest": {
+                        "date": "1450 15 III",
+                        "content": "Kazimierz Jag. przebywając w M. wystawia dok., w którym wydzierżawia na rok za 1700 grz. i 1 postaw sukna brukselskiego Janowi s. Marka mieszcz. krak. cła krak.",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
+                        "date": "",
+                        "content": "tamże wystawia dok. dla Elżbiety ż. Bolesława ks. opolskiego [c. Elżbiety i Wincentego Granowskich], przenoszący wieś Kidów, należącą do zamku Pilica z pr. pol. na pr. średz.",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
                         "date": "",
                         "content": "tamże wystawia dok., w którym wydzierżawia na rok za 900 grz. i postaw koftyru Krzysztofowi „de Sancto Romulo” i Mikołajowi ze Stradomia cło lwowskie",
                         "source": [
@@ -6079,7 +6283,7 @@
                                 "source_el": "DHn. 12, 1462—80, s. 334, 337"
                             },
                             {
-                                "source_en": ") [[18]]"
+                                "source_en": ")[[18]]"
                             }
                         ]
                     }
@@ -6172,6 +6376,13 @@
                 },
                 {
                     "regest": {
+                        "date": "1431",
+                        "content": "sąd w M. → p. 2c",
+                        "source": null
+                    }
+                },
+                {
+                    "regest": {
                         "date": "1435",
                         "content": "rajcy i ławnicy z M. mają sprawę z Mikołajem wójtem z M. przed sądem Mikołaja z Michałowa kaszt. i star. krak. w M.",
                         "source": [
@@ -6210,7 +6421,7 @@
                                 "source_el": "Dźwigała, Dokumenty → p. 7, s. 358"
                             },
                             {
-                                "source_en": ") [[19]]"
+                                "source_en": ")[[19]]"
                             }
                         ]
                     }
@@ -6306,7 +6517,7 @@
                 {
                     "regest": {
                         "date": "1566",
-                        "content": "pożar miasta i kościoła [[20]] ",
+                        "content": "pożar miasta i kościoła[[20]]",
                         "source": [
                             {
                                 "source_bg": "("
@@ -6380,7 +6591,7 @@
             "point_num": "7a",
             "point_content": [
                 {
-                    "text": "-a. Źródła. Dodatkowe skróty."
+                    "text": "7. -a. Źródła. Dodatkowe skróty."
                 },
                 {
                     "bibliography": "Decreta — Decreta iuris supremi Magdeburgensis castri Cracoviensis. Bd 1: 1456—1481, Bd 2: 1481—1511, hrsg. L. Łysiak, K. Nehlsen, V. Stryk, Frankfurt am Main 1995, 1997.; Księga kryminalna miasta Krakowa z lat 1554—1625, oprac. i wyd. W. Uruszczak, M. Mikuła, A. Karabowicz, Kr. 2013.; Księgi egzaminów — Księgi egzaminów do święceń w diecezji krakowskiej z lat 1573—1614, oprac. Z. Pietrzyk, Kr. 1991.; Najstarsza księga promocji — Najstarsza księga promocji Wydziału Sztuk Uniwersytetu Krakowskiego z lat 1402—1541, wyd.: A. Gąsiorowski, T. Jurek, I. Skierska, W. 2011."
@@ -6402,14 +6613,14 @@
             "point_num": "8",
             "point_content": [
                 {
-                    "text": "8. Kultura materialna. "
+                    "text": "8. Kultura materialna."
                 },
                 {
                     "paragraphs": [
-                        "1415 pieczęć M. podwieszona przy dok. rady miejskiej → p. 3h; 1417 pieczęć zapewne z h. Lis wystawcy dok. Dobiesławia z Żurawia wójta mstow. → p. 3g (ZDM 1, 317; H. Seroka, Herby miast małopolskich do końca XVIII wieku, W. 2002 s. 56); XVI wiek — pieczęć miasta M. z godłem w tarczy, wyobrażającym 2 klucze w skos w dłoni. Tarczę herbu M. wieńczą symbole właściciela miejscowości, czyli klasztoru, pastorał i infuła (H. Seroka, Herby miast…, s. 268).",
+                        "1415 pieczęć M. podwieszona przy dok. rady miejskiej → p. 3h; 1417 pieczęć zapewne z h. Lis wystawcy dok. Dobiesławia z Żurawia wójta mstow. → p. 3g (ZDM 1, 317; H. Seroka, Herby miast małopolskich do końca XVIII wieku, W. 2002 s. 56)",
+                        "XVI wiek — pieczęć miasta M. z godłem w tarczy, wyobrażającym 2 klucze w skos w dłoni. Tarczę herbu M. wieńczą symbole właściciela miejscowości, czyli klasztoru, pastorał i infuła (H. Seroka, Herby miast…, s. 268).",
                         "W rejonie ul. Kilińskiego w M. ujawniono skarb monet, ukryty po 1440 r., zawierający około 700 numizmatów, w tym monety Władysława Jag., Władysława III Jagiellończyka oraz emisje czes., węg. i pomorskie (I. Młodkowska-Przepiórowska, Badania AZP 86—50, 1992, mps archiwum częstochowskiej delegatury WUOZ w Katowicach).",
-                        "W 2011 r. Z. Bereszyński w artykule, Nieznane warownie, „Spotkania z Zabytkami”, 5 (171), 2001, s. 40, wysunął hipotezę, przyjętą następnie przez J. Laberscheka, Średniowieczne dzieje nadwarciańskiego Mstowa, Kr. 2014, s. 34, iż na wypłaszczeniu szczytowym „Góry 3 Maja” na południowy wschód od centrum Mstowa znajdują się relikty grodu wczesnośredniowiecznego, obwiedzionego wałem dookolnym o powierzchni założenia 80 arów. Z hipotezą tą rozprawiła się definitywnie archeolog Iwona Młodkowska-Przepiórowska, Co z tym grodziskiem, czyli o wynikach badań archeologicznych na Górze 3 Maja w Mstowie, w druku, która latem 2015 r. przeprowadziła w tym miejscu badania wykopaliskowe, wskazujące na istnienie tutaj wyłącznie wałów usypanych z odpadów przemysłowych [popiołu], najprawdopodobniej z wapienników funkcjonujących z pocz. XX wieku."
-                    ]
+                        "W 2011 r. Z. Bereszyński w artykule, Nieznane warownie, „Spotkania z Zabytkami”, 5 (171), 2001, s. 40, wysunął hipotezę, przyjętą następnie przez J. Laberscheka, Średniowieczne dzieje nadwarciańskiego Mstowa, Kr. 2014, s. 34, iż na wypłaszczeniu szczytowym „Góry 3 Maja” na południowy wschód od centrum Mstowa znajdują się relikty grodu wczesnośredniowiecznego, obwiedzionego wałem dookolnym o powierzchni założenia 80 arów. Z hipotezą tą rozprawiła się definitywnie archeolog Iwona Młodkowska-Przepiórowska, Co z tym grodziskiem, czyli o wynikach badań archeologicznych na Górze 3 Maja w Mstowie, w druku, która latem 2015 r. przeprowadziła w tym miejscu badania wykopaliskowe, wskazujące na istnienie tutaj wyłącznie wałów usypanych z odpadów przemysłowych [popiołu], najprawdopodobniej z wapienników funkcjonujących z pocz. XX wieku."]
                 }
             ]
         },
@@ -6417,7 +6628,7 @@
             "point_num": "Uw",
             "point_content": [
                 {
-                    "text": "Uw. W latach 1441—60 Mik. Łapsz pisał się jako były wójt M., w 1443—60 był posiadaczem → Małusz Błotnych, w 1445—59 → Małusz Pośrednich, w. 1459—60 → Małusz Starych (GK 8 s. 821—2, 1026—7, 1041, 1126; 10 s. 467; 11 s. 33; 12 s. 368, 561—3; 13 s. 74—5, 373; 14 s. 50—1, 53, 120—1, 124, 179, 328, 363, 402; 15 s. 249—50; 16 s. 699; ZK 13 s. 359, 430; 14 s. 118; 146 s. 567, 622, 624—5, 634, 638—9; 147 s. 142—3; 257 s. 78; 260 s. 120—1; 313 s. 195, 212—3, 237, 251, 257, 259, 264—5, 276—7, 283, 292, 297, 300—1, 311, 315, 317, 341, 346—7, 389; 314 s. 2c, 18, 25, 47, 53, 64, 66, 82—3, 109—10, 115—6, 134—5, 139). W 1444 Jan Rej z Szumska łowczy krak. ręcząc za Piotra Cikowskiego podsędka ziemi krak. zobowiązał się zapłacić 103 grz. długu Mikołajowi niegdyś wójtowi z M., a z kolei Piotr Cikowski zapewnił, że uwolni Jana Reja z poręki (GK 8 s. 821—2).Tego samego roku sprawa między Janem Rejem z Szumska a Mikołajem [niegdyś] wójtem z M. została odesłana na termin do Książa (GK 8 s. 1126) [[21]]. W latach 1464—9 występuje Jadwiga z Rząsaw wd. po Mikołaju z Małusz wójcie M., → Małusze Błotne p. 3, w l. 1460—93 s. Mikołaja Stanisław z Małusz, a w l. 1460—92 drugi s. Mikołaja Jakub Wójcik z Małusz, → Małusze Błotne p. 3."
+                    "text": "Uw. W latach 1441—60 Mik. Łapsz pisał się jako były wójt M., w 1443—60 był posiadaczem → Małusz Błotnych, w 1445—59 → Małusz Pośrednich, w. 1459—60 → Małusz Starych (GK 8 s. 821—2, 1026—7, 1041, 1126; 10 s. 467; 11 s. 33; 12 s. 368, 561—3; 13 s. 74—5, 373; 14 s. 50—1, 53, 120—1, 124, 179, 328, 363, 402; 15 s. 249—50; 16 s. 699; ZK 13 s. 359, 430; 14 s. 118; 146 s. 567, 622, 624—5, 634, 638—9; 147 s. 142—3; 257 s. 78; 260 s. 120—1; 313 s. 195, 212—3, 237, 251, 257, 259, 264—5, 276—7, 283, 292, 297, 300—1, 311, 315, 317, 341, 346—7, 389; 314 s. 2c, 18, 25, 47, 53, 64, 66, 82—3, 109—10, 115—6, 134—5, 139). W 1444 Jan Rej z Szumska łowczy krak. ręcząc za Piotra Cikowskiego podsędka ziemi krak. zobowiązał się zapłacić 103 grz. długu Mikołajowi niegdyś wójtowi z M., a z kolei Piotr Cikowski zapewnił, że uwolni Jana Reja z poręki (GK 8 s. 821—2).Tego samego roku sprawa między Janem Rejem z Szumska a Mikołajem [niegdyś] wójtem z M. została odesłana na termin do Książa (GK 8 s. 1126)[[21]]. W latach 1464—9 występuje Jadwiga z Rząsaw wd. po Mikołaju z Małusz wójcie M., → Małusze Błotne p. 3, w l. 1460—93 s. Mikołaja Stanisław z Małusz, a w l. 1460—92 drugi s. Mikołaja Jakub Wójcik z Małusz, → Małusze Błotne p. 3."
                 }
             ]
         }

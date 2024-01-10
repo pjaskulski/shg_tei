@@ -3,11 +3,13 @@
 import os
 import json
 import time
+import re
 #import xml.dom.minidom
 from pathlib import Path
 import warnings
 import spacy
 import pandas as pd
+import roman
 from patterns.burmistrzowie import rule_patterns_burmistrzowie
 from patterns.podwojtowie import rule_patterns_podwojtowie
 from patterns.sedziowie import rule_patterns_sedziowie
@@ -421,57 +423,88 @@ if __name__ == '__main__':
                         tei_text += '\n<seg>'
                         if 'date' in item['regest'] and item["regest"]["date"].strip() != "":
                             regest_date = item["regest"]["date"]
-                            # jeżeli nietypowy zapis daty - bez atrybutów w tagu <date>
-                            if regest_date and ('[' in regest_date or 'po' in regest_date):
+
+                            # jeżeli data dzienna
+                            pattern = r'\d{4}\s+\d{1,2}\s+[XVI]+'
+                            match = re.search(pattern=pattern, string=regest_date)
+                            if match:
+                                tmp_data = match.group().strip()
+                                tmp_data_tab = tmp_data.split(' ')
+                                year = tmp_data_tab[0].strip()
+                                day = tmp_data_tab[1].strip()
+                                month = str(roman.fromRoman(tmp_data_tab[2].strip()))
+                                tei_text += f'<date when="{year}-{month.zfill(2)}-{day.zfill(2)}">{regest_date}</date>' + ' '
+                                #previous_date = f'[<date>{regest_date}</date>]' + ' '
+                                previous_date = f'<date when="{year}-{month.zfill(2)}-{day.zfill(2)}"/> '
+
+                            # jeżeli nietypowy zapis daty wówczas z atrybutem when-custom w tagu <date>
+                            elif regest_date and ('[' in regest_date or 'po' in regest_date):
                                 tei_text += f'<date>{regest_date}</date>' + ' '
-                                previous_date = f'[<date>{regest_date}</date>]' + ' '
+                                #previous_date = f'[<date>{regest_date}</date>]' + ' '
+                                previous_date = f'<date when-custom="{regest_date}"/> '
+
                             # bardziej typowy zapis daty z atrybutami w tagu <date>
                             elif regest_date and regest_date.strip() != '':
                                 if ',' in regest_date:
                                     tmp = regest_date.split(',')
                                     tmp = [x.strip() for x in tmp]
                                     tmp_tab = []
+                                    tmp_prev_tab = []
                                     for tmp_date_item in tmp:
                                         if '-' in tmp_date_item:
                                             tmp = tmp_date_item.split('-')
                                             if len(tmp[1]) < 4:
                                                 tmp[1] = tmp[0][:(4-len(tmp[1]))] + tmp[1]
                                             tmp_tab.append(f'<date from="{tmp[0]}" to="{tmp[1]}">{tmp_date_item}</date> ')
+                                            tmp_prev_tab.append(f'<date from="{tmp[0]}" to="{tmp[1]}"/> ')
                                         elif '—' in tmp_date_item:
                                             tmp = tmp_date_item.split('—')
                                             if len(tmp[1]) < 4:
                                                 tmp[1] = tmp[0][:(4-len(tmp[1]))] + tmp[1]
                                             tmp_tab.append(f'<date from="{tmp[0]}" to="{tmp[1]}"> {tmp_date_item}</date> ')
+                                            tmp_prev_tab.append(f'<date from="{tmp[0]}" to="{tmp[1]}"/> ')
                                         elif r'/' in tmp_date_item:
                                             tmp = tmp_date_item.split(r'/')
                                             if len(tmp[1]) < 4:
                                                 tmp[1] = tmp[0][:(4-len(tmp[1]))] + tmp[1]
                                             tmp_tab.append(f'<date from="{tmp[0]}" to="{tmp[1]}"> {tmp_date_item}</date> ')
+                                            tmp_prev_tab.append(f'<date from="{tmp[0]}" to="{tmp[1]}"/> ')
                                         else:
                                             tmp_tab.append(f'<date when="{tmp_date_item.strip()}">{tmp_date_item}</date>')
+                                            tmp_prev_tab.append(f'<date when="{tmp_date_item.strip()}"/>')
                                     tei_text += ', '.join(tmp_tab)
-                                    previous_date = '['+', '.join(tmp_tab)+']'
+                                    previous_date = ', '.join(tmp_prev_tab)
+
+                                # zakres dat
                                 elif '-' in regest_date:
                                     tmp = regest_date.split('-')
                                     if len(tmp[1]) < 4:
                                         tmp[1] = tmp[0][:(4-len(tmp[1]))] + tmp[1]
                                     tei_text += f'<date from="{tmp[0]}" to="{tmp[1]}">{regest_date}</date> '
-                                    previous_date = f'[<date from="{tmp[0]}" to="{tmp[1]}">{regest_date}</date>] '
+                                    #previous_date = f'[<date from="{tmp[0]}" to="{tmp[1]}">{regest_date}</date>] '
+                                    previous_date = f'<date from="{tmp[0]}" to="{tmp[1]}"/> '
+
+                                # inny format zakresu dat
                                 elif '—' in regest_date:
                                     tmp = regest_date.split('—')
                                     if len(tmp[1]) < 4:
                                         tmp[1] = tmp[0][:(4-len(tmp[1]))] + tmp[1]
                                     tei_text += f'<date from="{tmp[0]}" to="{tmp[1]}"> {regest_date}</date> '
-                                    previous_date = f'[<date from="{tmp[0]}" to="{tmp[1]}"> {regest_date}</date>] '
+                                    #previous_date = f'[<date from="{tmp[0]}" to="{tmp[1]}"> {regest_date}</date>] '
+                                    previous_date = f'<date from="{tmp[0]}" to="{tmp[1]}"/> '
+
+                                # przełom lat
                                 elif r'/' in regest_date:
                                     tmp = regest_date.split(r'/')
                                     if len(tmp[1]) < 4:
                                         tmp[1] = tmp[0][:(4-len(tmp[1]))] + tmp[1]
                                     tmp_tab.append(f'<date from="{tmp[0]}" to="{tmp[1]}"> {regest_date}</date> ')
-                                    previous_date = f'<date from="{tmp[0]}" to="{tmp[1]}"> {regest_date}</date> '
+                                    #previous_date = f'<date from="{tmp[0]}" to="{tmp[1]}"> {regest_date}</date> '
+                                    previous_date = f'<date from="{tmp[0]}" to="{tmp[1]}"/> '
                                 else:
                                     tei_text += f'<date when="{item["regest"]["date"]}">{item["regest"]["date"]}</date>' + ' '
-                                    previous_date = f'[<date when="{item["regest"]["date"]}">{item["regest"]["date"]}</date>]' + ' '
+                                    #previous_date = f'[<date when="{item["regest"]["date"]}">{item["regest"]["date"]}</date>]' + ' '
+                                    previous_date = f'<date when="{item["regest"]["date"]}"/>'
                         # jeżeli nie ma dat a poprzednio był regest z datą to obowiązuje ta sama data
                         else:
                             if previous_date:
