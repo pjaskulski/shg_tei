@@ -115,7 +115,8 @@ def wikilinker_people(search_entity:str, year:str="", number_of_candidates=10, i
     return best_qid, best_description
 
 
-def fuzzylinker_places(search_entity:str, alt_search_entity:str, m_place_latitude, m_place_longitude, df) -> tuple:
+def fuzzylinker_places(search_entity:str, alt_search_entity:str, m_place_latitude,
+                       m_place_longitude, df, alt_df=None, modern_df=None) -> tuple:
     """ funkcja wyszukuje najbardziej prawdopodobną kandydaturę miejscowości z bazy
         na podstawie nazwy, z użyciem biblioteki rapidfuzz
         zwraca QID, opis z WikiHUM, współrzędne i etykietę
@@ -134,6 +135,7 @@ def fuzzylinker_places(search_entity:str, alt_search_entity:str, m_place_latitud
     if alt_search_entity and alt_search_entity[0].islower():
         return best_qid, best_description, best_latitude, best_longitude, best_label
 
+    dataset = df
     # długość szukanej nazwy to minimum trzy znaki
     if len(search_entity) >= 3:
         result = process.extract(search_entity, df['Miejscowosc'], score_cutoff=90, limit=10)
@@ -147,6 +149,19 @@ def fuzzylinker_places(search_entity:str, alt_search_entity:str, m_place_latitud
                     tmp = alt_search_entity.split(' ')
                     new_alt_search_entity = tmp[1] + ' ' + tmp[0]
                     result = process.extract(new_alt_search_entity, df['Miejscowosc'], score_cutoff=90, limit=10)
+
+        # jeżeli brak wyników szukanie w bazie miast z całej WikiHum (cała Polska)
+        if len(result) == 0:
+            print("Szukanie w bazie miast z XVI wieku...")
+            result = process.extract(search_entity, alt_df['Miejscowosc'], score_cutoff=90, limit=10)
+            dataset = alt_df
+
+        # jeżeli brak wyników to szukanie w bazie miejscowości współczesnych z południowo -
+        # wschodnej Polski (woj. śląskie, małopolskie, świętokrzyskie, podkarpackie)
+        if len(result) == 0:
+            print("Szukanie w bazie miejscowości współczesnych...")
+            result = process.extract(search_entity, modern_df['Miejscowosc'], score_cutoff=90, limit=10)
+            dataset = modern_df
 
         if len(result) == 0:
             print(f"Nie znaleziono kandydatów dla: {search_entity}")
@@ -176,13 +191,11 @@ def fuzzylinker_places(search_entity:str, alt_search_entity:str, m_place_latitud
                     best_item = None
                     for item in best_items:
                         name, score, line_number = item
-                        item_latitude = df['Latitude'][line_number]
-                        item_longitude = df['Longitude'][line_number]
+                        item_latitude = dataset['Latitude'][line_number]
+                        item_longitude = dataset['Longitude'][line_number]
                         if not math.isnan(item_latitude) and not math.isnan(item_longitude):
                             coords_item = (float(item_longitude), float(item_latitude))
                             distance = geopy.distance.geodesic(coords_main, coords_item).km
-                            # if search_entity == 'Zawada':
-                            #     print(f"Distance for {name}: {distance:.2f}")
                             if distance < best_distance:
                                 best_item = item
                                 best_distance = distance
@@ -196,10 +209,10 @@ def fuzzylinker_places(search_entity:str, alt_search_entity:str, m_place_latitud
                 name, score, line_number = best_item
 
             #print(name, score, line_number)
-            best_qid = df['QID'][line_number]
-            best_description = df['Description'][line_number]
-            best_latitude = df['Latitude'][line_number]
-            best_longitude = df['Longitude'][line_number]
-            best_label = df["Miejscowosc"][line_number]
+            best_qid = dataset['QID'][line_number]
+            best_description = dataset['Description'][line_number]
+            best_latitude = dataset['Latitude'][line_number]
+            best_longitude = dataset['Longitude'][line_number]
+            best_label = dataset["Miejscowosc"][line_number]
 
     return best_qid, best_description, best_latitude, best_longitude, best_label

@@ -145,9 +145,19 @@ df_people = pd.read_csv(people_path, sep=',', header=0, low_memory=False,
 df_people['DateOfDeath'] = df_people['DateOfDeath'].fillna(0)
 df_people['DateOfDeath'] = df_people['DateOfDeath'].astype(int)
 
-# baza miejscowości z WikiHum
+# baza miejscowości z WikiHum (istniejące w 16 wieku w woj krakowskim i przyległych powiatach)
 places_path = Path('..') / 'slowniki' / 'places.csv'
 df_places = pd.read_csv(places_path, sep=',', header=0, low_memory=False,
+                        quotechar='"', encoding='utf-8')
+
+# miasta w 16 wieku w całej bazie WikiHum
+miasta_path = Path("..") / "slowniki" / "miasta_1600.csv"
+df_miasta = pd.read_csv(miasta_path, sep=',', header=0, low_memory=False,
+                        quotechar='"', encoding='utf-8')
+
+# miejscowości współczesne z południowo wschodniej Polski
+south_east_path = Path("..") / "slowniki" / "south_east_poland.csv"
+df_south_east = pd.read_csv(south_east_path, sep=',', header=0, low_memory=False,
                         quotechar='"', encoding='utf-8')
 
 item_foot = None
@@ -230,6 +240,36 @@ def ner_to_xml(text_to_process:str, r_date:str="", main_place:str="") -> str:
                 if tmp_date.isdigit() and len(tmp_date) == 4:
                     tagged_text += (text_to_process[last_index:ent.start_char] +
                                     f'<{label2tag[ent.label_]} when="{tmp_date}">{ent.text}</{label2tag[ent.label_]}>')
+                elif not tmp_date.endswith('—') and ('-' in tmp_date or '—' in tmp_date):
+                    sep = '-'
+                    if '—' in tmp_date:
+                        sep = '—'
+                    tmp_date_tab = tmp_date.split(sep)
+                    if len(tmp_date_tab[1]) < 4:
+                        tmp_date_tab[1] = tmp_date_tab[0][:(4-len(tmp_date_tab[1]))] + tmp_date_tab[1]
+                    tagged_text += (text_to_process[last_index:ent.start_char] +
+                                    f'<{label2tag[ent.label_]} from="{tmp_date_tab[0]}" to="{tmp_date_tab[1]}">{ent.text}</{label2tag[ent.label_]}> ')
+                elif ' ' in tmp_date and not '[' in tmp_date and not 'po' in tmp_date and not 'przed' in tmp_date:
+                    pattern = r'\d{1,2}\s+[XVI]+\s+\d{4}'
+                    match = re.search(pattern=pattern, string=tmp_date)
+                    if match:
+                        match_text = match.group()
+                        match_tab = match_text.split(' ')
+                        day = match_tab[0]
+                        month = str(roman.fromRoman(match_tab[1].strip()))
+                        year = match_tab[2]
+                        tagged_text += (text_to_process[last_index:ent.start_char] +
+                                    f'<{label2tag[ent.label_]} when="{year}-{month.zfill(2)}-{day.zfill(2)}">{ent.text}</{label2tag[ent.label_]}>')
+                    else:
+                        pattern = r'\d{4}'
+                        match = re.search(pattern=pattern, string=tmp_date)
+                        if match:
+                            year = match.group()
+                            tagged_text += (text_to_process[last_index:ent.start_char] +
+                                        f'<{label2tag[ent.label_]} when="{year}">{ent.text}</{label2tag[ent.label_]}>')
+                        else:
+                            tagged_text += (text_to_process[last_index:ent.start_char] +
+                                    f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
                 else:
                     tagged_text += (text_to_process[last_index:ent.start_char] +
                                     f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
@@ -283,14 +323,16 @@ def ner_to_xml(text_to_process:str, r_date:str="", main_place:str="") -> str:
                                                                            alt_search_entity=alt_text,
                                                                            m_place_latitude=main_place_latitude,
                                                                            m_place_longitude=main_place_longitude,
-                                                                           df=df_places)
+                                                                           df=df_places,
+                                                                           alt_df=df_miasta,
+                                                                           modern_df=df_south_east)
                 if qid:
                     #print(ent.text, '->', text_to_search, '->', qid)
                     tagged_text += (text_to_process[last_index:ent.start_char] +
                                     f'<{label2tag[ent.label_]} ref="#{qid}">{ent.text}</{label2tag[ent.label_]}>')
                     # uzupełnienie do spisu miejscowości
                     places[qid_label] = (qid, description, latitude, longitude)
-                    #print(f"{text_to_search} ({alt_text}) = {qid_label} ({qid}) - {description}")
+                    print(f"{text_to_search} ({alt_text}) = {qid_label} ({qid}) - {description}")
                 else:
                     tagged_text += (text_to_process[last_index:ent.start_char] +
                                 f"<{label2tag[ent.label_]}>{ent.text}</{label2tag[ent.label_]}>")
@@ -404,7 +446,7 @@ if __name__ == '__main__':
                     # akapit tekstowy
                     if 'text' in item:
                         if previous_item == 'regest':
-                            tei_text += '</p>\n'
+                            tei_text += '\n</p>\n'
                         if '\n' in item["text"]:
                             tmp = item["text"].split('\n')
                         else:
@@ -412,27 +454,42 @@ if __name__ == '__main__':
                         for tmp_item in tmp:
                             content = ner_to_xml(tmp_item, main_place=item_name)
                             content = add_footnotes(content, num_of_footnotes)
-                            tei_text += f'<p>{content}</p>\n'
+                            tei_text += f'\n<p>\n{content}\n</p>\n'
                             previous_item = 'text'
                     # lista regestów
                     elif 'regest' in item:
                         regest_date = ""
                         if previous_item != 'regest':
-                            tei_text += '\n<p>'
+                            tei_text += '\n<p>\n'
                             previous_date = ""
                         tei_text += '\n<seg>'
                         if 'date' in item['regest'] and item["regest"]["date"].strip() != "":
                             regest_date = item["regest"]["date"]
 
-                            # jeżeli data dzienna
+                            # jeżeli data dzienna YYYY DD MM
                             pattern = r'\d{4}\s+\d{1,2}\s+[XVI]+'
                             match = re.search(pattern=pattern, string=regest_date)
+                            # czy może data dzienna w formie DD MM YYYY
+                            pattern2 = r'\d{1,2}\s+[XVI]+\s+\d{4}'
+                            match2 = re.search(pattern=pattern2, string=regest_date)
+
+                            # YYYY DD MM
                             if match:
                                 tmp_data = match.group().strip()
                                 tmp_data_tab = tmp_data.split(' ')
                                 year = tmp_data_tab[0].strip()
                                 day = tmp_data_tab[1].strip()
                                 month = str(roman.fromRoman(tmp_data_tab[2].strip()))
+                                tei_text += f'<date when="{year}-{month.zfill(2)}-{day.zfill(2)}">{regest_date}</date>' + ' '
+                                #previous_date = f'[<date>{regest_date}</date>]' + ' '
+                                previous_date = f'<date when="{year}-{month.zfill(2)}-{day.zfill(2)}"/> '
+                            # DD MM YYYY
+                            elif match2:
+                                tmp_data = match.group().strip()
+                                tmp_data_tab = tmp_data.split(' ')
+                                year = tmp_data_tab[2].strip()
+                                day = tmp_data_tab[0].strip()
+                                month = str(roman.fromRoman(tmp_data_tab[1].strip()))
                                 tei_text += f'<date when="{year}-{month.zfill(2)}-{day.zfill(2)}">{regest_date}</date>' + ' '
                                 #previous_date = f'[<date>{regest_date}</date>]' + ' '
                                 previous_date = f'<date when="{year}-{month.zfill(2)}-{day.zfill(2)}"/> '

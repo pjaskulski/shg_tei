@@ -53,7 +53,14 @@ def patterns_ogolne(obiekty:list, fizjografia:list, imiona:list, miejscowosci:li
            },
            # herby
            {"label":"COATOFARMS",
-            "pattern": [{"TEXT": "h"}, {"IS_PUNCT": True}, {"POS": "PROPN"}]
+            "pattern": [{"TEXT": "h"}, {"IS_PUNCT": True}, {"POS": "PROPN", "OP":"+"}]
+           },
+           # zakresy dat np. 1441—60, 1441-7
+           {"label": "DATE",
+            "pattern":[{"ENT_TYPE": "DATE"}, {"TEXT":"—"}, {"ENT_TYPE":"DATE"}]
+           },
+           {"label": "DATE",
+            "pattern":[{"IS_DIGIT":True, "LENGTH": 4}, {"TEXT":"—"}, {"IS_DIGIT":True, "LENGTH": 2}]
            },
            # osoba z miejscowości
            {"label": "PERSON",
