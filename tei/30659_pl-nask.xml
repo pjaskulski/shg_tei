@@ -924,13 +924,13 @@
                   <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q94859</idno>
                   <note>miasto (gmina: Żarki, powiat: myszkowski, wojewódzwo: śląskie)</note>
                </place>
-               <place xml:id="Q62781">
-                  <placeName>Padowa</placeName>
+               <place xml:id="Q147385">
+                  <placeName>Padwa</placeName>
                   <location>
-                     <geo>49.55902773, 20.46903978</geo>
+                     <geo>45.40833333333333, 11.875</geo>
                   </location>
-                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q62781</idno>
-                  <note>część wsi: Maszkowice (gmina: Łącko, powiat: nowosądecki, wojewódzwo: małopolskie)</note>
+                  <idno>https://wikihum.lab.dariah.pl/wiki/Item:Q147385</idno>
+                  <note>miejscowość (Włochy) [45°24'30' N, 11°52'30' E]</note>
                </place>
                <place xml:id="Q75135">
                   <placeName>Siewierz</placeName>
@@ -1657,7 +1657,7 @@
             <p>
 
                <seg><date when="1374">1374</date> <persName>Wojciech</persName> s. zm. <persName>Jana z M.</persName> <roleName type="kościelny_wyższy" subtype="kleryk">kleryk gnieźn.</roleName> zostaje kan. kurzelowskim po śmierci <persName>Mikołaja z Koziegłów</persName> (<bibl><title>Rejestr Świętop. </title> <biblScope>s. 89</biblScope></bibl>; <bibl><title>Bullarium 2</title>, <biblScope> nr 2133</biblScope></bibl>);</seg>
-               <seg><date from="1388" to="1400"> 1388—1400</date> <persName>Stanisław s. Michała</persName>, mgr uniwersytetu w <placeName ref="#Q62781">Padwie</placeName>, <roleName type="miejski" subtype="notariusz">notariusz kap. krak.</roleName> <date when="1389">1389</date> (<bibl><title>K. Ożóg, Kultura umysłowa w Krakowie w XIV wieku: środowisko duchowieństwa świeckiego, Wr. 1987, </title> <biblScope>s. 149</biblScope></bibl>);</seg>
+               <seg><date from="1388" to="1400"> 1388—1400</date> <persName>Stanisław s. Michała</persName>, mgr uniwersytetu w <placeName ref="#Q147385">Padwie</placeName>, <roleName type="miejski" subtype="notariusz">notariusz kap. krak.</roleName> <date when="1389">1389</date> (<bibl><title>K. Ożóg, Kultura umysłowa w Krakowie w XIV wieku: środowisko duchowieństwa świeckiego, Wr. 1987, </title> <biblScope>s. 149</biblScope></bibl>);</seg>
                <seg><date from="1389" to="1400"> 1389—1400</date> <persName>Michał s. Wincentego z M.</persName>, <roleName type="miejski" subtype="notariusz">notariusz publiczny</roleName> diec. <placeName>krak</placeName>. (<bibl><title>KMK 1</title>, <biblScope> 68</biblScope></bibl>; <bibl><title>Bullarium 3</title>, <biblScope> nr 691</biblScope></bibl>).</seg>
                <seg><date when="1422">1422</date> <persName>Gotard</persName> z <persName>M. s. Pawła z M.</persName>, piszący się też z <placeName ref="#Q94878">Żarnowca</placeName>, <roleName type="miejski" subtype="notariusz">notariusz publiczny</roleName> (<bibl><title>Cracovia artificum suppl. 1410—1412</title>, <biblScope> 1421—1424</biblScope>, <biblScope> nr 158</biblScope></bibl>; <bibl><title>OK 4 k. 272r</title></bibl>);</seg>
                <seg><date when="1425">1425</date> tenże <roleName type="miejski" subtype="pisarz">pisarz kurii bpiej</roleName> (<bibl><title>ZDK 2</title>, <biblScope> 254</biblScope></bibl>);</seg>

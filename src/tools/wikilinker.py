@@ -116,10 +116,21 @@ def wikilinker_people(search_entity:str, year:str="", number_of_candidates=10, i
 
 
 def fuzzylinker_places(search_entity:str, alt_search_entity:str, m_place_latitude,
-                       m_place_longitude, df, alt_df=None, modern_df=None) -> tuple:
+                       m_place_longitude, df, df_city=None, df_additional=None) -> tuple:
     """ funkcja wyszukuje najbardziej prawdopodobną kandydaturę miejscowości z bazy
         na podstawie nazwy, z użyciem biblioteki rapidfuzz
-        zwraca QID, opis z WikiHUM, współrzędne i etykietę
+        Parametry:
+        search_entity - nazwa do zidentyfikowania
+        alt_search_entity - alternatywna nazwa (w formie w jakiej występuje w tekście)
+        m_place_latitude - szerokośc geograficzna głównej miejscowości hasła
+        m_place_longitude - długość geograficzna głównej miejscowości hasła
+        df - podstawowa baza nazw (dataframe), zawartość powinna być dopasowana do przetwarzanego słownika
+        np. dla krakowskiego zawiera miejscowości z AHP z obszaru woj. krakowskiego oraz przyległych powiatów
+        województw sąsiednich i księstwa siewierskiego
+        df_city - baza miejscowości będących miastami w XVI w (z AHP)
+        df_additional - dodatkowa baza nazw miejscowości (egzonimy, miejscowości współczesne
+        z PRNG)
+        zwraca QID, opis z WikiHUM, współrzędne (lat, lon) i etykietę
     """
 
     best_qid = best_description = best_latitude = best_longitude = best_label = ''
@@ -153,15 +164,14 @@ def fuzzylinker_places(search_entity:str, alt_search_entity:str, m_place_latitud
         # jeżeli brak wyników szukanie w bazie miast z całej WikiHum (cała Polska)
         if len(result) == 0:
             print("Szukanie w bazie miast z XVI wieku...")
-            result = process.extract(search_entity, alt_df['Miejscowosc'], score_cutoff=90, limit=10)
-            dataset = alt_df
+            result = process.extract(search_entity, df_city['Miejscowosc'], score_cutoff=90, limit=10)
+            dataset = df_city
 
-        # jeżeli brak wyników to szukanie w bazie miejscowości współczesnych z południowo -
-        # wschodnej Polski (woj. śląskie, małopolskie, świętokrzyskie, podkarpackie)
+        # jeżeli brak wyników to szukanie w dodatkowej bazie miejscowosci
         if len(result) == 0:
-            print("Szukanie w bazie miejscowości współczesnych...")
-            result = process.extract(search_entity, modern_df['Miejscowosc'], score_cutoff=90, limit=10)
-            dataset = modern_df
+            print("Szukanie w bazie egzonimów i miejscowości współczesnych...")
+            result = process.extract(search_entity, df_additional['Miejscowosc'], score_cutoff=90, limit=10)
+            dataset = df_additional
 
         if len(result) == 0:
             print(f"Nie znaleziono kandydatów dla: {search_entity}")
@@ -171,6 +181,8 @@ def fuzzylinker_places(search_entity:str, alt_search_entity:str, m_place_latitud
             best_score = 0
             best_item = None
 
+            # szuka najbardziej dopasowanej miejscowości, jeżeli są takie o dopasowaniu = 100
+            # to tworzona jest lista do dalszego wyboru
             for item in result:
                 name, score, line_number = item
                 if score == 100:
@@ -181,18 +193,16 @@ def fuzzylinker_places(search_entity:str, alt_search_entity:str, m_place_latitud
                         best_score = score
 
             if len(best_items) > 0:
-                # jeżeli jest więcej niż jedna miejscowość z takim score i znane są
+                # jeżeli jest więcej niż jedna miejscowość z maksymalnym podobieństwem i znane są
                 # współrzędne głównej miejscowości hasła, szukana jest najbliższa
                 if len(best_items) > 1 and m_place_latitude and m_place_longitude:
-                    # if search_entity == 'Zawada':
-                    #     print("Wybór z kandydatów:", best_items)
                     coords_main = (float(m_place_longitude), float(m_place_latitude))
                     best_distance = 999 # km
                     best_item = None
                     for item in best_items:
                         name, score, line_number = item
-                        item_latitude = dataset['Latitude'][line_number]
-                        item_longitude = dataset['Longitude'][line_number]
+                        item_latitude = float(dataset['Latitude'][line_number])
+                        item_longitude = float(dataset['Longitude'][line_number])
                         if not math.isnan(item_latitude) and not math.isnan(item_longitude):
                             coords_item = (float(item_longitude), float(item_latitude))
                             distance = geopy.distance.geodesic(coords_main, coords_item).km

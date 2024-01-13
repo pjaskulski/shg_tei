@@ -155,9 +155,9 @@ miasta_path = Path("..") / "slowniki" / "miasta_1600.csv"
 df_miasta = pd.read_csv(miasta_path, sep=',', header=0, low_memory=False,
                         quotechar='"', encoding='utf-8')
 
-# miejscowości współczesne z południowo wschodniej Polski
-south_east_path = Path("..") / "slowniki" / "south_east_poland.csv"
-df_south_east = pd.read_csv(south_east_path, sep=',', header=0, low_memory=False,
+# miejscowości dodatkowe: egzonimy i współczesne z południowo wschodniej Polski
+places_additional_path = Path("..") / "slowniki" / "places_additional.csv"
+df_places_additional = pd.read_csv(places_additional_path, sep=',', header=0, low_memory=False,
                         quotechar='"', encoding='utf-8')
 
 item_foot = None
@@ -305,6 +305,8 @@ def ner_to_xml(text_to_process:str, r_date:str="", main_place:str="") -> str:
                 # nazw miejscowości
                 if ent.text in places_norm:
                     text_to_search = places_norm[ent.text]
+
+                # oryginalna forma nazwy z tekstu do alternatywnego wyszukiwania
                 alt_text = ent.text
 
                 # jeżeli nazwa to skrót od miejscowości hasła to szukanie wg nazwy miejscowości hasła
@@ -324,8 +326,8 @@ def ner_to_xml(text_to_process:str, r_date:str="", main_place:str="") -> str:
                                                                            m_place_latitude=main_place_latitude,
                                                                            m_place_longitude=main_place_longitude,
                                                                            df=df_places,
-                                                                           alt_df=df_miasta,
-                                                                           modern_df=df_south_east)
+                                                                           df_city=df_miasta,
+                                                                           df_additional=df_places_additional)
                 if qid:
                     #print(ent.text, '->', text_to_search, '->', qid)
                     tagged_text += (text_to_process[last_index:ent.start_char] +
@@ -428,7 +430,11 @@ if __name__ == '__main__':
             # identyfikacja głównej miejscowości hasła, ustalenie jej współrzędne
             text_to_search = item_name.title()
             _, _, main_place_latitude, main_place_longitude, _ = fuzzylinker_places(text_to_search, '', None, None, df_places)
-            #print(f"Współrzędne miejscowości {text_to_search}: {main_place_latitude}, {main_place_longitude}")
+            # jeżeli brak współrzędnych to przyjmuje się współrzędne Krakowa (położonego mniej więcej
+            # w środku dawnego województwa krakowskiego)
+            if not main_place_latitude or not main_place_longitude:
+                main_place_latitude = 50.0617812
+                main_place_longitude = 19.93736971
 
             # head
             tei_text = f"""<text>
