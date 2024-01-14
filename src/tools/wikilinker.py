@@ -133,6 +133,9 @@ def fuzzylinker_places(search_entity:str, alt_search_entity:str, m_place_latitud
         zwraca QID, opis z WikiHUM, współrzędne (lat, lon) i etykietę
     """
 
+    if search_entity == 'Kuchary':
+        print()
+
     best_qid = best_description = best_latitude = best_longitude = best_label = ''
 
     # lista słów zwykle omyłkowo uznawanych za miejscowości dla których nie ma sensu szukać
@@ -146,7 +149,7 @@ def fuzzylinker_places(search_entity:str, alt_search_entity:str, m_place_latitud
     if alt_search_entity and alt_search_entity[0].islower():
         return best_qid, best_description, best_latitude, best_longitude, best_label
 
-    dataset = df
+    current_dataset = df
     # długość szukanej nazwy to minimum trzy znaki
     if len(search_entity) >= 3:
         result = process.extract(search_entity, df['Miejscowosc'], score_cutoff=90, limit=10)
@@ -165,13 +168,13 @@ def fuzzylinker_places(search_entity:str, alt_search_entity:str, m_place_latitud
         if len(result) == 0:
             print("Szukanie w bazie miast z XVI wieku...")
             result = process.extract(search_entity, df_city['Miejscowosc'], score_cutoff=90, limit=10)
-            dataset = df_city
+            current_dataset = df_city
 
         # jeżeli brak wyników to szukanie w dodatkowej bazie miejscowosci
         if len(result) == 0:
             print("Szukanie w bazie egzonimów i miejscowości współczesnych...")
             result = process.extract(search_entity, df_additional['Miejscowosc'], score_cutoff=90, limit=10)
-            dataset = df_additional
+            current_dataset = df_additional
 
         if len(result) == 0:
             print(f"Nie znaleziono kandydatów dla: {search_entity}")
@@ -201,8 +204,8 @@ def fuzzylinker_places(search_entity:str, alt_search_entity:str, m_place_latitud
                     best_item = None
                     for item in best_items:
                         name, score, line_number = item
-                        item_latitude = float(dataset['Latitude'][line_number])
-                        item_longitude = float(dataset['Longitude'][line_number])
+                        item_latitude = float(current_dataset['Latitude'][line_number])
+                        item_longitude = float(current_dataset['Longitude'][line_number])
                         if not math.isnan(item_latitude) and not math.isnan(item_longitude):
                             coords_item = (float(item_longitude), float(item_latitude))
                             distance = geopy.distance.geodesic(coords_main, coords_item).km
@@ -219,10 +222,10 @@ def fuzzylinker_places(search_entity:str, alt_search_entity:str, m_place_latitud
                 name, score, line_number = best_item
 
             #print(name, score, line_number)
-            best_qid = dataset['QID'][line_number]
-            best_description = dataset['Description'][line_number]
-            best_latitude = dataset['Latitude'][line_number]
-            best_longitude = dataset['Longitude'][line_number]
-            best_label = dataset["Miejscowosc"][line_number]
+            best_qid = current_dataset['QID'][line_number]
+            best_description = current_dataset['Description'][line_number]
+            best_latitude = current_dataset['Latitude'][line_number]
+            best_longitude = current_dataset['Longitude'][line_number]
+            best_label = current_dataset["Miejscowosc"][line_number]
 
     return best_qid, best_description, best_latitude, best_longitude, best_label
