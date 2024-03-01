@@ -6,11 +6,14 @@ import json
 import time
 import re
 import warnings
+import csv
 from pathlib import Path
 # third party imports
 import spacy
 import pandas as pd
 import roman
+#from spacy_llm.util import assemble
+#from dotenv import load_dotenv
 # local library imports
 from patterns.burmistrzowie import rule_patterns_burmistrzowie
 from patterns.podwojtowie import rule_patterns_podwojtowie
@@ -32,8 +35,30 @@ from tools.tools import fstr, xsplit
 
 warnings.filterwarnings("ignore")
 
+# api key
+# env_path = Path(".") / ".env"
+
+# load_dotenv(dotenv_path=env_path)
+
+# OPENAI_ORG_ID = os.environ.get('OPENAI_ORG_ID')
+# OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
+
+# config_path = Path(".") / "config_ner_pl.cfg"
+
+# nlp_llm = assemble(config_path)
+# #ner_llm = nlp_llm.get_pipe("llm")
+
 nlp = spacy.load('pl_nask')
 spacy.require_cpu()
+
+# etykiety z komponentu llm
+# new_vocab = ['BIBLIO']
+
+# for item in new_vocab:
+#    nlp.vocab.strings.add(item)
+
+# nlp.add_pipe('llm', source = nlp_llm , name="ner_llm", after="ner")
+#nlp.add_pipe(ner_llm, name="ner_llm", before="ner")
 
 config = {
    "overwrite_ents": True
@@ -90,6 +115,7 @@ item_name = header = main_place_latitude = main_place_longitude = None
 people = {}
 places = {}
 places_norm = {}
+skroty_doc = {}
 
 
 ################################### FUNKCJE ####################################
@@ -114,6 +140,135 @@ def read_entity_names(entity_filename:str) -> list:
     return result
 
 
+def read_abbrev(abbrev_filename:str) -> dict:
+    """ Wczytywanie skrótów dokumentacyjnych """
+    result = {}
+    path_to_file = Path("..") / "slowniki" / abbrev_filename
+    with open(path_to_file, encoding='utf-8') as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',', quotechar='"')
+        for row in csv_reader:
+            result[row[0].strip()] = row[1].strip()
+
+    sorted_keys = sorted(result.keys(), key=len, reverse=True)
+    sorted_dict = dict(zip(sorted_keys, [result[key] for key in sorted_keys]))
+    return sorted_dict
+
+
+def find_abbr(source_title:str) -> str:
+    """ wyszukiwanie skrótu w tytule źródła """
+    result = ""
+
+    for key, value in skroty_doc.items():
+        if len(key) == 1:
+            key += ' '
+        if key in source_title:
+            result = value
+            break
+
+    return result
+
+
+def find_title_only(source_title: str) -> str:
+    """ wyszukiwanie samego tytułu bez numeru """
+    result = ''
+    for i in source_title:
+        if i.isdigit():
+            break
+        else:
+            result += i
+
+    return result.strip()
+
+
+def prepare_biblio(part_items:list) -> str:
+    """ formatowanie bibliografii w nawiasie """
+    result = ""
+    prev_title = ""
+    for item in part_items:
+        untitled = False
+        if ((item.strip()[0].isdigit() or
+            item.strip()[0].islower()) and prev_title):
+            untitled = True
+
+        if 's.' in item:
+            pos = item.find('s.')
+            b_title = item[:pos].strip()
+            # wyszukiwanie źródła i zapis typu
+            if untitled:
+                abbr_type = find_abbr(prev_title + ' ' + b_title)
+            else:
+                prev_title = find_title_only(b_title)
+                abbr_type = find_abbr(b_title)
+
+            if abbr_type:
+                item_format = f'<title type="{abbr_type}">{b_title}</title> '
+            else:
+                item_format = f'<title>{b_title}</title> '
+            item_format += f'<biblScope>{item[pos:]}</biblScope>'
+        elif 't.' in item:
+            pos = item.find('t.')
+            b_title = item[:pos].strip()
+            if untitled:
+                abbr_type = find_abbr(prev_title + ' ' + b_title)
+            else:
+                prev_title = find_title_only(b_title)
+                abbr_type = find_abbr(b_title)
+
+            if abbr_type:
+                item_format = f'<title type="{abbr_type}">{b_title}</title> '
+            else:
+                item_format = f'<title>{b_title}</title> '
+            item_format += f'<biblScope>{item[pos:]}</biblScope>'
+        elif 'z.' in item:
+            pos = item.find('z.')
+            b_title = item[:pos].strip()
+            if untitled:
+                abbr_type = find_abbr(prev_title + ' ' + b_title)
+            else:
+                prev_title = find_title_only(b_title)
+                abbr_type = find_abbr(b_title)
+
+            if abbr_type:
+                item_format = f'<title type="{abbr_type}">{b_title}</title> '
+            else:
+                item_format = f'<title>{b_title}</title> '
+            item_format += f'<biblScope>{item[pos:]}</biblScope>'
+        elif ',' in item:
+            tmp = item.split(',')
+            b_title = tmp[0].strip()
+            if untitled:
+                abbr_type = find_abbr(prev_title + ' ' + b_title)
+            else:
+                prev_title = find_title_only(b_title)
+                abbr_type = find_abbr(b_title)
+
+            if abbr_type:
+                item_format = f'<title type="{abbr_type}">{b_title}</title>'
+            else:
+                item_format = f'<title>{b_title}</title>'
+            for element in tmp[1:]:
+                item_format += ', ' + f'<biblScope>{element}</biblScope>'
+
+        else:
+            if untitled:
+                abbr_type = find_abbr(prev_title + ' ' + item)
+            else:
+                prev_title = find_title_only(item)
+                abbr_type = find_abbr(item)
+
+            if abbr_type:
+                item_format = f'<title type="{abbr_type}">{item}</title>'
+            else:
+                item_format = f'<title>{item}</title>'
+
+        if result:
+            result += f'; <bibl>{item_format}</bibl>'
+        else:
+            result += f'<bibl>{item_format}</bibl>'
+
+    return result
+
+
 def add_footnotes(text_to_complete:str, footnotes:dict=None) -> str:
     """ funkcja zmienia tagi przypisów na docelowe """
     # jeżeli są jakieś przypisy
@@ -125,7 +280,8 @@ def add_footnotes(text_to_complete:str, footnotes:dict=None) -> str:
     return text_to_complete
 
 
-def ner_to_xml(text_to_process:str, r_date:str="", main_place:str="", datasets:dict=None, main_coordinates:tuple = None) -> str:
+def ner_to_xml(text_to_process:str, r_date:str="", main_place:str="", datasets:dict=None,
+               main_coordinates:tuple = None) -> str:
     """ wyszukiwanie encji - nazw własnych
         text_to_process = tekst do przetworzenia
         r_data - data zapiski jeżeli występuje
@@ -301,6 +457,12 @@ def ner_to_xml_omit_brackets(text_to_process:str, main_place:str="", df_dataset:
     for part in tmp_tab:
         if part:
             if part.startswith('(') and part.endswith(')'):
+                # rozpozawanie, że zawartością nawiasu jest to bibliografia
+                if 's.' in part:
+                    part = part[1:-1]
+                    tmp_part = part.split(';')
+                    part = '(' + prepare_biblio(tmp_part) + ')'
+
                 result += part
             else:
                 result += ner_to_xml(part, main_place=main_place, datasets=df_dataset, main_coordinates=main_coordinates)
@@ -330,6 +492,67 @@ def get_json_files():
     data_folder_list = list(data_folder.glob('*.json'))
 
     return data_folder_list
+
+
+def odmianki(text_to_process:str, main_place:str="", datasets:dict=None,
+               main_coordinates:tuple = None) -> str:
+    """ przetwarzanie bloku tekstu zawierającego odmianki nazw """
+    result = ''
+
+    text_to_process = text_to_process[1:-1] # usunięcie nawiasów
+    parts = xsplit(text_to_process)
+    for p in parts:
+        tmp = p.split('—')
+        odmianka_data = tmp[0].strip()
+        odmianka_bibl = tmp[1].strip()
+
+        odmianka_data = ner_to_xml(odmianka_data,
+                               main_place=main_place,
+                               datasets=datasets,
+                               main_coordinates=main_coordinates)
+
+        # jeżeli przy odmiance jest nierozpoznana data...
+        pattern = r'^\d{4}\s{1}'
+        match = re.search(pattern=pattern, string=odmianka_data)
+        if match:
+            match_date = match.group().strip()
+            odmianka_data = f'<date when="{match_date}">{match_date}</date> {odmianka_data[5:]}'
+
+        # jeżeli przy źródle jest przypis to musi zostać przeniesiony poza tag <bibl>
+        pattern = r'\[\[\d{1,3}\]\]'
+        match = re.search(pattern=pattern, string = odmianka_bibl)
+        przypis = ''
+        if match:
+            przypis = match.group()
+            odmianka_bibl = odmianka_bibl.replace(przypis,'').strip()
+
+        if 's.' in odmianka_bibl and odmianka_bibl.count(',') == 0:
+            pos = odmianka_bibl.find('s.')
+            title = odmianka_bibl[:pos].strip()
+            scope = odmianka_bibl[pos:].strip()
+            abbr = find_abbr(title)
+            if abbr:
+                odmianka_bibl = f'<title type="{abbr}">{title}</title> <biblScope>{scope}</biblScope>'
+            else:
+                odmianka_bibl = f'<title>{title}</title> <biblScope>{scope}</biblScope>'
+        elif 's.' not in odmianka_bibl and odmianka_bibl.count(',') == 1:
+            tmp_odmianka_bibl = odmianka_bibl.split(',')
+            title = tmp_odmianka_bibl[0].strip()
+            scope = tmp_odmianka_bibl[1].strip()
+            abbr = find_abbr(title)
+            if abbr:
+                odmianka_bibl = f'<title type="{abbr}">{title}</title>, <biblScope>{scope}</biblScope>'
+            else:
+                odmianka_bibl = f'<title>{title}</title>, <biblScope>{scope}</biblScope>'
+
+        odmianka_bibl = f'<bibl>{odmianka_bibl}</bibl>{przypis}'
+        result += odmianka_data + ' — ' + odmianka_bibl + '; '
+
+    result = result.strip()
+    if result.endswith(';'):
+        result = result[:-1]
+    result = '(' + result.strip() + ')'
+    return result
 
 
 def process_file(file_json:str, df_data:dict):
@@ -395,10 +618,11 @@ def process_file(file_json:str, df_data:dict):
 
                     for tmp_item in tmp:
                         # NER, ale z pomijaniem tekstów w nawiasach, gdyź
-                        # zwykle jest to bibliografia, chyba że cały tekst jest nawiasem (zwykle lista
-                        # odmianek nazw na początku hasła)
+                        # zwykle jest to bibliografia, chyba że cały tekst jest
+                        # nawiasem (zwykle to lista odmianek nazw na początku hasła)
                         if tmp_item.startswith('(') and tmp_item.endswith(')'):
-                            content = ner_to_xml(tmp_item,
+                            # odmianki
+                            content = odmianki(tmp_item,
                                                  main_place=item_name,
                                                  datasets=df_data,
                                                  main_coordinates=(main_place_latitude, main_place_longitude))
@@ -532,31 +756,91 @@ def process_file(file_json:str, df_data:dict):
                     if 'source' in item['regest']:
                         biblio = item['regest']['source']
                         if biblio:
+                            prev_title = ""
                             for bib_item in biblio:
                                 if 'source_bg' in bib_item:
                                     tei_text += f'{bib_item["source_bg"]}'
                                 elif 'source_el' in bib_item and bib_item["source_el"].strip() != "":
-                                    source_el = bib_item["source_el"]
+                                    source_el = str(bib_item["source_el"])
+
+                                    # if 'ZK 146' in source_el:
+                                    #     print()
+
+                                    untitled = False
+                                    if ((source_el.strip()[0].isdigit() or
+                                        source_el.strip()[0].islower()) and prev_title):
+                                        untitled = True
+
                                     if 's.' in source_el:
                                         pos = source_el.find('s.')
-                                        source_el_format = f'<title>{source_el[:pos]}</title> '
+                                        b_title = source_el[:pos].strip()
+                                        # wyszukiwanie źródła i zapis typu
+                                        if untitled:
+                                            abbr_type = find_abbr(prev_title + ' ' + b_title)
+                                        else:
+                                            prev_title = find_title_only(b_title)
+                                            abbr_type = find_abbr(b_title)
+
+                                        if abbr_type:
+                                            source_el_format = f'<title type="{abbr_type}">{b_title}</title> '
+                                        else:
+                                            source_el_format = f'<title>{b_title}</title> '
                                         source_el_format += f'<biblScope>{source_el[pos:]}</biblScope>'
                                     elif 't.' in source_el:
                                         pos = source_el.find('t.')
-                                        source_el_format = f'<title>{source_el[:pos]}</title> '
+                                        b_title = source_el[:pos].strip()
+                                        if untitled:
+                                            abbr_type = find_abbr(prev_title + ' ' + b_title)
+                                        else:
+                                            prev_title = find_title_only(b_title)
+                                            abbr_type = find_abbr(b_title)
+
+                                        if abbr_type:
+                                            source_el_format = f'<title type="{abbr_type}">{b_title}</title> '
+                                        else:
+                                            source_el_format = f'<title>{b_title}</title> '
                                         source_el_format += f'<biblScope>{source_el[pos:]}</biblScope>'
                                     elif 'z.' in source_el:
                                         pos = source_el.find('z.')
-                                        source_el_format = f'<title>{source_el[:pos]}</title> '
+                                        b_title = source_el[:pos].strip()
+                                        if untitled:
+                                            abbr_type = find_abbr(prev_title + ' ' + b_title)
+                                        else:
+                                            prev_title = find_title_only(b_title)
+                                            abbr_type = find_abbr(b_title)
+
+                                        if abbr_type:
+                                            source_el_format = f'<title type="{abbr_type}">{b_title}</title> '
+                                        else:
+                                            source_el_format = f'<title>{b_title}</title> '
                                         source_el_format += f'<biblScope>{source_el[pos:]}</biblScope>'
                                     elif ',' in source_el:
                                         tmp = source_el.split(',')
-                                        source_el_format = f'<title>{tmp[0]}</title>'
+                                        b_title = tmp[0].strip()
+                                        if untitled:
+                                            abbr_type = find_abbr(prev_title + ' ' + b_title)
+                                        else:
+                                            prev_title = find_title_only(b_title)
+                                            abbr_type = find_abbr(b_title)
+
+                                        if abbr_type:
+                                            source_el_format = f'<title type="{abbr_type}">{b_title}</title>'
+                                        else:
+                                            source_el_format = f'<title>{b_title}</title>'
                                         for element in tmp[1:]:
                                             source_el_format += ', ' + f'<biblScope>{element}</biblScope>'
 
                                     else:
-                                        source_el_format = f'<title>{source_el}</title>'
+                                        if untitled:
+                                            abbr_type = find_abbr(prev_title + ' ' + source_el)
+                                        else:
+                                            prev_title = find_title_only(source_el)
+                                            abbr_type = find_abbr(source_el)
+
+                                        if abbr_type:
+                                            source_el_format = f'<title type="{abbr_type}">{source_el}</title>'
+                                        else:
+                                            source_el_format = f'<title>{source_el}</title>'
 
                                     # sklejanie bibliografii
                                     if tei_text.endswith('('):
@@ -693,6 +977,9 @@ if __name__ == '__main__':
 
     # wczytanie form podstawowych dla miejscowości
     places_norm = read_names_dict("places_norm.csv")
+
+    # wczytanie skrótów dokumentacyjnych
+    skroty_doc = read_abbrev("skroty_dokumentacyjne.csv")
 
     # reguły (entity ruler), ogólne: obiekty gospodarcze, fizjograficzne, urzędy kościelne,
     # urzędy ziemskie, reguły dla urzędów miejskich burmistrzów, wójtów itp.
